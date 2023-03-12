@@ -1,17 +1,8 @@
 import random
 from App.Models.client import Client
-from App.parse_data.download_data import check_txt_data, load_data_from_api_and_save, load_data_from_txt
+from App.parse_data.download_data import initialize_data, load_clients_from_file, upload_data_to_file
 from App.search_filters.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month
-from App.search_filters.order_restaurant_products import get_product_by_name
-
-
-def initialize_data():
-    if not check_txt_data():
-        drivers, constructors, races = load_data_from_api_and_save()
-    else:
-        drivers, constructors, races = load_data_from_txt()
-    return drivers, constructors, races
 
 
 def generate_unique_ticket_code(clients):
@@ -90,8 +81,8 @@ def set_unique_code_to_ticket(clients):
 
 
 def main():
-    clients = []
     drivers, constructors, races = initialize_data()
+    clients = load_clients_from_file()
 
     while True:
         print('Choose which module you want to use: ')
@@ -100,11 +91,11 @@ def main():
                                  '5.Restaurants sale management\n\t6.Statistics\n\t7.Exit\n\t'
                                  )
         if module_to_choose == '1':
-            choice = input(f'1.Search by filters\n\t2.Manage race')
+            choice = input(f'1.Search by filters\n\t2.Manage race\n')
             match choice:
                 case '1':
                     type_of_filter = input('Enter the type of filter you want to use:\n\t1.Constructors by country\n\t'
-                                           '2.Drivers by constructor\n\t3.Races by circuit\n\t4.Races by month')
+                                           '2.Drivers by constructor\n\t3.Races by circuit\n\t4.Races by month\n')
                     match type_of_filter:
                         case '1':
                             country = input('Enter the country you want to search by: ')
@@ -145,7 +136,7 @@ def main():
 
         elif module_to_choose == '4':
             print('Welcome to the restaurant management system!, here you can see our food and drinks by filters!')
-            choice = input('1.Products by name\n\t2.Products by type\n\t3.Products by price_range')
+            choice = input('1.Products by name\n\t2.Products by type\n\t3.Products by price_range\n')
             match choice:
                 case '1':
                     name = input('Enter the name of the product you want to search by: ')
@@ -161,7 +152,14 @@ def main():
             pass
 
         else:
-            # TODO:Upload data to database before closing
+            # TODO: fix clients Upload to database
+            for client in clients:
+                print(type(client))
+            upload_data_to_file(drivers, 'drivers')
+            upload_data_to_file(constructors, 'constructors')
+            upload_data_to_file(races, 'races')
+            upload_data_to_file(clients, 'clients')
+
             quit()
 
 

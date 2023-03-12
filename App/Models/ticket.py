@@ -1,4 +1,3 @@
-import random
 from enum import Enum
 
 
@@ -37,4 +36,3 @@ class Ticket:
         else:
             print(f'You dont qualify for a discount')
         print(f'Total: {self.total_price}')
-

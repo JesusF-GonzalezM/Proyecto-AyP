@@ -1,15 +1,31 @@
 import json
 import os
 import requests
+
+from App.Models.client import Client
 from App.Models.constructor import Constructor
 from App.Models.driver import Driver
 from App.Models.race import Race
-from App.parse_data.write_to_file import write_to_file
 
 URL_DRIVERS = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/api-proyecto/main/drivers.json'
 URL_CONSTRUCTORS = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/' \
                    'api-proyecto/main/constructors.json'
 URL_RACES = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/api-proyecto/main/races.json'
+
+
+def upload_data_to_file(obj, filename):  # Does not work for client
+    json_string = json.dumps(obj, default=lambda o: o.__dict__, indent=4)
+    with open(f"Database/{filename}.json", "w") as json_file:
+        json_file.write(json_string)
+
+
+def load_clients_from_file():
+    clients = []
+    if check_txt_data('clients'):
+        with open('Database/clients.json', 'r') as clients_file:
+            json_clients = json.load(clients_file)
+            clients = initialize_clients(json_clients)
+    return clients
 
 
 def initialize_drivers(data_array):
@@ -36,6 +52,14 @@ def initialize_constructors(data_array):
     return constructors
 
 
+def initialize_clients(data_array):
+    clients = []
+    for data in data_array:
+        client = Client(**data)
+        clients.append(client)
+    return clients
+
+
 def initialize_drivers_from_api(url):
     response = requests.get(url)
     data_array = response.json()
@@ -54,8 +78,8 @@ def initialize_races_from_api(url):
     return initialize_races(data_array)
 
 
-def check_txt_data():
-    return os.path.isfile(f'Database/drivers.json')
+def check_txt_data(file_path):
+    return os.path.isfile(f'Database/{file_path}.json')
 
 
 def load_data_from_txt():
@@ -79,12 +103,16 @@ def load_data_from_api_and_save():
     constructors = initialize_constructors_from_api(URL_CONSTRUCTORS)
     races = initialize_races_from_api(URL_RACES)
 
-    write_to_file(drivers, 'drivers')
-    write_to_file(constructors, 'constructors')
-    write_to_file(races, 'races')
+    upload_data_to_file(drivers, 'drivers')
+    upload_data_to_file(constructors, 'constructors')
+    upload_data_to_file(races, 'races')
 
     return drivers, constructors, races
 
 
-def upload_data_to_db():
-    pass
+def initialize_data():
+    if not check_txt_data('drivers'):
+        drivers, constructors, races = load_data_from_api_and_save()
+    else:
+        drivers, constructors, races = load_data_from_txt()
+    return drivers, constructors, races
