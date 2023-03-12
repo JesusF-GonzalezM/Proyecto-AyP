@@ -7,3 +7,4 @@ class Constructor:
     def __str__(self):
         return f' -----\n ---\n name: {self.name}\n ' \
                f'nationality: {self.nationality}\n ---\n -----\n'
+    

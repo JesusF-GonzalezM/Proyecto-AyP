@@ -1,7 +1,7 @@
 class Refreshment:
     def __init__(self, name, price):
         self.name = name
-        self.price = price
+        self.price = float(price) * 1.16
 
 
 class Food(Refreshment):
