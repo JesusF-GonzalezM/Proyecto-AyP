@@ -14,9 +14,13 @@ URL_RACES = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/
 
 
 def upload_data_to_file(obj, filename):  # Does not work for client
-    json_string = json.dumps(obj, default=lambda o: o.__dict__, indent=4)
+    json_string = json.dumps(obj, default=object_to_dict, indent=4)
     with open(f"Database/{filename}.json", "w") as json_file:
         json_file.write(json_string)
+
+
+def object_to_dict(obj):
+    return obj.__dict__
 
 
 def load_clients_from_file():

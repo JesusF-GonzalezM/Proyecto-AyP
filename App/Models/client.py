@@ -16,12 +16,18 @@ def number_is_ondulado(num):  # this shit does not work
 
 
 class Client:
-    def __init__(self, name, id, age, race_name, ticket_type):
+    def __init__(self, name, id, age, race_name, ticket):
         self.name = name
         self.id = id
         self.age = age
         self.race_name = race_name
-        self.ticket_type = Ticket(ticket_type)
-        if number_is_ondulado(self.id):
-            self.ticket_type.discount = True
+        if isinstance(ticket, str):
+            self.ticket = Ticket(ticket)
+        else:
+            self.ticket = Ticket(**ticket)
 
+        if number_is_ondulado(self.id):
+            self.ticket.discount = True
+
+    def __str__(self):
+        return f'name: {self.name}, age: {self.age}, race_name: {self.race_name}'

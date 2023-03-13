@@ -16,7 +16,3 @@ class Race:
         return f'RACE NUMBER: {self.round}\n\trace name: {self.name}\n\tcircuit name: {self.circuit.name}\n' \
                f'\trace date: {self.date}\n\trace country: {self.circuit.location.country}\n' \
                f'\trace state: {self.circuit.location.locality}'
-
-
-
-

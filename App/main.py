@@ -10,7 +10,7 @@ def generate_unique_ticket_code(clients):
         unique_code = random.randint(100000, 999999)
         unique = True
         for client in clients:
-            if unique_code == client.ticket_type.code:
+            if unique_code == client.ticket.code:
                 unique = False
                 break
         if unique:
@@ -61,14 +61,14 @@ def get_client_data(races):
     while True:
         print('\tEnter your desired ticket type:')
         print('\t1. VIP')
-        ticket_type = input('\t2. GENERAL\n\t')
-        if ticket_type == '1' or ticket_type == '2':
+        ticket = input('\t2. GENERAL\n\t')
+        if ticket == '1' or ticket == '2':
             break
         print('Ticket type is not valid, please try again.')
 
-    new_client = Client(name=name, id=id, age=age, race_name=race_name, ticket_type=ticket_type)
-    new_client.ticket_type.calculate_price()
-    new_client.ticket_type.print_detailed_price()
+    new_client = Client(name=name, id=id, age=age, race_name=race_name, ticket=ticket)
+    new_client.ticket.calculate_price()
+    new_client.ticket.print_detailed_price()
     return new_client
 
 
@@ -123,7 +123,7 @@ def main():
 
         elif module_to_choose == '2':
             client = get_client_data(races)
-            client.ticket_type.code = set_unique_code_to_ticket(clients)
+            client.ticket.code = set_unique_code_to_ticket(clients)
             payment = input('\tDo you want to pay this ticket? (y/n):\n\t')
             if payment == 'y':
                 print('Success! Thank you for your purchase!')
@@ -140,6 +140,7 @@ def main():
             match choice:
                 case '1':
                     name = input('Enter the name of the product you want to search by: ')
+                    print(name)
                 case '2':
                     pass
                 case '3':
@@ -152,9 +153,6 @@ def main():
             pass
 
         else:
-            # TODO: fix clients Upload to database
-            for client in clients:
-                print(type(client))
             upload_data_to_file(drivers, 'drivers')
             upload_data_to_file(constructors, 'constructors')
             upload_data_to_file(races, 'races')

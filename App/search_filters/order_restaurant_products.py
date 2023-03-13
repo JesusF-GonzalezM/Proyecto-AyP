@@ -1,5 +1,4 @@
 # Buscar productos por nombre, tipo, o rango de precio.
-from App.Models.refreshment import Food, Drink
 
 
 def get_product_by_name(products, product_name):

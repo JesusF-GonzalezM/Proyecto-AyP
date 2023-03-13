@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class TicketType(Enum):
+class TicketType(str, Enum):
     VIP = '1'
     GENERAL = '2'
 
@@ -13,11 +13,11 @@ ticket_price = {
 
 
 class Ticket:
-    def __init__(self, type):
+    def __init__(self, type, code=None, total_price=0, discount=None):
         self.type = TicketType(type)
-        self.code = None
-        self.total_price = 0
-        self.discount = False
+        self.code = code
+        self.total_price = total_price
+        self.discount = discount
 
     def calculate_price(self):
         initial_price = ticket_price[self.type.name]
