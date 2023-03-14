@@ -1,83 +1,17 @@
-import random
-from App.Models.client import Client
-from App.parse_data.download_data import initialize_data, load_clients_from_file, upload_data_to_file
-from App.search_filters.filter_races import get_constructor_by_country, get_driver_by_constructor, \
+from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month
+from App.Races_and_team_management.finish_race import set_drivers_and_constructors_score, randomize_list, \
+    get_winning_constructor, reset_scores
+from App.Restaurant_sale_management.manage_purchases import manage_purchase
+from App.Tickets_sale_management.manage_client_creation import manage_client
+from App.parse_data.download_data import initialize_data, load_clients_from_file, upload_data_to_file
 
-
-def generate_unique_ticket_code(clients):
-    while True:
-        unique_code = random.randint(100000, 999999)
-        unique = True
-        for client in clients:
-            if unique_code == client.ticket.code:
-                unique = False
-                break
-        if unique:
-            break
-    return unique_code
-
-
-def end_race():
-    pass
-
-# Gestión de venta de entradas
-
-
-def get_client_data(races):
-    print('Welcome!, Please enter your information to buy a ticket:\n')
-    while True:
-        name = input('\tEnter your name: ')
-        if name.isalpha():
-            name = name.lower()
-            break
-        print('Name is not valid, please try again.')
-
-    while True:
-        id = input('\tEnter your ID: ')
-        if id.isnumeric():
-            break
-        print('ID is not valid, please try again.')
-
-    while True:
-        age = input('\tEnter your age: ')
-        if age.isnumeric():
-            break
-        print('Age is not valid, please try again.')
-
-    for race in races:
-        print(race)
-    valid = False
-    while True:
-        race_name = input('Enter the name of the race you want to buy a ticket for: ').title()
-        for race in races:
-            if race.name == race_name:
-                valid = True
-                break
-        if valid:
-            break
-        print('Race does not exist, please try again.')
-
-    while True:
-        print('\tEnter your desired ticket type:')
-        print('\t1. VIP')
-        ticket = input('\t2. GENERAL\n\t')
-        if ticket == '1' or ticket == '2':
-            break
-        print('Ticket type is not valid, please try again.')
-
-    new_client = Client(name=name, id=id, age=age, race_name=race_name, ticket=ticket)
-    new_client.ticket.calculate_price()
-    new_client.ticket.print_detailed_price()
-    return new_client
-
-
-def set_unique_code_to_ticket(clients):
-    if clients:
-        unique_ticket_code = generate_unique_ticket_code(clients)
-    else:
-        unique_ticket_code = random.randint(100000, 999999)
-    return unique_ticket_code
+# Modulo 1 listo
+# Modulo 2 listo
+# Modulo 3 Gestion de Asistencia de Carreras pendiente
+# Modulo 4 Gestion de Restaurantes filtros listos, lo demás pendiente.
+# Modulo 5 Gestion de venta de restaurantes, pendiente terminar
+# Modulo 6 Estadísticas pendientes
 
 
 def main():
@@ -90,75 +24,113 @@ def main():
                                  '3.Races assistance management\n\t4.Restaurants management\n\t'
                                  '5.Restaurants sale management\n\t6.Statistics\n\t7.Exit\n\t'
                                  )
-        if module_to_choose == '1':
-            choice = input(f'1.Search by filters\n\t2.Manage race\n')
-            match choice:
-                case '1':
-                    type_of_filter = input('Enter the type of filter you want to use:\n\t1.Constructors by country\n\t'
-                                           '2.Drivers by constructor\n\t3.Races by circuit\n\t4.Races by month\n')
-                    match type_of_filter:
+        match module_to_choose:
+            # Races and team management Module
+            case '1':
+                while True:
+                    choice = input(f'1.Search by filters\n2.Finish race\n3.Leave\n')
+                    match choice:
                         case '1':
-                            country = input('Enter the country you want to search by: ')
-                            filtered_constructors = get_constructor_by_country(constructors, country)
-                            for constructor in filtered_constructors:
-                                print(constructor)
+                            type_of_filter = input('Enter the type of filter you want to use:'
+                                                   '\n\t1.Constructors by country'
+                                                   '\n\t2.Drivers by constructor'
+                                                   '\n\t3.Races by circuit'
+                                                   '\n\t4.Races by month'
+                                                   '\n\t5.Leave\n')
+                            match type_of_filter:
+                                case '1':
+                                    country = input('Enter the country you want to search by: ')
+                                    filtered_constructors = get_constructor_by_country(constructors, country)
+                                    for constructor in filtered_constructors:
+                                        print(constructor)
+                                case '2':
+                                    constructor_id = input('Enter the id of the constructor you want to search by: ')
+                                    filtered_drivers = get_driver_by_constructor(drivers, constructor_id)
+                                    for driver in filtered_drivers:
+                                        print(driver)
+                                case '3':
+                                    circuit_country = input('Enter the country of the circuit you want to search by: ')
+                                    filtered_races_by_circuit_country = \
+                                        get_races_by_circuit_country(races, circuit_country)
+                                    for race in filtered_races_by_circuit_country:
+                                        print(race)
+                                case '4':
+                                    race_month = input('Enter the month of the year you want to search by: ')
+                                    filtered_races_by_month = get_races_by_month(races, race_month)
+                                    for race in filtered_races_by_month:
+                                        print(race)
+                                case _:
+                                    break
+
                         case '2':
-                            constructor_id = input('Enter the id of the constructor you want to search by: ')
-                            filtered_drivers = get_driver_by_constructor(drivers, constructor_id)
-                            for driver in filtered_drivers:
-                                print(driver)
+                            randomize_list(drivers)
+
+                            set_drivers_and_constructors_score(drivers, constructors)
+                            print(f'Congratulations to the driver {drivers[0].firstName} {drivers[0].lastName}, '
+                                  f'for winning in the first place!, scoring {drivers[0].score} points')
+
+                            winning_constructor = get_winning_constructor(constructors)
+                            print(f'Congratulations to the constructor {winning_constructor.name}, for '
+                                  f'winning in the first place!, scoring {winning_constructor.score} points')
+
+                            reset_scores(drivers, constructors)
                         case '3':
-                            circuit_country = input('Enter the country of the circuit you want to search by: ')
-                            filtered_races_by_circuit_country = get_races_by_circuit_country(races, circuit_country)
-                            for race in filtered_races_by_circuit_country:
-                                print(race)
-                        case '4':
-                            race_month = input('Enter the month of the year you want to search by: ')
-                            filtered_races_by_month = get_races_by_month(races, race_month)
-                            for race in filtered_races_by_month:
-                                print(race)
-
-            if choice == '2':
+                            break
+            # Tickets sale management Module
+            case '2':
+                while True:
+                    choice = input(f'1.Buy ticket\n2.Leave\n')
+                    match choice:
+                        case '1':
+                            client, ticket, client_in_db = manage_client(races, clients)
+                            payment = input('\tDo you want to pay this ticket? (y/n):\n\t')
+                            if payment == 'y':
+                                client.add_ticket(ticket)
+                                client.total_spent += ticket.total_price
+                                if not client_in_db:
+                                    clients.append(client)
+                                print('Success! Thank you for your purchase!')
+                                # TODO: Asignar asiento
+                            else:
+                                print('Goodbye!')
+                        case _:
+                            break
+            # Races assistance management Module
+            case '3':
+                print('Welcome to the ticket validation system!')
+            # Restaurants management Module
+            case '4':
+                print('Welcome to the restaurant management system!, here you can see our food and drinks by filters!')
+                choice = input('1.Products by name\n\t2.Products by type\n\t3.Products by price_range\n')
+                match choice:
+                    case '1':
+                        restaurant = input('Enter the name of the restaurant you want to search the products by: ')
+                        name = input('Enter the name of the product you want to search by: ')
+                        print(name, restaurant)
+                    case '2':
+                        pass
+                    case '3':
+                        pass
+            # Restaurants sale management Module
+            case '5':
+                client, total_price = manage_purchase(clients, races)
+                if client != 'no restaurants':
+                    choice = input(f'1.Pay the products\n2.Cancel Payment\n')
+                    if choice == '1':
+                        print('Success! Thank you for your purchase!')
+                        client.total_spent += total_price
+                        # TODO: Remove from restaurant inventory
+            # Statistics Module
+            case '6':
                 pass
+            # Exit and Save
+            case _:
+                upload_data_to_file(drivers, 'drivers')
+                upload_data_to_file(constructors, 'constructors')
+                upload_data_to_file(races, 'races')
+                upload_data_to_file(clients, 'clients')
 
-        elif module_to_choose == '2':
-            client = get_client_data(races)
-            client.ticket.code = set_unique_code_to_ticket(clients)
-            payment = input('\tDo you want to pay this ticket? (y/n):\n\t')
-            if payment == 'y':
-                print('Success! Thank you for your purchase!')
-                clients.append(client)
-            else:
-                print('Goodbye!')
-
-        elif module_to_choose == '3':
-            pass
-
-        elif module_to_choose == '4':
-            print('Welcome to the restaurant management system!, here you can see our food and drinks by filters!')
-            choice = input('1.Products by name\n\t2.Products by type\n\t3.Products by price_range\n')
-            match choice:
-                case '1':
-                    name = input('Enter the name of the product you want to search by: ')
-                    print(name)
-                case '2':
-                    pass
-                case '3':
-                    pass
-
-        elif module_to_choose == '5':
-            pass
-
-        elif module_to_choose == '6':
-            pass
-
-        else:
-            upload_data_to_file(drivers, 'drivers')
-            upload_data_to_file(constructors, 'constructors')
-            upload_data_to_file(races, 'races')
-            upload_data_to_file(clients, 'clients')
-
-            quit()
+                quit()
 
 
 if __name__ == '__main__':

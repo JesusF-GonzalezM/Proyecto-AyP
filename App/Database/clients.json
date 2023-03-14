@@ -2,49 +2,17 @@
     {
         "name": "jesus",
         "id": "25",
-        "age": "25",
-        "race_name": "Las Vegas Grand Prix",
-        "ticket": {
-            "type": "1",
-            "code": 490426,
-            "total_price": 197.2,
-            "discount": true
-        }
-    },
-    {
-        "name": "jesus",
-        "id": "25",
-        "age": "25",
-        "race_name": "Las Vegas Grand Prix",
-        "ticket": {
-            "type": "1",
-            "code": 787365,
-            "total_price": 197.2,
-            "discount": true
-        }
-    },
-    {
-        "name": "jesus",
-        "id": "25",
-        "age": "25",
-        "race_name": "Las Vegas Grand Prix",
-        "ticket": {
-            "type": "1",
-            "code": 579766,
-            "total_price": 197.2,
-            "discount": true
-        }
-    },
-    {
-        "name": "gustavo",
-        "id": "25",
-        "age": "25",
-        "race_name": "Las Vegas Grand Prix",
-        "ticket": {
-            "type": "1",
-            "code": 325975,
-            "total_price": 197.2,
-            "discount": true
-        }
+        "age": "15",
+        "total_spent": 528.96,
+        "tickets": [
+            {
+                "race_round": "22",
+                "type": "2",
+                "code": 160168,
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            }
+        ]
     }
 ]

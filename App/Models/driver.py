@@ -1,5 +1,5 @@
 class Driver:
-    def __init__(self, id, permanentNumber, code, team, firstName, lastName, dateOfBirth, nationality):
+    def __init__(self, id, permanentNumber, code, team, firstName, lastName, dateOfBirth, nationality, score=0):
         self.id = id
         self.permanentNumber = permanentNumber
         self.code = code
@@ -8,6 +8,7 @@ class Driver:
         self.lastName = lastName
         self.dateOfBirth = dateOfBirth
         self.nationality = nationality
+        self.score = score
 
     def __str__(self):
         return f' -----\n ---\n name: {self.firstName} {self.lastName}\n ' \

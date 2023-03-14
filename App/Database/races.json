@@ -19,72 +19,96 @@
                 "items": [
                     {
                         "name": "ullam voluptas corporis",
-                        "price": "736.00",
+                        "price": 736.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "officia porro eos",
-                        "price": "822.00",
+                        "price": 822.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "facilis tenetur nesciunt",
-                        "price": "164.00",
+                        "price": 164.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "doloremque perferendis debitis",
-                        "price": "582.00",
+                        "price": 582.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "temporibus placeat iste",
-                        "price": "381.00",
+                        "price": 381.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "minus in quasi",
-                        "price": "130.00",
+                        "price": 130.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "molestias repudiandae ratione",
-                        "price": "35.00",
+                        "price": 35.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "laborum blanditiis possimus",
-                        "price": "496.00",
+                        "price": 496.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "debitis impedit consequuntur",
-                        "price": "263.00",
+                        "price": 263.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ipsa dolor repellat",
-                        "price": "936.00",
+                        "price": 936.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "et incidunt iusto",
-                        "price": "563.00",
+                        "price": 563.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "reprehenderit pariatur impedit",
-                        "price": "229.00",
+                        "price": 229.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "exercitationem laudantium quia",
-                        "price": "870.00",
+                        "price": 870.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                1,
+                6
+            ],
+            "vip": [
+                1,
+                1
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "2",
@@ -106,47 +130,66 @@
                 "items": [
                     {
                         "name": "tempora laboriosam omnis",
-                        "price": "110.00",
+                        "price": 110.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quisquam eaque cumque",
-                        "price": "314.00",
+                        "price": 314.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quos quasi in",
-                        "price": "446.00",
+                        "price": 446.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "numquam placeat numquam",
-                        "price": "521.00",
+                        "price": 521.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "magni inventore hic",
-                        "price": "353.00",
+                        "price": 353.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quam eum ad",
-                        "price": "345.00",
+                        "price": 345.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "illum eum occaecati",
-                        "price": "674.00",
+                        "price": 674.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quae atque magnam",
-                        "price": "687.00",
+                        "price": 687.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                3,
+                6
+            ],
+            "vip": [
+                1,
+                7
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "3",
@@ -168,62 +211,74 @@
                 "items": [
                     {
                         "name": "tenetur vitae voluptas",
-                        "price": "121.00",
+                        "price": 121.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "in eius voluptatum",
-                        "price": "438.00",
+                        "price": 438.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "enim odio quasi",
-                        "price": "676.00",
+                        "price": 676.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quis nam natus",
-                        "price": "60.00",
+                        "price": 60.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "earum explicabo eius",
-                        "price": "992.00",
+                        "price": 992.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "dolore rem libero",
-                        "price": "571.00",
+                        "price": 571.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "iusto itaque dolorum",
-                        "price": "859.00",
+                        "price": 859.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "tempora blanditiis minus",
-                        "price": "925.00",
+                        "price": 925.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "unde maiores sapiente",
-                        "price": "311.00",
+                        "price": 311.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "repudiandae distinctio error",
-                        "price": "246.00",
+                        "price": 246.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "hic velit sint",
-                        "price": "3.00",
+                        "price": 3.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "iste praesentium necessitatibus",
-                        "price": "653.00",
+                        "price": 653.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -233,52 +288,62 @@
                 "items": [
                     {
                         "name": "ratione recusandae praesentium",
-                        "price": "759.00",
+                        "price": 759.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "numquam molestiae corporis",
-                        "price": "714.00",
+                        "price": 714.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quod corporis rerum",
-                        "price": "453.00",
+                        "price": 453.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "impedit facere nisi",
-                        "price": "264.00",
+                        "price": 264.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "explicabo earum ducimus",
-                        "price": "402.00",
+                        "price": 402.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quidem debitis aliquam",
-                        "price": "593.00",
+                        "price": 593.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "magni sapiente placeat",
-                        "price": "621.00",
+                        "price": 621.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatum nemo nesciunt",
-                        "price": "815.00",
+                        "price": 815.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "harum assumenda quae",
-                        "price": "913.00",
+                        "price": 913.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "exercitationem eveniet culpa",
-                        "price": "790.00",
+                        "price": 790.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -288,47 +353,56 @@
                 "items": [
                     {
                         "name": "magni ut animi",
-                        "price": "256.00",
+                        "price": 256.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "rem quia placeat",
-                        "price": "116.00",
+                        "price": 116.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "itaque dolores expedita",
-                        "price": "820.00",
+                        "price": 820.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "eos consequatur officia",
-                        "price": "407.00",
+                        "price": 407.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "vel officia itaque",
-                        "price": "347.00",
+                        "price": 347.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "inventore quibusdam ratione",
-                        "price": "924.00",
+                        "price": 924.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quam quidem rerum",
-                        "price": "850.00",
+                        "price": 850.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "explicabo provident accusantium",
-                        "price": "953.00",
+                        "price": 953.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "sequi recusandae harum",
-                        "price": "345.00",
+                        "price": 345.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -338,32 +412,38 @@
                 "items": [
                     {
                         "name": "explicabo molestiae necessitatibus",
-                        "price": "816.00",
+                        "price": 816.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "incidunt necessitatibus illum",
-                        "price": "934.00",
+                        "price": 934.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "adipisci ducimus adipisci",
-                        "price": "927.00",
+                        "price": 927.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "porro alias repellendus",
-                        "price": "982.00",
+                        "price": 982.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "doloremque aliquid explicabo",
-                        "price": "219.00",
+                        "price": 219.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "odio accusamus quidem",
-                        "price": "282.00",
+                        "price": 282.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -373,72 +453,86 @@
                 "items": [
                     {
                         "name": "ullam sit illo",
-                        "price": "948.00",
+                        "price": 948.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "aliquid inventore eveniet",
-                        "price": "600.00",
+                        "price": 600.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nesciunt vel itaque",
-                        "price": "234.00",
+                        "price": 234.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ex neque consequatur",
-                        "price": "946.00",
+                        "price": 946.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "natus sequi porro",
-                        "price": "816.00",
+                        "price": 816.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quisquam aspernatur ex",
-                        "price": "977.00",
+                        "price": 977.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ab ut exercitationem",
-                        "price": "55.00",
+                        "price": 55.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "fugit itaque exercitationem",
-                        "price": "519.00",
+                        "price": 519.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "iusto natus fugit",
-                        "price": "252.00",
+                        "price": 252.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "aliquam veniam dolor",
-                        "price": "931.00",
+                        "price": 931.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "laboriosam vel dolorum",
-                        "price": "217.00",
+                        "price": 217.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "tempora et pariatur",
-                        "price": "914.00",
+                        "price": 914.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "accusamus rerum quaerat",
-                        "price": "12.00",
+                        "price": 12.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "deleniti dignissimos libero",
-                        "price": "584.00",
+                        "price": 584.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -448,17 +542,20 @@
                 "items": [
                     {
                         "name": "earum officiis culpa",
-                        "price": "798.00",
+                        "price": 798.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "laudantium aperiam quisquam",
-                        "price": "228.00",
+                        "price": 228.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "culpa blanditiis voluptatum",
-                        "price": "874.00",
+                        "price": 874.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -468,27 +565,32 @@
                 "items": [
                     {
                         "name": "sunt blanditiis velit",
-                        "price": "888.00",
+                        "price": 888.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ea ducimus ipsum",
-                        "price": "530.00",
+                        "price": 530.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quis ex delectus",
-                        "price": "824.00",
+                        "price": 824.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nesciunt vitae saepe",
-                        "price": "470.00",
+                        "price": 470.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "velit ad id",
-                        "price": "724.00",
+                        "price": 724.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -498,22 +600,36 @@
                 "items": [
                     {
                         "name": "distinctio iusto autem",
-                        "price": "627.00",
+                        "price": 627.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "harum in aliquid",
-                        "price": "22.00",
+                        "price": 22.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "recusandae eaque ea",
-                        "price": "529.00",
+                        "price": 529.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                4,
+                2
+            ],
+            "vip": [
+                1,
+                3
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "4",
@@ -535,72 +651,86 @@
                 "items": [
                     {
                         "name": "nulla doloribus itaque",
-                        "price": "275.00",
+                        "price": 275.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "aliquam repudiandae excepturi",
-                        "price": "883.00",
+                        "price": 883.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "consequuntur commodi ipsum",
-                        "price": "182.00",
+                        "price": 182.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "consequuntur voluptate velit",
-                        "price": "926.00",
+                        "price": 926.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "delectus facilis officiis",
-                        "price": "753.00",
+                        "price": 753.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "labore sequi tempora",
-                        "price": "768.00",
+                        "price": 768.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "alias earum debitis",
-                        "price": "909.00",
+                        "price": 909.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "reiciendis recusandae exercitationem",
-                        "price": "334.00",
+                        "price": 334.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quisquam sequi possimus",
-                        "price": "331.00",
+                        "price": 331.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "facere in nihil",
-                        "price": "288.00",
+                        "price": 288.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptates vero cupiditate",
-                        "price": "79.00",
+                        "price": 79.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "esse ipsum maiores",
-                        "price": "821.00",
+                        "price": 821.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "sint enim necessitatibus",
-                        "price": "599.00",
+                        "price": 599.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "atque quo earum",
-                        "price": "673.00",
+                        "price": 673.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -610,62 +740,74 @@
                 "items": [
                     {
                         "name": "corporis corporis fuga",
-                        "price": "927.00",
+                        "price": 927.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "reiciendis odio rerum",
-                        "price": "412.00",
+                        "price": 412.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "aspernatur iure nihil",
-                        "price": "991.00",
+                        "price": 991.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "in deleniti perferendis",
-                        "price": "34.00",
+                        "price": 34.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "magni dolore est",
-                        "price": "967.00",
+                        "price": 967.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quasi sequi voluptate",
-                        "price": "550.00",
+                        "price": 550.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "perspiciatis error accusantium",
-                        "price": "740.00",
+                        "price": 740.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quisquam amet debitis",
-                        "price": "980.00",
+                        "price": 980.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "aliquid quibusdam facilis",
-                        "price": "770.00",
+                        "price": 770.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quas in cumque",
-                        "price": "809.00",
+                        "price": 809.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nesciunt ipsa amet",
-                        "price": "406.00",
+                        "price": 406.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "hic quisquam iste",
-                        "price": "357.00",
+                        "price": 357.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -675,17 +817,20 @@
                 "items": [
                     {
                         "name": "hic dignissimos explicabo",
-                        "price": "1.00",
+                        "price": 1.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "molestiae nihil maiores",
-                        "price": "490.00",
+                        "price": 490.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "a omnis ipsa",
-                        "price": "813.00",
+                        "price": 813.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -695,37 +840,44 @@
                 "items": [
                     {
                         "name": "velit nam adipisci",
-                        "price": "594.00",
+                        "price": 594.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "expedita exercitationem aut",
-                        "price": "321.00",
+                        "price": 321.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "nisi quo deleniti",
-                        "price": "877.00",
+                        "price": 877.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quia at qui",
-                        "price": "241.00",
+                        "price": 241.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "consequuntur ea animi",
-                        "price": "60.00",
+                        "price": 60.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatibus eum officia",
-                        "price": "637.00",
+                        "price": 637.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "odit eos quisquam",
-                        "price": "356.00",
+                        "price": 356.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -739,47 +891,56 @@
                 "items": [
                     {
                         "name": "magnam rerum assumenda",
-                        "price": "822.00",
+                        "price": 822.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "a rem dolor",
-                        "price": "305.00",
+                        "price": 305.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "et eum dolorem",
-                        "price": "842.00",
+                        "price": 842.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "eum fugit est",
-                        "price": "802.00",
+                        "price": 802.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quae facilis alias",
-                        "price": "800.00",
+                        "price": 800.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "recusandae fugit ex",
-                        "price": "769.00",
+                        "price": 769.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "corporis suscipit praesentium",
-                        "price": "191.00",
+                        "price": 191.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nesciunt voluptatum aut",
-                        "price": "163.00",
+                        "price": 163.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quos nisi vitae",
-                        "price": "308.00",
+                        "price": 308.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -789,32 +950,38 @@
                 "items": [
                     {
                         "name": "eligendi provident harum",
-                        "price": "392.00",
+                        "price": 392.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "neque itaque reiciendis",
-                        "price": "390.00",
+                        "price": 390.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "dolores minima repudiandae",
-                        "price": "49.00",
+                        "price": 49.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "maxime modi at",
-                        "price": "591.00",
+                        "price": 591.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quibusdam maiores dignissimos",
-                        "price": "178.00",
+                        "price": 178.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "porro adipisci suscipit",
-                        "price": "760.00",
+                        "price": 760.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -824,7 +991,8 @@
                 "items": [
                     {
                         "name": "voluptatum consectetur ut",
-                        "price": "783.00",
+                        "price": 783.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -834,17 +1002,30 @@
                 "items": [
                     {
                         "name": "alias quis tempore",
-                        "price": "815.00",
+                        "price": 815.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quidem eveniet unde",
-                        "price": "967.00",
+                        "price": 967.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                7,
+                5
+            ],
+            "vip": [
+                5,
+                2
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "5",
@@ -860,7 +1041,18 @@
             }
         },
         "date": "2023-05-07",
-        "restaurants": []
+        "restaurants": [],
+        "map": {
+            "general": [
+                7,
+                3
+            ],
+            "vip": [
+                7,
+                3
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "6",
@@ -882,22 +1074,26 @@
                 "items": [
                     {
                         "name": "est totam nisi",
-                        "price": "693.00",
+                        "price": 693.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eligendi aliquam provident",
-                        "price": "967.00",
+                        "price": 967.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "velit perferendis corrupti",
-                        "price": "623.00",
+                        "price": 623.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "modi laboriosam ut",
-                        "price": "114.00",
+                        "price": 114.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -911,62 +1107,74 @@
                 "items": [
                     {
                         "name": "saepe culpa fugit",
-                        "price": "458.00",
+                        "price": 458.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quae illum hic",
-                        "price": "745.00",
+                        "price": 745.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "rerum harum saepe",
-                        "price": "58.00",
+                        "price": 58.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quae laboriosam a",
-                        "price": "252.00",
+                        "price": 252.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "illum laborum incidunt",
-                        "price": "607.00",
+                        "price": 607.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "laudantium optio pariatur",
-                        "price": "768.00",
+                        "price": 768.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "corporis cupiditate adipisci",
-                        "price": "267.00",
+                        "price": 267.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "harum aperiam veritatis",
-                        "price": "893.00",
+                        "price": 893.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "earum ipsa provident",
-                        "price": "1000.00",
+                        "price": 1000.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ducimus consequuntur aspernatur",
-                        "price": "31.00",
+                        "price": 31.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "iure ex laboriosam",
-                        "price": "820.00",
+                        "price": 820.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "incidunt ipsum maxime",
-                        "price": "6.00",
+                        "price": 6.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -976,32 +1184,38 @@
                 "items": [
                     {
                         "name": "eligendi natus magni",
-                        "price": "202.00",
+                        "price": 202.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "architecto maxime ipsa",
-                        "price": "931.00",
+                        "price": 931.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "perferendis architecto ut",
-                        "price": "929.00",
+                        "price": 929.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nostrum eos unde",
-                        "price": "755.00",
+                        "price": 755.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "aspernatur quaerat mollitia",
-                        "price": "970.00",
+                        "price": 970.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "voluptas voluptates laudantium",
-                        "price": "403.00",
+                        "price": 403.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1011,22 +1225,26 @@
                 "items": [
                     {
                         "name": "laborum magnam odio",
-                        "price": "397.00",
+                        "price": 397.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "possimus et tempore",
-                        "price": "617.00",
+                        "price": 617.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "aperiam facere recusandae",
-                        "price": "562.00",
+                        "price": 562.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quos dolores repudiandae",
-                        "price": "963.00",
+                        "price": 963.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1036,37 +1254,44 @@
                 "items": [
                     {
                         "name": "nihil distinctio ipsam",
-                        "price": "687.00",
+                        "price": 687.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "praesentium fuga quaerat",
-                        "price": "990.00",
+                        "price": 990.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "eligendi commodi excepturi",
-                        "price": "209.00",
+                        "price": 209.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "numquam velit distinctio",
-                        "price": "869.00",
+                        "price": 869.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quo earum libero",
-                        "price": "662.00",
+                        "price": 662.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "totam tempora voluptatibus",
-                        "price": "101.00",
+                        "price": 101.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "officiis similique sint",
-                        "price": "927.00",
+                        "price": 927.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1076,7 +1301,8 @@
                 "items": [
                     {
                         "name": "magni sit iure",
-                        "price": "264.00",
+                        "price": 264.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1086,52 +1312,62 @@
                 "items": [
                     {
                         "name": "autem tempore nemo",
-                        "price": "967.00",
+                        "price": 967.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "sapiente modi at",
-                        "price": "754.00",
+                        "price": 754.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quae quibusdam deserunt",
-                        "price": "274.00",
+                        "price": 274.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "labore architecto recusandae",
-                        "price": "299.00",
+                        "price": 299.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "non veniam non",
-                        "price": "918.00",
+                        "price": 918.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "maiores asperiores saepe",
-                        "price": "251.00",
+                        "price": 251.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "inventore inventore consequatur",
-                        "price": "849.00",
+                        "price": 849.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "atque cumque id",
-                        "price": "452.00",
+                        "price": 452.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ab libero beatae",
-                        "price": "317.00",
+                        "price": 317.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "nulla deleniti incidunt",
-                        "price": "291.00",
+                        "price": 291.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1141,37 +1377,54 @@
                 "items": [
                     {
                         "name": "assumenda excepturi pariatur",
-                        "price": "642.00",
+                        "price": 642.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "veniam mollitia animi",
-                        "price": "485.00",
+                        "price": 485.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "fugiat at quasi",
-                        "price": "545.00",
+                        "price": 545.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "nemo ipsam pariatur",
-                        "price": "583.00",
+                        "price": 583.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "voluptatibus ipsa inventore",
-                        "price": "690.00",
+                        "price": 690.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quos veniam cumque",
-                        "price": "319.00",
+                        "price": 319.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                2,
+                3
+            ],
+            "vip": [
+                6,
+                2
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "7",
@@ -1193,62 +1446,74 @@
                 "items": [
                     {
                         "name": "consequuntur repudiandae sunt",
-                        "price": "900.00",
+                        "price": 900.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "vitae repudiandae quia",
-                        "price": "341.00",
+                        "price": 341.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "facere nesciunt deserunt",
-                        "price": "414.00",
+                        "price": 414.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quis enim voluptatibus",
-                        "price": "940.00",
+                        "price": 940.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "impedit explicabo facilis",
-                        "price": "514.00",
+                        "price": 514.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "similique soluta dolores",
-                        "price": "886.00",
+                        "price": 886.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "libero dignissimos ab",
-                        "price": "185.00",
+                        "price": 185.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nesciunt vitae aliquid",
-                        "price": "795.00",
+                        "price": 795.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "veritatis voluptatibus adipisci",
-                        "price": "811.00",
+                        "price": 811.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "et quidem fugit",
-                        "price": "927.00",
+                        "price": 927.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quae non quo",
-                        "price": "387.00",
+                        "price": 387.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "corrupti mollitia aliquam",
-                        "price": "637.00",
+                        "price": 637.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1258,37 +1523,44 @@
                 "items": [
                     {
                         "name": "voluptate quis necessitatibus",
-                        "price": "975.00",
+                        "price": 975.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quidem corrupti possimus",
-                        "price": "380.00",
+                        "price": 380.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quos esse similique",
-                        "price": "312.00",
+                        "price": 312.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "pariatur nostrum doloribus",
-                        "price": "325.00",
+                        "price": 325.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "asperiores cum veniam",
-                        "price": "207.00",
+                        "price": 207.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "laboriosam consectetur quidem",
-                        "price": "584.00",
+                        "price": 584.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "vitae quaerat quia",
-                        "price": "659.00",
+                        "price": 659.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1298,42 +1570,50 @@
                 "items": [
                     {
                         "name": "aliquid excepturi laborum",
-                        "price": "868.00",
+                        "price": 868.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "error optio illo",
-                        "price": "968.00",
+                        "price": 968.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "at natus quam",
-                        "price": "562.00",
+                        "price": 562.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "consectetur delectus consequuntur",
-                        "price": "380.00",
+                        "price": 380.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eveniet sunt fugiat",
-                        "price": "113.00",
+                        "price": 113.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ipsum perferendis similique",
-                        "price": "738.00",
+                        "price": 738.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "in vero quaerat",
-                        "price": "814.00",
+                        "price": 814.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "doloremque necessitatibus possimus",
-                        "price": "601.00",
+                        "price": 601.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1342,7 +1622,18 @@
                 "name": "Almanza, Toledo y Gir\u00f3n Asociados",
                 "items": []
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                5,
+                8
+            ],
+            "vip": [
+                1,
+                6
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "8",
@@ -1358,7 +1649,18 @@
             }
         },
         "date": "2023-06-04",
-        "restaurants": []
+        "restaurants": [],
+        "map": {
+            "general": [
+                1,
+                7
+            ],
+            "vip": [
+                3,
+                2
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "9",
@@ -1380,12 +1682,24 @@
                 "items": [
                     {
                         "name": "in voluptatibus quisquam",
-                        "price": "617.00",
+                        "price": 617.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                8,
+                1
+            ],
+            "vip": [
+                6,
+                5
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "10",
@@ -1407,17 +1721,20 @@
                 "items": [
                     {
                         "name": "fugit porro perspiciatis",
-                        "price": "897.00",
+                        "price": 897.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "totam eaque asperiores",
-                        "price": "456.00",
+                        "price": 456.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nulla corporis minima",
-                        "price": "899.00",
+                        "price": 899.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1427,62 +1744,74 @@
                 "items": [
                     {
                         "name": "facilis reprehenderit quibusdam",
-                        "price": "661.00",
+                        "price": 661.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "molestiae id asperiores",
-                        "price": "427.00",
+                        "price": 427.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "rerum a recusandae",
-                        "price": "312.00",
+                        "price": 312.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "neque vitae quam",
-                        "price": "582.00",
+                        "price": 582.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "illum quo impedit",
-                        "price": "14.00",
+                        "price": 14.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quaerat minus ullam",
-                        "price": "437.00",
+                        "price": 437.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quos dolores perspiciatis",
-                        "price": "77.00",
+                        "price": 77.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "repudiandae distinctio fuga",
-                        "price": "487.00",
+                        "price": 487.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "corporis quo deleniti",
-                        "price": "563.00",
+                        "price": 563.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "amet doloribus repellendus",
-                        "price": "336.00",
+                        "price": 336.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "repellat quibusdam in",
-                        "price": "590.00",
+                        "price": 590.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "tenetur quis hic",
-                        "price": "100.00",
+                        "price": 100.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1492,22 +1821,26 @@
                 "items": [
                     {
                         "name": "assumenda nulla labore",
-                        "price": "569.00",
+                        "price": 569.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "autem id esse",
-                        "price": "664.00",
+                        "price": 664.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "dolor nihil molestias",
-                        "price": "337.00",
+                        "price": 337.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "laudantium molestiae expedita",
-                        "price": "732.00",
+                        "price": 732.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1517,12 +1850,14 @@
                 "items": [
                     {
                         "name": "magni cupiditate alias",
-                        "price": "67.00",
+                        "price": 67.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "possimus quas soluta",
-                        "price": "498.00",
+                        "price": 498.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -1532,27 +1867,32 @@
                 "items": [
                     {
                         "name": "odio accusamus iure",
-                        "price": "806.00",
+                        "price": 806.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "porro eius laudantium",
-                        "price": "738.00",
+                        "price": 738.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "dicta harum voluptate",
-                        "price": "799.00",
+                        "price": 799.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "earum atque porro",
-                        "price": "927.00",
+                        "price": 927.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "minus doloribus fugiat",
-                        "price": "938.00",
+                        "price": 938.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1562,37 +1902,44 @@
                 "items": [
                     {
                         "name": "eius quis cum",
-                        "price": "405.00",
+                        "price": 405.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "expedita eius tempora",
-                        "price": "80.00",
+                        "price": 80.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "officia earum consequatur",
-                        "price": "922.00",
+                        "price": 922.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "illum blanditiis quo",
-                        "price": "629.00",
+                        "price": 629.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "in expedita sint",
-                        "price": "50.00",
+                        "price": 50.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nobis facilis et",
-                        "price": "934.00",
+                        "price": 934.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "asperiores suscipit dolorum",
-                        "price": "676.00",
+                        "price": 676.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1602,32 +1949,38 @@
                 "items": [
                     {
                         "name": "assumenda voluptatum adipisci",
-                        "price": "39.00",
+                        "price": 39.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ex ex quibusdam",
-                        "price": "559.00",
+                        "price": 559.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "dolores reprehenderit eaque",
-                        "price": "578.00",
+                        "price": 578.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "accusamus in animi",
-                        "price": "887.00",
+                        "price": 887.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "libero voluptas ut",
-                        "price": "354.00",
+                        "price": 354.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "maxime vel odio",
-                        "price": "949.00",
+                        "price": 949.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -1637,52 +1990,62 @@
                 "items": [
                     {
                         "name": "illum nihil expedita",
-                        "price": "802.00",
+                        "price": 802.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "molestiae quo eligendi",
-                        "price": "633.00",
+                        "price": 633.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "dolore praesentium quos",
-                        "price": "620.00",
+                        "price": 620.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "laborum magnam repellat",
-                        "price": "172.00",
+                        "price": 172.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "et optio hic",
-                        "price": "565.00",
+                        "price": 565.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "expedita atque consequuntur",
-                        "price": "597.00",
+                        "price": 597.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "mollitia temporibus odio",
-                        "price": "973.00",
+                        "price": 973.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "deleniti doloribus placeat",
-                        "price": "948.00",
+                        "price": 948.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "aut doloribus id",
-                        "price": "31.00",
+                        "price": 31.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "animi consequatur impedit",
-                        "price": "803.00",
+                        "price": 803.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1692,67 +2055,90 @@
                 "items": [
                     {
                         "name": "eaque amet laborum",
-                        "price": "253.00",
+                        "price": 253.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ut laborum tenetur",
-                        "price": "875.00",
+                        "price": 875.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "in laudantium sed",
-                        "price": "11.00",
+                        "price": 11.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "omnis quisquam ad",
-                        "price": "615.00",
+                        "price": 615.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "accusantium ipsa sed",
-                        "price": "131.00",
+                        "price": 131.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "pariatur delectus libero",
-                        "price": "229.00",
+                        "price": 229.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "qui nulla minima",
-                        "price": "895.00",
+                        "price": 895.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "nemo voluptates sint",
-                        "price": "197.00",
+                        "price": 197.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "tempore dolorum repellendus",
-                        "price": "112.00",
+                        "price": 112.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eos recusandae nihil",
-                        "price": "731.00",
+                        "price": 731.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "rerum alias soluta",
-                        "price": "279.00",
+                        "price": 279.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "soluta blanditiis officia",
-                        "price": "689.00",
+                        "price": 689.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                7,
+                8
+            ],
+            "vip": [
+                2,
+                3
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "11",
@@ -1774,52 +2160,62 @@
                 "items": [
                     {
                         "name": "facere quas doloribus",
-                        "price": "881.00",
+                        "price": 881.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quod odit dolor",
-                        "price": "648.00",
+                        "price": 648.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "sunt eligendi alias",
-                        "price": "822.00",
+                        "price": 822.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "numquam libero rem",
-                        "price": "35.00",
+                        "price": 35.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "sit soluta natus",
-                        "price": "75.00",
+                        "price": 75.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "autem nihil architecto",
-                        "price": "151.00",
+                        "price": 151.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "et reprehenderit fuga",
-                        "price": "806.00",
+                        "price": 806.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "non accusantium reiciendis",
-                        "price": "40.00",
+                        "price": 40.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "reprehenderit reprehenderit suscipit",
-                        "price": "152.00",
+                        "price": 152.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "tempore tempore placeat",
-                        "price": "808.00",
+                        "price": 808.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -1833,62 +2229,74 @@
                 "items": [
                     {
                         "name": "nam tempore ducimus",
-                        "price": "625.00",
+                        "price": 625.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "et officiis iure",
-                        "price": "267.00",
+                        "price": 267.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "libero accusantium laboriosam",
-                        "price": "523.00",
+                        "price": 523.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "doloribus mollitia recusandae",
-                        "price": "449.00",
+                        "price": 449.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "incidunt molestiae eius",
-                        "price": "1.00",
+                        "price": 1.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "eum maiores incidunt",
-                        "price": "96.00",
+                        "price": 96.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "voluptate nulla qui",
-                        "price": "470.00",
+                        "price": 470.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "est officia quae",
-                        "price": "226.00",
+                        "price": 226.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "deleniti cum animi",
-                        "price": "19.00",
+                        "price": 19.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "iusto quibusdam accusantium",
-                        "price": "722.00",
+                        "price": 722.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "recusandae molestias voluptas",
-                        "price": "230.00",
+                        "price": 230.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "veniam ut magnam",
-                        "price": "564.00",
+                        "price": 564.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1898,12 +2306,14 @@
                 "items": [
                     {
                         "name": "nulla a quos",
-                        "price": "163.00",
+                        "price": 163.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "in beatae deleniti",
-                        "price": "381.00",
+                        "price": 381.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -1913,17 +2323,20 @@
                 "items": [
                     {
                         "name": "quia iusto sint",
-                        "price": "870.00",
+                        "price": 870.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "laborum earum aspernatur",
-                        "price": "235.00",
+                        "price": 235.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quo repudiandae illum",
-                        "price": "536.00",
+                        "price": 536.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1933,47 +2346,56 @@
                 "items": [
                     {
                         "name": "omnis a atque",
-                        "price": "127.00",
+                        "price": 127.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "modi eveniet corporis",
-                        "price": "100.00",
+                        "price": 100.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "voluptatem deserunt eos",
-                        "price": "164.00",
+                        "price": 164.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "doloribus ex commodi",
-                        "price": "396.00",
+                        "price": 396.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "tempore expedita reiciendis",
-                        "price": "347.00",
+                        "price": 347.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "reprehenderit mollitia dicta",
-                        "price": "800.00",
+                        "price": 800.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "nulla repudiandae rem",
-                        "price": "114.00",
+                        "price": 114.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "mollitia molestiae animi",
-                        "price": "970.00",
+                        "price": 970.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "tempora explicabo doloribus",
-                        "price": "168.00",
+                        "price": 168.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -1983,42 +2405,50 @@
                 "items": [
                     {
                         "name": "iusto voluptates saepe",
-                        "price": "849.00",
+                        "price": 849.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "explicabo nobis sequi",
-                        "price": "454.00",
+                        "price": 454.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "veritatis quod aspernatur",
-                        "price": "432.00",
+                        "price": 432.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "illo voluptate consequatur",
-                        "price": "757.00",
+                        "price": 757.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "incidunt soluta alias",
-                        "price": "557.00",
+                        "price": 557.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "sit architecto quos",
-                        "price": "806.00",
+                        "price": 806.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "maxime tempore architecto",
-                        "price": "724.00",
+                        "price": 724.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "doloremque pariatur temporibus",
-                        "price": "41.00",
+                        "price": 41.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2028,72 +2458,96 @@
                 "items": [
                     {
                         "name": "maxime nam quos",
-                        "price": "797.00",
+                        "price": 797.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "earum laboriosam quia",
-                        "price": "570.00",
+                        "price": 570.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "libero dolore dolores",
-                        "price": "862.00",
+                        "price": 862.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nesciunt laborum iusto",
-                        "price": "866.00",
+                        "price": 866.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "harum quod atque",
-                        "price": "528.00",
+                        "price": 528.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "a exercitationem modi",
-                        "price": "207.00",
+                        "price": 207.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "rerum veniam itaque",
-                        "price": "102.00",
+                        "price": 102.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "sunt facere quasi",
-                        "price": "86.00",
+                        "price": 86.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "neque vero ipsam",
-                        "price": "993.00",
+                        "price": 993.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "fugit temporibus alias",
-                        "price": "824.00",
+                        "price": 824.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "provident necessitatibus et",
-                        "price": "564.00",
+                        "price": 564.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "enim necessitatibus aut",
-                        "price": "108.00",
+                        "price": 108.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "accusamus sapiente nesciunt",
-                        "price": "462.00",
+                        "price": 462.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                7,
+                3
+            ],
+            "vip": [
+                5,
+                2
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "12",
@@ -2115,42 +2569,50 @@
                 "items": [
                     {
                         "name": "magni animi quam",
-                        "price": "747.00",
+                        "price": 747.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eum reiciendis cumque",
-                        "price": "591.00",
+                        "price": 591.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "aut veritatis quidem",
-                        "price": "13.00",
+                        "price": 13.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ut incidunt rem",
-                        "price": "805.00",
+                        "price": 805.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "numquam sapiente ratione",
-                        "price": "396.00",
+                        "price": 396.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "magnam eaque porro",
-                        "price": "147.00",
+                        "price": 147.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "explicabo modi ullam",
-                        "price": "848.00",
+                        "price": 848.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ut ullam consequatur",
-                        "price": "108.00",
+                        "price": 108.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -2160,32 +2622,38 @@
                 "items": [
                     {
                         "name": "consequatur a eligendi",
-                        "price": "794.00",
+                        "price": 794.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quidem adipisci nulla",
-                        "price": "505.00",
+                        "price": 505.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "architecto nulla non",
-                        "price": "546.00",
+                        "price": 546.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "laboriosam dicta minus",
-                        "price": "543.00",
+                        "price": 543.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "totam facere minima",
-                        "price": "29.00",
+                        "price": 29.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "incidunt nobis distinctio",
-                        "price": "499.00",
+                        "price": 499.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2195,37 +2663,44 @@
                 "items": [
                     {
                         "name": "qui necessitatibus deserunt",
-                        "price": "374.00",
+                        "price": 374.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "saepe vero iusto",
-                        "price": "94.00",
+                        "price": 94.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "numquam ipsa aliquid",
-                        "price": "432.00",
+                        "price": 432.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "quam voluptatibus iusto",
-                        "price": "323.00",
+                        "price": 323.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "eligendi dolore quia",
-                        "price": "141.00",
+                        "price": 141.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "maxime dignissimos nam",
-                        "price": "734.00",
+                        "price": 734.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "iure earum tenetur",
-                        "price": "386.00",
+                        "price": 386.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2235,47 +2710,66 @@
                 "items": [
                     {
                         "name": "labore autem sunt",
-                        "price": "615.00",
+                        "price": 615.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "aspernatur eum voluptatibus",
-                        "price": "282.00",
+                        "price": 282.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "odit doloribus eveniet",
-                        "price": "843.00",
+                        "price": 843.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "cumque nulla libero",
-                        "price": "114.00",
+                        "price": 114.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "a pariatur doloribus",
-                        "price": "629.00",
+                        "price": 629.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "aspernatur iste molestiae",
-                        "price": "45.00",
+                        "price": 45.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "atque quos ea",
-                        "price": "182.00",
+                        "price": 182.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "sunt non eius",
-                        "price": "461.00",
+                        "price": 461.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                7,
+                6
+            ],
+            "vip": [
+                1,
+                8
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "13",
@@ -2291,7 +2785,18 @@
             }
         },
         "date": "2023-07-30",
-        "restaurants": []
+        "restaurants": [],
+        "map": {
+            "general": [
+                1,
+                3
+            ],
+            "vip": [
+                4,
+                7
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "14",
@@ -2307,7 +2812,18 @@
             }
         },
         "date": "2023-08-27",
-        "restaurants": []
+        "restaurants": [],
+        "map": {
+            "general": [
+                8,
+                3
+            ],
+            "vip": [
+                4,
+                6
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "15",
@@ -2329,7 +2845,8 @@
                 "items": [
                     {
                         "name": "labore quas repellendus",
-                        "price": "999.00",
+                        "price": 999.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -2339,17 +2856,20 @@
                 "items": [
                     {
                         "name": "animi cumque repellendus",
-                        "price": "133.00",
+                        "price": 133.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "reiciendis animi unde",
-                        "price": "381.00",
+                        "price": 381.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ad in a",
-                        "price": "791.00",
+                        "price": 791.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2359,52 +2879,72 @@
                 "items": [
                     {
                         "name": "labore quis autem",
-                        "price": "476.00",
+                        "price": 476.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "incidunt sunt iure",
-                        "price": "129.00",
+                        "price": 129.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "atque minus magnam",
-                        "price": "943.00",
+                        "price": 943.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "sunt vero eos",
-                        "price": "693.00",
+                        "price": 693.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quo voluptates sapiente",
-                        "price": "139.00",
+                        "price": 139.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "facere ipsa facilis",
-                        "price": "43.00",
+                        "price": 43.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ex eligendi harum",
-                        "price": "522.00",
+                        "price": 522.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ipsam incidunt voluptatum",
-                        "price": "970.00",
+                        "price": 970.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "maiores sapiente tenetur",
-                        "price": "3.00",
+                        "price": 3.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                4,
+                8
+            ],
+            "vip": [
+                1,
+                1
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "16",
@@ -2426,57 +2966,68 @@
                 "items": [
                     {
                         "name": "voluptate ipsa exercitationem",
-                        "price": "728.00",
+                        "price": 728.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "fugit quia laudantium",
-                        "price": "716.00",
+                        "price": 716.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quidem error commodi",
-                        "price": "974.00",
+                        "price": 974.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "architecto laudantium corporis",
-                        "price": "689.00",
+                        "price": 689.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "sequi nulla occaecati",
-                        "price": "821.00",
+                        "price": 821.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "possimus aperiam velit",
-                        "price": "751.00",
+                        "price": 751.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "totam officiis quo",
-                        "price": "629.00",
+                        "price": 629.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "vel doloribus maiores",
-                        "price": "428.00",
+                        "price": 428.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "voluptates blanditiis tempora",
-                        "price": "272.00",
+                        "price": 272.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "maxime dicta ipsum",
-                        "price": "822.00",
+                        "price": 822.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "officiis accusantium illo",
-                        "price": "517.00",
+                        "price": 517.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2486,7 +3037,8 @@
                 "items": [
                     {
                         "name": "voluptatem mollitia dolorum",
-                        "price": "771.00",
+                        "price": 771.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -2496,12 +3048,14 @@
                 "items": [
                     {
                         "name": "incidunt nesciunt quas",
-                        "price": "345.00",
+                        "price": 345.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nesciunt dolorem dolorem",
-                        "price": "186.00",
+                        "price": 186.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -2511,22 +3065,26 @@
                 "items": [
                     {
                         "name": "sequi quo nulla",
-                        "price": "704.00",
+                        "price": 704.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "maxime dolorem officia",
-                        "price": "807.00",
+                        "price": 807.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "cum dolorum maxime",
-                        "price": "464.00",
+                        "price": 464.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "exercitationem perferendis voluptatem",
-                        "price": "972.00",
+                        "price": 972.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2536,47 +3094,56 @@
                 "items": [
                     {
                         "name": "id consectetur quo",
-                        "price": "160.00",
+                        "price": 160.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "odio similique neque",
-                        "price": "415.00",
+                        "price": 415.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "iste assumenda aspernatur",
-                        "price": "734.00",
+                        "price": 734.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "ea maiores ad",
-                        "price": "605.00",
+                        "price": 605.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "dolorum quis quaerat",
-                        "price": "160.00",
+                        "price": 160.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ad ipsa consectetur",
-                        "price": "20.00",
+                        "price": 20.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ut molestias non",
-                        "price": "558.00",
+                        "price": 558.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "iure veritatis veniam",
-                        "price": "307.00",
+                        "price": 307.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "repellendus ut fugit",
-                        "price": "169.00",
+                        "price": 169.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2586,52 +3153,62 @@
                 "items": [
                     {
                         "name": "optio molestias sint",
-                        "price": "667.00",
+                        "price": 667.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ab tempore veritatis",
-                        "price": "796.00",
+                        "price": 796.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "asperiores earum voluptatem",
-                        "price": "598.00",
+                        "price": 598.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "eum optio ullam",
-                        "price": "123.00",
+                        "price": 123.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "id distinctio doloribus",
-                        "price": "467.00",
+                        "price": 467.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "voluptatum voluptates exercitationem",
-                        "price": "239.00",
+                        "price": 239.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "labore veritatis aliquam",
-                        "price": "968.00",
+                        "price": 968.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "repellat voluptates eos",
-                        "price": "570.00",
+                        "price": 570.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quod ab expedita",
-                        "price": "760.00",
+                        "price": 760.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "accusamus tempore aliquam",
-                        "price": "393.00",
+                        "price": 393.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2640,7 +3217,18 @@
                 "name": "Villegas, Anaya y Palomino Asociados",
                 "items": []
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                8,
+                4
+            ],
+            "vip": [
+                7,
+                4
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "17",
@@ -2656,7 +3244,18 @@
             }
         },
         "date": "2023-09-24",
-        "restaurants": []
+        "restaurants": [],
+        "map": {
+            "general": [
+                3,
+                4
+            ],
+            "vip": [
+                5,
+                1
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "18",
@@ -2678,12 +3277,14 @@
                 "items": [
                     {
                         "name": "inventore nemo molestias",
-                        "price": "870.00",
+                        "price": 870.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "necessitatibus placeat sed",
-                        "price": "374.00",
+                        "price": 374.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -2693,7 +3294,8 @@
                 "items": [
                     {
                         "name": "consequuntur sit quis",
-                        "price": "489.00",
+                        "price": 489.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -2707,12 +3309,14 @@
                 "items": [
                     {
                         "name": "porro excepturi quo",
-                        "price": "51.00",
+                        "price": 51.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "architecto aperiam impedit",
-                        "price": "549.00",
+                        "price": 549.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -2722,17 +3326,30 @@
                 "items": [
                     {
                         "name": "enim quia itaque",
-                        "price": "827.00",
+                        "price": 827.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "iusto quae ea",
-                        "price": "610.00",
+                        "price": 610.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                9,
+                2
+            ],
+            "vip": [
+                5,
+                2
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "19",
@@ -2754,57 +3371,78 @@
                 "items": [
                     {
                         "name": "sit illo ad",
-                        "price": "500.00",
+                        "price": 500.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "occaecati voluptas maiores",
-                        "price": "5.00",
+                        "price": 5.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "magni occaecati esse",
-                        "price": "709.00",
+                        "price": 709.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "illo voluptas at",
-                        "price": "825.00",
+                        "price": 825.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "sapiente tenetur dolorem",
-                        "price": "890.00",
+                        "price": 890.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "totam repellat laboriosam",
-                        "price": "160.00",
+                        "price": 160.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "ipsam nesciunt esse",
-                        "price": "982.00",
+                        "price": 982.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "nemo id quia",
-                        "price": "46.00",
+                        "price": 46.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "esse quos numquam",
-                        "price": "101.00",
+                        "price": 101.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "sint quasi placeat",
-                        "price": "390.00",
+                        "price": 390.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                3,
+                3
+            ],
+            "vip": [
+                6,
+                7
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "20",
@@ -2826,32 +3464,38 @@
                 "items": [
                     {
                         "name": "libero voluptates rem",
-                        "price": "583.00",
+                        "price": 583.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "tenetur quisquam distinctio",
-                        "price": "209.00",
+                        "price": 209.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "a deleniti sed",
-                        "price": "86.00",
+                        "price": 86.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "aliquid tempore ullam",
-                        "price": "484.00",
+                        "price": 484.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "labore fugiat repellat",
-                        "price": "7.00",
+                        "price": 7.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "aut minus accusantium",
-                        "price": "589.00",
+                        "price": 589.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2861,7 +3505,8 @@
                 "items": [
                     {
                         "name": "ipsam repudiandae iure",
-                        "price": "179.00",
+                        "price": 179.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -2871,17 +3516,20 @@
                 "items": [
                     {
                         "name": "itaque neque distinctio",
-                        "price": "19.00",
+                        "price": 19.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "corporis sunt eaque",
-                        "price": "441.00",
+                        "price": 441.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "officia assumenda tempora",
-                        "price": "418.00",
+                        "price": 418.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -2891,17 +3539,20 @@
                 "items": [
                     {
                         "name": "voluptatibus et maiores",
-                        "price": "392.00",
+                        "price": 392.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "repellat enim earum",
-                        "price": "92.00",
+                        "price": 92.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "doloremque at tenetur",
-                        "price": "959.00",
+                        "price": 959.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2911,22 +3562,26 @@
                 "items": [
                     {
                         "name": "repellendus odit soluta",
-                        "price": "556.00",
+                        "price": 556.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "sequi omnis doloribus",
-                        "price": "119.00",
+                        "price": 119.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "doloribus maiores atque",
-                        "price": "902.00",
+                        "price": 902.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "minus illo unde",
-                        "price": "978.00",
+                        "price": 978.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -2936,37 +3591,54 @@
                 "items": [
                     {
                         "name": "itaque numquam necessitatibus",
-                        "price": "292.00",
+                        "price": 292.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "rem ducimus perferendis",
-                        "price": "877.00",
+                        "price": 877.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "libero ex tenetur",
-                        "price": "122.00",
+                        "price": 122.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "amet mollitia unde",
-                        "price": "370.00",
+                        "price": 370.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "commodi ipsa vero",
-                        "price": "570.00",
+                        "price": 570.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "mollitia sequi iste",
-                        "price": "613.00",
+                        "price": 613.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                3,
+                1
+            ],
+            "vip": [
+                1,
+                7
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "21",
@@ -2988,67 +3660,80 @@
                 "items": [
                     {
                         "name": "impedit laborum mollitia",
-                        "price": "571.00",
+                        "price": 571.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "enim eveniet magni",
-                        "price": "305.00",
+                        "price": 305.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "accusantium alias quod",
-                        "price": "577.00",
+                        "price": 577.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatem voluptatum rem",
-                        "price": "421.00",
+                        "price": 421.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "nulla ipsa voluptatum",
-                        "price": "538.00",
+                        "price": 538.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "earum quae beatae",
-                        "price": "386.00",
+                        "price": 386.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatibus necessitatibus animi",
-                        "price": "460.00",
+                        "price": 460.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "consequuntur consequuntur doloribus",
-                        "price": "551.00",
+                        "price": 551.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "aut ea nobis",
-                        "price": "831.00",
+                        "price": 831.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptate voluptates voluptatum",
-                        "price": "758.00",
+                        "price": 758.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "dicta exercitationem voluptatem",
-                        "price": "399.00",
+                        "price": 399.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "voluptatum harum dicta",
-                        "price": "194.00",
+                        "price": 194.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "et veniam facere",
-                        "price": "940.00",
+                        "price": 940.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -3058,27 +3743,32 @@
                 "items": [
                     {
                         "name": "nihil distinctio omnis",
-                        "price": "329.00",
+                        "price": 329.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "maiores officia magnam",
-                        "price": "307.00",
+                        "price": 307.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "libero non sapiente",
-                        "price": "415.00",
+                        "price": 415.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ex repellendus voluptates",
-                        "price": "349.00",
+                        "price": 349.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "voluptatibus quisquam tempore",
-                        "price": "203.00",
+                        "price": 203.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -3088,47 +3778,56 @@
                 "items": [
                     {
                         "name": "laborum necessitatibus esse",
-                        "price": "501.00",
+                        "price": 501.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "laboriosam exercitationem quisquam",
-                        "price": "990.00",
+                        "price": 990.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "in odio quae",
-                        "price": "967.00",
+                        "price": 967.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "repellat incidunt autem",
-                        "price": "621.00",
+                        "price": 621.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quibusdam esse possimus",
-                        "price": "357.00",
+                        "price": 357.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "odio itaque fugit",
-                        "price": "265.00",
+                        "price": 265.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "provident cupiditate esse",
-                        "price": "677.00",
+                        "price": 677.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "omnis qui libero",
-                        "price": "229.00",
+                        "price": 229.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "vel totam laborum",
-                        "price": "924.00",
+                        "price": 924.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -3138,22 +3837,26 @@
                 "items": [
                     {
                         "name": "excepturi commodi dicta",
-                        "price": "226.00",
+                        "price": 226.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "porro qui tenetur",
-                        "price": "701.00",
+                        "price": 701.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "asperiores aut dolore",
-                        "price": "746.00",
+                        "price": 746.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "illo corrupti fugiat",
-                        "price": "136.00",
+                        "price": 136.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -3163,72 +3866,86 @@
                 "items": [
                     {
                         "name": "aperiam quod id",
-                        "price": "608.00",
+                        "price": 608.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "tempore reiciendis voluptates",
-                        "price": "377.00",
+                        "price": 377.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "mollitia molestias nihil",
-                        "price": "231.00",
+                        "price": 231.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "dolorem optio omnis",
-                        "price": "454.00",
+                        "price": 454.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "aliquam odit incidunt",
-                        "price": "893.00",
+                        "price": 893.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "saepe eveniet natus",
-                        "price": "566.00",
+                        "price": 566.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "non ut omnis",
-                        "price": "259.00",
+                        "price": 259.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "voluptatibus consectetur laborum",
-                        "price": "715.00",
+                        "price": 715.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "repudiandae eos repellendus",
-                        "price": "228.00",
+                        "price": 228.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "necessitatibus earum excepturi",
-                        "price": "555.00",
+                        "price": 555.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "maxime unde asperiores",
-                        "price": "897.00",
+                        "price": 897.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "fugit ullam sequi",
-                        "price": "918.00",
+                        "price": 918.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "distinctio suscipit deserunt",
-                        "price": "3.00",
+                        "price": 3.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "consequatur tempore natus",
-                        "price": "578.00",
+                        "price": 578.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -3238,27 +3955,32 @@
                 "items": [
                     {
                         "name": "itaque hic quae",
-                        "price": "760.00",
+                        "price": 760.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quidem minus voluptate",
-                        "price": "442.00",
+                        "price": 442.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "cum est iure",
-                        "price": "288.00",
+                        "price": 288.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ipsam voluptatem laudantium",
-                        "price": "814.00",
+                        "price": 814.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "tempore quis quis",
-                        "price": "619.00",
+                        "price": 619.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -3268,72 +3990,86 @@
                 "items": [
                     {
                         "name": "cumque recusandae sed",
-                        "price": "16.00",
+                        "price": 16.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "totam itaque nihil",
-                        "price": "185.00",
+                        "price": 185.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "recusandae dolorem eveniet",
-                        "price": "54.00",
+                        "price": 54.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "consequatur incidunt dignissimos",
-                        "price": "46.00",
+                        "price": 46.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "architecto voluptatum nostrum",
-                        "price": "8.00",
+                        "price": 8.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "excepturi totam repellendus",
-                        "price": "708.00",
+                        "price": 708.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "officia adipisci quod",
-                        "price": "504.00",
+                        "price": 504.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "quae repellat facere",
-                        "price": "581.00",
+                        "price": 581.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "et neque amet",
-                        "price": "479.00",
+                        "price": 479.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "vitae illum voluptate",
-                        "price": "224.00",
+                        "price": 224.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "repudiandae tenetur atque",
-                        "price": "905.00",
+                        "price": 905.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "alias consequatur necessitatibus",
-                        "price": "387.00",
+                        "price": 387.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "iusto optio quasi",
-                        "price": "646.00",
+                        "price": 646.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "libero ipsam natus",
-                        "price": "598.00",
+                        "price": 598.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     }
                 ]
@@ -3343,37 +4079,54 @@
                 "items": [
                     {
                         "name": "libero recusandae deserunt",
-                        "price": "259.00",
+                        "price": 259.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "rem aut minima",
-                        "price": "81.00",
+                        "price": 81.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eius totam natus",
-                        "price": "812.00",
+                        "price": 812.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "dicta impedit nobis",
-                        "price": "704.00",
+                        "price": 704.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "sit excepturi debitis",
-                        "price": "54.00",
+                        "price": 54.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatibus tempora odit",
-                        "price": "742.00",
+                        "price": 742.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                2,
+                1
+            ],
+            "vip": [
+                4,
+                7
+            ]
+        },
+        "sold_tickets": 0
     },
     {
         "round": "22",
@@ -3395,22 +4148,26 @@
                 "items": [
                     {
                         "name": "molestias aut et",
-                        "price": "703.00",
+                        "price": 703.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "laborum quaerat in",
-                        "price": "254.00",
+                        "price": 254.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "voluptatum excepturi quod",
-                        "price": "623.00",
+                        "price": 623.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "minima voluptates quisquam",
-                        "price": "311.00",
+                        "price": 311.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -3424,62 +4181,74 @@
                 "items": [
                     {
                         "name": "autem voluptates nisi",
-                        "price": "24.00",
+                        "price": 24.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "magnam quaerat itaque",
-                        "price": "73.00",
+                        "price": 73.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "enim ducimus cumque",
-                        "price": "756.00",
+                        "price": 756.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "doloremque voluptate fugit",
-                        "price": "147.00",
+                        "price": 147.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "distinctio soluta quae",
-                        "price": "265.00",
+                        "price": 265.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "aut quia vel",
-                        "price": "193.00",
+                        "price": 193.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "recusandae aperiam atque",
-                        "price": "786.00",
+                        "price": 786.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "corporis sequi consectetur",
-                        "price": "175.00",
+                        "price": 175.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "eum dolorum natus",
-                        "price": "229.00",
+                        "price": 229.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "occaecati quibusdam tempore",
-                        "price": "127.00",
+                        "price": 127.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "quod voluptatum excepturi",
-                        "price": "990.00",
+                        "price": 990.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "accusamus alias vero",
-                        "price": "259.00",
+                        "price": 259.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -3493,32 +4262,38 @@
                 "items": [
                     {
                         "name": "vero repellat dolores",
-                        "price": "503.00",
+                        "price": 503.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "labore consequuntur modi",
-                        "price": "32.00",
+                        "price": 32.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "repudiandae ducimus sapiente",
-                        "price": "135.00",
+                        "price": 135.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ullam modi nulla",
-                        "price": "36.00",
+                        "price": 36.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "quisquam quis quae",
-                        "price": "24.00",
+                        "price": 24.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "natus ab voluptatum",
-                        "price": "15.00",
+                        "price": 15.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
@@ -3528,57 +4303,68 @@
                 "items": [
                     {
                         "name": "explicabo cupiditate fugiat",
-                        "price": "452.00",
+                        "price": 452.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "accusamus delectus blanditiis",
-                        "price": "675.00",
+                        "price": 675.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "ab voluptate rerum",
-                        "price": "732.00",
+                        "price": 732.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "unde aliquam necessitatibus",
-                        "price": "374.00",
+                        "price": 374.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "voluptatem repellendus dignissimos",
-                        "price": "656.00",
+                        "price": 656.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "eveniet aspernatur fuga",
-                        "price": "872.00",
+                        "price": 872.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "blanditiis facere consequuntur",
-                        "price": "917.00",
+                        "price": 917.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "dicta molestiae unde",
-                        "price": "473.00",
+                        "price": 473.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "aut dolore enim",
-                        "price": "18.00",
+                        "price": 18.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "cupiditate molestiae velit",
-                        "price": "948.00",
+                        "price": 948.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "ex voluptas libero",
-                        "price": "912.00",
+                        "price": 912.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     }
                 ]
@@ -3588,72 +4374,86 @@
                 "items": [
                     {
                         "name": "facere eius quidem",
-                        "price": "61.00",
+                        "price": 61.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nemo odio impedit",
-                        "price": "902.00",
+                        "price": 902.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ab voluptates aspernatur",
-                        "price": "399.00",
+                        "price": 399.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "cupiditate animi deleniti",
-                        "price": "364.00",
+                        "price": 364.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "placeat reiciendis placeat",
-                        "price": "488.00",
+                        "price": 488.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "labore odit rem",
-                        "price": "367.00",
+                        "price": 367.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "minus odit nobis",
-                        "price": "505.00",
+                        "price": 505.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "consectetur alias inventore",
-                        "price": "661.00",
+                        "price": 661.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "modi suscipit commodi",
-                        "price": "380.00",
+                        "price": 380.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "distinctio eligendi possimus",
-                        "price": "298.00",
+                        "price": 298.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "nobis quos amet",
-                        "price": "60.00",
+                        "price": 60.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "voluptatem iure accusamus",
-                        "price": "804.00",
+                        "price": 804.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "itaque aperiam quidem",
-                        "price": "607.00",
+                        "price": 607.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "corrupti quae et",
-                        "price": "705.00",
+                        "price": 705.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     }
                 ]
@@ -3663,12 +4463,24 @@
                 "items": [
                     {
                         "name": "id vero porro",
-                        "price": "642.00",
+                        "price": 642.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                6,
+                1
+            ],
+            "vip": [
+                1,
+                7
+            ]
+        },
+        "sold_tickets": 3
     },
     {
         "round": "23",
@@ -3690,71 +4502,95 @@
                 "items": [
                     {
                         "name": "quam officia tempora",
-                        "price": "389.00",
+                        "price": 389.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "adipisci corporis nesciunt",
-                        "price": "304.00",
+                        "price": 304.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "omnis eaque consequatur",
-                        "price": "111.00",
+                        "price": 111.0,
+                        "total_sold": 0,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nam illo distinctio",
-                        "price": "334.00",
+                        "price": 334.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "eligendi laborum inventore",
-                        "price": "677.00",
+                        "price": 677.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "ipsam voluptates quaerat",
-                        "price": "502.00",
+                        "price": 502.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     },
                     {
                         "name": "itaque laborum repellat",
-                        "price": "697.00",
+                        "price": 697.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "minima optio nihil",
-                        "price": "971.00",
+                        "price": 971.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "perferendis aut enim",
-                        "price": "561.00",
+                        "price": 561.0,
+                        "total_sold": 0,
                         "type": "food:restaurant"
                     },
                     {
                         "name": "asperiores nostrum dolor",
-                        "price": "337.00",
+                        "price": 337.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "fugiat repudiandae ipsum",
-                        "price": "714.00",
+                        "price": 714.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "esse suscipit hic",
-                        "price": "287.00",
+                        "price": 287.0,
+                        "total_sold": 0,
                         "type": "food:fast"
                     },
                     {
                         "name": "officia mollitia praesentium",
-                        "price": "923.00",
+                        "price": 923.0,
+                        "total_sold": 0,
                         "type": "drink:not-alcoholic"
                     }
                 ]
             }
-        ]
+        ],
+        "map": {
+            "general": [
+                8,
+                3
+            ],
+            "vip": [
+                2,
+                9
+            ]
+        },
+        "sold_tickets": 6
     }
 ]
