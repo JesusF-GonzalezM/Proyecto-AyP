@@ -15,7 +15,25 @@ def get_races_by_month(races, month):
         month = '0' + month
     filtered_races = []
     for race in races:
-        year, race_month, day = race.date.split('-')
+        race_month = race.date.split('-')[1]
         if race_month == month:
             filtered_races.append(race)
     return filtered_races
+
+
+def show_countries(constructors):
+    countries = set()
+    for constructor in constructors:
+        countries.add(constructor.nationality)
+    for country in countries:
+        print(country)
+
+
+def show_constructor_id(constructors):
+    for constructor in constructors:
+        print(constructor.id)
+
+
+def show_circuit_country(races):
+    for race in races:
+        print(race.circuit.location.country)

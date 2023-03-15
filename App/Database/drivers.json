@@ -1,16 +1,5 @@
 [
     {
-        "id": "hulkenberg",
-        "permanentNumber": "27",
-        "code": "HUL",
-        "team": "haas",
-        "firstName": "Nico",
-        "lastName": "H\u00fclkenberg",
-        "dateOfBirth": "1987-08-19",
-        "nationality": "German",
-        "score": 0
-    },
-    {
         "id": "albon",
         "permanentNumber": "23",
         "code": "ALB",
@@ -19,138 +8,6 @@
         "lastName": "Albon",
         "dateOfBirth": "1996-03-23",
         "nationality": "Thai",
-        "score": 0
-    },
-    {
-        "id": "sainz",
-        "permanentNumber": "55",
-        "code": "SAI",
-        "team": "ferrari",
-        "firstName": "Carlos",
-        "lastName": "Sainz",
-        "dateOfBirth": "1994-09-01",
-        "nationality": "Spanish",
-        "score": 0
-    },
-    {
-        "id": "leclerc",
-        "permanentNumber": "16",
-        "code": "LEC",
-        "team": "ferrari",
-        "firstName": "Charles",
-        "lastName": "Leclerc",
-        "dateOfBirth": "1997-10-16",
-        "nationality": "Monegasque",
-        "score": 0
-    },
-    {
-        "id": "sargeant",
-        "permanentNumber": "2",
-        "code": "SAR",
-        "team": "williams",
-        "firstName": "Logan",
-        "lastName": "Sargeant",
-        "dateOfBirth": "2000-12-31",
-        "nationality": "American",
-        "score": 0
-    },
-    {
-        "id": "max_verstappen",
-        "permanentNumber": "33",
-        "code": "VER",
-        "team": "red_bull",
-        "firstName": "Max",
-        "lastName": "Verstappen",
-        "dateOfBirth": "1997-09-30",
-        "nationality": "Dutch",
-        "score": 0
-    },
-    {
-        "id": "perez",
-        "permanentNumber": "11",
-        "code": "PER",
-        "team": "red_bull",
-        "firstName": "Sergio",
-        "lastName": "P\u00e9rez",
-        "dateOfBirth": "1990-01-26",
-        "nationality": "Mexican",
-        "score": 0
-    },
-    {
-        "id": "stroll",
-        "permanentNumber": "18",
-        "code": "STR",
-        "team": "aston_martin",
-        "firstName": "Lance",
-        "lastName": "Stroll",
-        "dateOfBirth": "1998-10-29",
-        "nationality": "Canadian",
-        "score": 0
-    },
-    {
-        "id": "hamilton",
-        "permanentNumber": "44",
-        "code": "HAM",
-        "team": "mercedes",
-        "firstName": "Lewis",
-        "lastName": "Hamilton",
-        "dateOfBirth": "1985-01-07",
-        "nationality": "British",
-        "score": 0
-    },
-    {
-        "id": "russell",
-        "permanentNumber": "63",
-        "code": "RUS",
-        "team": "mercedes",
-        "firstName": "George",
-        "lastName": "Russell",
-        "dateOfBirth": "1998-02-15",
-        "nationality": "British",
-        "score": 0
-    },
-    {
-        "id": "kevin_magnussen",
-        "permanentNumber": "20",
-        "code": "MAG",
-        "team": "haas",
-        "firstName": "Kevin",
-        "lastName": "Magnussen",
-        "dateOfBirth": "1992-10-05",
-        "nationality": "Danish",
-        "score": 0
-    },
-    {
-        "id": "norris",
-        "permanentNumber": "4",
-        "code": "NOR",
-        "team": "mclaren",
-        "firstName": "Lando",
-        "lastName": "Norris",
-        "dateOfBirth": "1999-11-13",
-        "nationality": "British",
-        "score": 0
-    },
-    {
-        "id": "de_vries",
-        "permanentNumber": "45",
-        "code": "DEV",
-        "team": "alphatauri",
-        "firstName": "Nyck",
-        "lastName": "de Vries",
-        "dateOfBirth": "1995-02-06",
-        "nationality": "Dutch",
-        "score": 0
-    },
-    {
-        "id": "zhou",
-        "permanentNumber": "24",
-        "code": "ZHO",
-        "team": "alfa",
-        "firstName": "Guanyu",
-        "lastName": "Zhou",
-        "dateOfBirth": "1999-05-30",
-        "nationality": "Chinese",
         "score": 0
     },
     {
@@ -176,25 +33,14 @@
         "score": 0
     },
     {
-        "id": "piastri",
-        "permanentNumber": "81",
-        "code": "PIA",
-        "team": "mclaren",
-        "firstName": "Oscar",
-        "lastName": "Piastri",
-        "dateOfBirth": "2001-04-06",
-        "nationality": "Australian",
-        "score": 0
-    },
-    {
-        "id": "ocon",
-        "permanentNumber": "31",
-        "code": "OCO",
-        "team": "alpine",
-        "firstName": "Esteban",
-        "lastName": "Ocon",
-        "dateOfBirth": "1996-09-17",
-        "nationality": "French",
+        "id": "de_vries",
+        "permanentNumber": "45",
+        "code": "DEV",
+        "team": "alphatauri",
+        "firstName": "Nyck",
+        "lastName": "de Vries",
+        "dateOfBirth": "1995-02-06",
+        "nationality": "Dutch",
         "score": 0
     },
     {
@@ -209,6 +55,138 @@
         "score": 0
     },
     {
+        "id": "hamilton",
+        "permanentNumber": "44",
+        "code": "HAM",
+        "team": "mercedes",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "dateOfBirth": "1985-01-07",
+        "nationality": "British",
+        "score": 0
+    },
+    {
+        "id": "hulkenberg",
+        "permanentNumber": "27",
+        "code": "HUL",
+        "team": "haas",
+        "firstName": "Nico",
+        "lastName": "H\u00fclkenberg",
+        "dateOfBirth": "1987-08-19",
+        "nationality": "German",
+        "score": 0
+    },
+    {
+        "id": "leclerc",
+        "permanentNumber": "16",
+        "code": "LEC",
+        "team": "ferrari",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "dateOfBirth": "1997-10-16",
+        "nationality": "Monegasque",
+        "score": 0
+    },
+    {
+        "id": "kevin_magnussen",
+        "permanentNumber": "20",
+        "code": "MAG",
+        "team": "haas",
+        "firstName": "Kevin",
+        "lastName": "Magnussen",
+        "dateOfBirth": "1992-10-05",
+        "nationality": "Danish",
+        "score": 0
+    },
+    {
+        "id": "norris",
+        "permanentNumber": "4",
+        "code": "NOR",
+        "team": "mclaren",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "dateOfBirth": "1999-11-13",
+        "nationality": "British",
+        "score": 0
+    },
+    {
+        "id": "ocon",
+        "permanentNumber": "31",
+        "code": "OCO",
+        "team": "alpine",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "dateOfBirth": "1996-09-17",
+        "nationality": "French",
+        "score": 0
+    },
+    {
+        "id": "perez",
+        "permanentNumber": "11",
+        "code": "PER",
+        "team": "red_bull",
+        "firstName": "Sergio",
+        "lastName": "P\u00e9rez",
+        "dateOfBirth": "1990-01-26",
+        "nationality": "Mexican",
+        "score": 0
+    },
+    {
+        "id": "piastri",
+        "permanentNumber": "81",
+        "code": "PIA",
+        "team": "mclaren",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "dateOfBirth": "2001-04-06",
+        "nationality": "Australian",
+        "score": 0
+    },
+    {
+        "id": "russell",
+        "permanentNumber": "63",
+        "code": "RUS",
+        "team": "mercedes",
+        "firstName": "George",
+        "lastName": "Russell",
+        "dateOfBirth": "1998-02-15",
+        "nationality": "British",
+        "score": 0
+    },
+    {
+        "id": "sainz",
+        "permanentNumber": "55",
+        "code": "SAI",
+        "team": "ferrari",
+        "firstName": "Carlos",
+        "lastName": "Sainz",
+        "dateOfBirth": "1994-09-01",
+        "nationality": "Spanish",
+        "score": 0
+    },
+    {
+        "id": "sargeant",
+        "permanentNumber": "2",
+        "code": "SAR",
+        "team": "williams",
+        "firstName": "Logan",
+        "lastName": "Sargeant",
+        "dateOfBirth": "2000-12-31",
+        "nationality": "American",
+        "score": 0
+    },
+    {
+        "id": "stroll",
+        "permanentNumber": "18",
+        "code": "STR",
+        "team": "aston_martin",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "dateOfBirth": "1998-10-29",
+        "nationality": "Canadian",
+        "score": 0
+    },
+    {
         "id": "tsunoda",
         "permanentNumber": "22",
         "code": "TSU",
@@ -217,6 +195,28 @@
         "lastName": "Tsunoda",
         "dateOfBirth": "2000-05-11",
         "nationality": "Japanese",
+        "score": 0
+    },
+    {
+        "id": "max_verstappen",
+        "permanentNumber": "33",
+        "code": "VER",
+        "team": "red_bull",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "dateOfBirth": "1997-09-30",
+        "nationality": "Dutch",
+        "score": 0
+    },
+    {
+        "id": "zhou",
+        "permanentNumber": "24",
+        "code": "ZHO",
+        "team": "alfa",
+        "firstName": "Guanyu",
+        "lastName": "Zhou",
+        "dateOfBirth": "1999-05-30",
+        "nationality": "Chinese",
         "score": 0
     }
 ]

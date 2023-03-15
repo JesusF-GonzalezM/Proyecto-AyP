@@ -2,10 +2,8 @@ import json
 import os
 import requests
 
-from App.Models.client import Client
-from App.Models.constructor import Constructor
-from App.Models.driver import Driver
-from App.Models.race import Race
+from App.parse_data.initialize_data import initialize_clients, initialize_drivers, initialize_constructors, \
+    initialize_races
 
 URL_DRIVERS = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/api-proyecto/main/drivers.json'
 URL_CONSTRUCTORS = 'https://raw.githubusercontent.com/Algorimtos-y-Programacion-2223-2/' \
@@ -19,7 +17,7 @@ def upload_data_to_file(obj, filename):
         json_file.write(json_string)
 
 
-def load_clients_from_file():
+def download_clients_from_file():
     clients = []
     if check_txt_data('clients'):
         with open('Database/clients.json', 'r') as clients_file:
@@ -28,61 +26,25 @@ def load_clients_from_file():
     return clients
 
 
-def initialize_drivers(data_array):
-    drivers = []
-    for data in data_array:
-        driver = Driver(**data)
-        drivers.append(driver)
-    return drivers
-
-
-def initialize_races(data_array):
-    races = []
-    for data in data_array:
-        race = Race(**data)
-        races.append(race)
-    return races
-
-
-def initialize_constructors(data_array):
-    constructors = []
-    for data in data_array:
-        constructor = Constructor(**data)
-        constructors.append(constructor)
-    return constructors
-
-
-def initialize_clients(data_array):
-    clients = []
-    for data in data_array:
-        client = Client(**data)
-        clients.append(client)
-    return clients
-
-
-def initialize_drivers_from_api(url):
+def download_drivers_from_api(url):
     response = requests.get(url)
     data_array = response.json()
     return initialize_drivers(data_array)
 
 
-def initialize_constructors_from_api(url):
+def download_constructors_from_api(url):
     response = requests.get(url)
     data_array = response.json()
     return initialize_constructors(data_array)
 
 
-def initialize_races_from_api(url):
+def download_races_from_api(url):
     response = requests.get(url)
     data_array = response.json()
     return initialize_races(data_array)
 
 
-def check_txt_data(file_path):
-    return os.path.isfile(f'Database/{file_path}.json')
-
-
-def load_data_from_txt():
+def download_data_from_txt():
     with open('Database/drivers.json', 'r') as drivers_file:
         json_drivers = json.load(drivers_file)
         drivers = initialize_drivers(json_drivers)
@@ -99,9 +61,9 @@ def load_data_from_txt():
 
 
 def load_data_from_api_and_save():
-    drivers = initialize_drivers_from_api(URL_DRIVERS)
-    constructors = initialize_constructors_from_api(URL_CONSTRUCTORS)
-    races = initialize_races_from_api(URL_RACES)
+    drivers = download_drivers_from_api(URL_DRIVERS)
+    constructors = download_constructors_from_api(URL_CONSTRUCTORS)
+    races = download_races_from_api(URL_RACES)
 
     upload_data_to_file(drivers, 'drivers')
     upload_data_to_file(constructors, 'constructors')
@@ -110,9 +72,13 @@ def load_data_from_api_and_save():
     return drivers, constructors, races
 
 
+def check_txt_data(file_path):
+    return os.path.isfile(f'Database/{file_path}.json')
+
+
 def initialize_data():
     if not check_txt_data('drivers'):
         drivers, constructors, races = load_data_from_api_and_save()
     else:
-        drivers, constructors, races = load_data_from_txt()
+        drivers, constructors, races = download_data_from_txt()
     return drivers, constructors, races

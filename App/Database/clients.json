@@ -2,13 +2,61 @@
     {
         "name": "jesus",
         "id": "25",
-        "age": "15",
-        "total_spent": 528.96,
+        "age": 25,
+        "total_spent": 719.2,
         "tickets": [
             {
-                "race_round": "22",
+                "race_round": "1",
+                "type": "1",
+                "code": "a8d9ccebf23b45838e319860613aa383",
+                "total_price": 197.2,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
                 "type": "2",
-                "code": 160168,
+                "code": "00ba3240dbc64c949494fb214486001a",
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
+                "type": "2",
+                "code": "c20783ddbaa94a1f88b94b0813856386",
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
+                "type": "2",
+                "code": "c41e5e699c784f88a5f6299c1ff0dc8c",
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
+                "type": "2",
+                "code": "05e8037b4c654d018449dd7d5fc1889f",
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
+                "type": "2",
+                "code": "2da0cf98f04b4791864e0b585bab8456",
+                "total_price": 87.0,
+                "discount": true,
+                "assisted": false
+            },
+            {
+                "race_round": "1",
+                "type": "2",
+                "code": "2e229b70f07c49d8a206d7f31cf49dfa",
                 "total_price": 87.0,
                 "discount": true,
                 "assisted": false

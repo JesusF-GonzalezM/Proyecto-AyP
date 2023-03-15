@@ -1,10 +1,12 @@
 from App.Models.client import Client
-from App.Tickets_sale_management.manage_ticket_creation import create_ticket
+from App.Tickets_sale_management.manage_ticket_creation import create_ticket, choose_race_and_ticket_type
 
 
 def manage_client(races, clients):
     client_in_db = False
     print('Welcome!, Please enter your information to buy a ticket:\n')
+    race_at, race_round, ticket_type = choose_race_and_ticket_type(races)
+
     while True:
         id = input('\tEnter your ID: ')
         if id.isnumeric():
@@ -16,8 +18,8 @@ def manage_client(races, clients):
             client_in_db = True
             print(f'Welcome back, {client.name.title()}')
             print('-------------------')
-            ticket = create_ticket(client.id, races, clients)
-            return client, ticket, client_in_db
+            ticket, seat = create_ticket(race_at, race_round, ticket_type, client.id)
+            return seat, race_at, client, ticket, client_in_db
 
     while True:
         name = input('\tEnter your name: ')
@@ -33,5 +35,5 @@ def manage_client(races, clients):
         print('Age is not valid, please try again.')
 
     client = Client(name=name, id=id, age=age)
-    ticket = create_ticket(client.id, races, clients)
-    return client, ticket, client_in_db
+    ticket, seat = create_ticket(race_at, race_round, ticket_type, client.id)
+    return seat, race_at, client, ticket, client_in_db
