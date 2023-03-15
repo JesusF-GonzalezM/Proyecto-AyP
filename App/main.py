@@ -115,6 +115,7 @@ def race_assistance_management(clients, races):
         print('You dont have any ticket for this race!')
 
 
+# se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
 def restaurant_management_module(races):
     for race in races:
         print(f'{race.round}. {race.name}')

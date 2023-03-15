@@ -1,12 +1,13 @@
 import random
 
 
-# orders the list in a random order
+# ordena la lista de una manera aleatoria
 def randomize_list(drivers_list):
     random.shuffle(drivers_list)
     return drivers_list
 
 
+# le asigna la puntuación a cada driver y a cada constructor según los lineamientos del proyecto
 def set_drivers_and_constructors_score(drivers, constructors):
     drivers[0].score = 25
     drivers[1].score = 18
@@ -23,6 +24,7 @@ def set_drivers_and_constructors_score(drivers, constructors):
         constructor.set_score(drivers)
 
 
+# retorna el constructor con mayor puntuación
 def get_winning_constructor(constructors):
     winning_constructor = constructors[0]
     for constructor in constructors:
@@ -31,6 +33,7 @@ def get_winning_constructor(constructors):
     return winning_constructor
 
 
+# resetea la puntuación de cada driver y a cada constructor a 0
 def reset_scores(drivers, constructors):
     for driver in drivers:
         driver.score = 0

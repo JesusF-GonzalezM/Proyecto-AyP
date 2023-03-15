@@ -1,6 +1,7 @@
 from App.Models.ticket import Ticket
 
 
+# Se encarga de recibir tanto la carrera, como el tipo de ticket que quiere el usuario.
 def choose_race_and_ticket_type(races):
     valid_races = []
     for race in races:
@@ -43,6 +44,7 @@ def choose_race_and_ticket_type(races):
     return race_at, race_round, ticket_type
 
 
+# se encarga de validar que el asiento no esté tomado, y exista.
 def validate_seat(seats):
     valid = False
     taken = False
@@ -66,6 +68,7 @@ def validate_seat(seats):
     return current_seat
 
 
+# se encarga de la creacion del ticket
 def create_ticket(race_at, race_round, ticket_type, client_id):
 
     seat = choose_seat(race_at, ticket_type)
@@ -78,6 +81,7 @@ def create_ticket(race_at, race_round, ticket_type, client_id):
     return ticket, seat
 
 
+# se encarga de permitir al usuario escoger un asiento.
 def choose_seat(race, ticket_type):
     while True:
         if ticket_type == '1':
@@ -89,6 +93,7 @@ def choose_seat(race, ticket_type):
         return current_seat
 
 
+# se encarga de revisar si un número es ondulando(utilizada para validar con la cédula si el cliente recibirá un descuento).
 def number_is_ondulado(num):  # this shit does not work
     num = str(num)
     if int(num) < 100:
@@ -103,6 +108,7 @@ def number_is_ondulado(num):  # this shit does not work
     return True
 
 
+# se encarga de verificar si quedan asientos disponibles.
 def check_if_seats_available(seats):
     taken = True
     for row in seats:

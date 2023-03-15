@@ -1,5 +1,4 @@
-
-
+# Maneja la compra de un item por un usuario
 def manage_purchase(clients, races):
     can_buy = False
     valid_id = False
@@ -17,6 +16,7 @@ def manage_purchase(clients, races):
     while True:
         for race in races:
             print(race)
+        # validación de que la carrera sea un número válido en cuanto a los índices de las carreras
         race_round = input("Enter the round of the race you are at: ")
         if 1 <= int(race_round) <= 23:
             for race in races:
