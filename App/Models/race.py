@@ -42,8 +42,12 @@ class Race:
 
     def print_general_seats(self):
         for row in self.general_seats:
-            print(row)
+            print('_____' * len(row))
+            print_row = str(row).replace(',', '').replace('[', '').replace(']', '')
+            print(print_row)
 
     def print_vip_seats(self):
         for row in self.vip_seats:
-            print(row)
+            print('_____' * len(row))
+            print_row = str(row).replace(',', '').replace('[', '').replace(']', '')
+            print(print_row)

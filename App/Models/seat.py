@@ -6,12 +6,8 @@ class Seat:
 
     def __repr__(self):
         if not self.taken:
-            return f'{self.position}'
-        return f'XX'
-
-    @staticmethod
-    def pretty_print():
-        print('___')
+            return f'|{self.position}|'
+        return f'|XX|'
 
     def show_all(self):
         print(f'position: {self.position}\ncode: {self.code}\ntaken: {self.taken}')

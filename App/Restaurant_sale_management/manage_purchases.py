@@ -1,12 +1,3 @@
-def perfect_number(n):
-    n = int(n)
-    n_divisors = 0
-    for i in range(1, n + 1):
-        if n % i == 0:
-            n_divisors += i
-    if n_divisors == (2 * n):
-        return True
-    return False
 
 
 def manage_purchase(clients, races):
@@ -49,8 +40,8 @@ def manage_purchase(clients, races):
     for index, restaurant in enumerate(race_at.restaurants):
         restaurants.update({index+1: restaurant})
     # noinspection PyUnboundLocalVariable
-    total_price = purchase_products(current_client, restaurants)
-    return current_client, total_price
+    total_price, restaurant_at = purchase_products(current_client, restaurants)
+    return current_client, total_price, restaurant_at
 
 
 def purchase_products(client, restaurants):
@@ -66,6 +57,7 @@ def purchase_products(client, restaurants):
             if key == int(chosen_restaurant):
                 if len(restaurants[chosen_restaurant].items) > 0:
                     valid_restaurant = True
+                    restaurant_at = restaurants[chosen_restaurant]
                     break
                 print('This restaurant does not have any inventory currently')
                 no_items = True
@@ -95,7 +87,7 @@ def purchase_products(client, restaurants):
             break
     total_price = calculate_total_price(client, products_to_buy)
     print_checkout(products_to_buy, total_price)
-    return total_price
+    return total_price, restaurant_at
 
 
 def calculate_total_price(client, products):
@@ -105,6 +97,17 @@ def calculate_total_price(client, products):
     if perfect_number(client.id):
         total_price *= 0.85
     return total_price
+
+
+def perfect_number(n):
+    n = int(n)
+    n_divisors = 0
+    for i in range(1, n + 1):
+        if n % i == 0:
+            n_divisors += i
+    if n_divisors == (2 * n):
+        return True
+    return False
 
 
 def print_checkout(products, total_price):

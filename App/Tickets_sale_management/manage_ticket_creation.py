@@ -28,6 +28,7 @@ def choose_race_and_ticket_type(races):
         print('\t1. VIP')
         ticket_type = input('\t2. GENERAL\n\t')
         if ticket_type == '1' or ticket_type == '2':
+            # noinspection PyUnboundLocalVariable
             if ticket_type == '1' and vip_full:
                 full = True
                 print('We are out of VIP seats, please try again.')
@@ -38,6 +39,7 @@ def choose_race_and_ticket_type(races):
                 break
         if not full:
             print('Ticket type is not valid, please try again.')
+    # noinspection PyUnboundLocalVariable
     return race_at, race_round, ticket_type
 
 
@@ -60,7 +62,20 @@ def validate_seat(seats):
             break
         if not taken:
             print('Seat does not exist, please try again.')
+    # noinspection PyUnboundLocalVariable
     return current_seat
+
+
+def create_ticket(race_at, race_round, ticket_type, client_id):
+
+    seat = choose_seat(race_at, ticket_type)
+    ticket = Ticket(race_round=race_round, type=ticket_type, code=seat.code)
+
+    if number_is_ondulado(client_id):
+        ticket.discount = True
+    ticket.calculate_price()
+    ticket.print_detailed_price()
+    return ticket, seat
 
 
 def choose_seat(race, ticket_type):
@@ -86,18 +101,6 @@ def number_is_ondulado(num):  # this shit does not work
         if num[index] != a or num[index + 1] != b:
             return False
     return True
-
-
-def create_ticket(race_at, race_round, ticket_type, client_id):
-
-    seat = choose_seat(race_at, ticket_type)
-    ticket = Ticket(race_round=race_round, type=ticket_type, code=seat.code)
-
-    if number_is_ondulado(client_id):
-        ticket.discount = True
-    ticket.calculate_price()
-    ticket.print_detailed_price()
-    return ticket, seat
 
 
 def check_if_seats_available(seats):
