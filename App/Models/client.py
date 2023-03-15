@@ -13,7 +13,7 @@ class Client:
                 self.tickets.append(Ticket(**ticket))
 
     def __str__(self):
-        return f'name: {self.name}, age: {self.age} tickets: {self.tickets}'
+        return f'Name: {self.name} | Age: {self.age} | amount_of_tickets: {len(self.tickets)}'
 
     def add_ticket(self, ticket):
         self.tickets.append(ticket)

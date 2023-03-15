@@ -4,11 +4,12 @@ from App.Models.seat import Seat
 
 
 class Race:
-    def __init__(self, round, name, circuit, date, restaurants, map, sold_tickets=0, vip_seats=None, general_seats=None):
+    def __init__(self, round, name, circuit, date, restaurants, map, attendance=0, sold_tickets=0, vip_seats=None, general_seats=None):
         self.round = round
         self.name = name
         self.circuit = Circuit(**circuit)
         self.date = date
+        self.attendance = attendance
         self.restaurants = []
         for restaurant in restaurants:
             self.restaurants.append(Restaurant(**restaurant))

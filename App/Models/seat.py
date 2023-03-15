@@ -1,8 +1,9 @@
 class Seat:
-    def __init__(self, position, code=None, taken=False):
+    def __init__(self, position, code=None, taken=False, assisted=False):
         self.position = position
         self.code = code
         self.taken = taken
+        self.assisted = assisted
 
     def __repr__(self):
         if not self.taken:

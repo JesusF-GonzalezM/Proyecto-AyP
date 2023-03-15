@@ -13,13 +13,12 @@ ticket_price = {
 
 
 class Ticket:
-    def __init__(self, race_round, type, code=None, total_price=0, discount=False, assisted=False):
+    def __init__(self, race_round, type, code=None, total_price=0, discount=False):
         self.race_round = race_round
         self.type = TicketType(type)
         self.code = code
         self.total_price = total_price
         self.discount = discount
-        self.assisted = assisted
 
     def calculate_price(self):
         initial_price = ticket_price[self.type.name]

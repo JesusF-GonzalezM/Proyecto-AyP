@@ -10,18 +10,21 @@ from App.Restaurant_sale_management.manage_purchases import manage_purchase
 from App.Tickets_sale_management.manage_client_creation import manage_client
 from App.parse_data.download_data import initialize_data, download_clients_from_file, upload_data_to_file
 
+
 # Modulo 1 listo
 # Modulo 2 listo
-# Modulo 3 Gestion de Asistencia de Carreras pendiente
+# Modulo 3 listo
 # Modulo 4 listo
-# Modulo 5 Gestion de venta de restaurantes, pendiente terminar
-# Modulo 6 Estadísticas pendientes
+# Modulo 5 Gestion de venta de restaurantes, pendiente terminar, arreglar.
+# Modulo 6 Falta 2, 5 y 7 y luego implementarlo en el main()
 # noinspection PyUnboundLocalVariable
 
 
 def main():
+    # inicializo la información, si no existen los archivos, la bajo de la api, sino, la bajo de los archivos
     drivers, constructors, races = initialize_data()
     clients = download_clients_from_file()
+    # si las matrices de los asientos no están inicializadas todavía, las inicializo y le agrego el codigo unico a cada asiento.
     for race in races:
         if not race.general_seats:
             race.define_general_seats_matrix()
@@ -30,6 +33,7 @@ def main():
             race.define_vip_seats_matrix()
             set_unique_code_to_seats(race.vip_seats)
 
+    # corro los modulos
     while True:
         print('Choose which module you want to use: ')
         module_to_choose = input('\t1. Races and team management\n\t2. Tickets sale management\n\t'
@@ -48,6 +52,7 @@ def main():
             case '3':
                 # Races assistance management Module
                 print('Welcome to the ticket validation module!')
+                race_assistance_management(clients, races)
             case '4':
                 # Restaurants management Module
                 print('Welcome to the restaurant management module!, here you can see our food and drinks by filters!')
@@ -64,6 +69,50 @@ def main():
                 save_data(clients, constructors, drivers, races)
 
                 quit()
+
+
+# Se encarga de manejar la asistencia de los clientes, y verificar que las entradas sean válidas
+def race_assistance_management(clients, races):
+    for index, race in enumerate(races):
+        print(f'{index + 1}. {race.name}')
+    while True:
+        is_valid = False
+        chosen_race_round = input('Choose the race you are trying to get into: ')
+        for index, race in enumerate(races):
+            if chosen_race_round == str(index + 1):
+                is_valid = True
+                current_race = race
+                current_race_index = str(index + 1)
+                break
+        if is_valid:
+            break
+        print('That is not a valid race!')
+    while True:
+        is_valid = False
+        client_id = input('Enter your id so we can verify your ticket: ')
+        if client_id.isnumeric():
+            for client in clients:
+                if client.id == client_id:
+                    is_valid = True
+                    current_client = client
+                    break
+            if is_valid:
+                break
+            print('That is not a valid id!')
+    # noinspection PyUnboundLocalVariable
+    for ticket in current_client.tickets:
+        # noinspection PyUnboundLocalVariable
+        if ticket.race_round == current_race_index:
+            if ticket.type == '1':
+                # noinspection PyUnboundLocalVariable
+                for row in current_race.vip_seats:
+                    for seat in row:
+                        if seat.code == ticket.code:
+                            seat.assisted = True
+                            current_race.attendance += 1
+            print(f'Welcome to the race, enjoy!')
+            break
+        print('You dont have any ticket for this race!')
 
 
 def restaurant_management_module(races):
@@ -170,12 +219,14 @@ def restaurant_management_module(races):
                 print(f'No products found by the price range {min_price} to {max_price}')
 
 
+# Se encarga de generar un codigo unico para cada asiento
 def set_unique_code_to_seats(seats):
     for row in seats:
         for seat in row:
             seat.code = uuid.uuid4().hex
 
 
+# Se encarga de las compras en los restaurantes, y agregarle el costo a una variable en el cliente.
 def restaurant_sales_management(clients, races):
     client, total_price, restaurant_at = manage_purchase(clients, races)
     if client != 'no restaurants':
@@ -186,6 +237,7 @@ def restaurant_sales_management(clients, races):
             # TODO: Remove from restaurant inventory
 
 
+# Se encarga de la venta de tickets delegando responsabilidades en otras funciones
 def tickets_sale_management(clients, races):
     while True:
         choice = input(f'1.Buy ticket\n2.Leave\n')
@@ -208,6 +260,7 @@ def tickets_sale_management(clients, races):
                 break
 
 
+# Se encarga de subir la data a la base de datos
 def save_data(clients, constructors, drivers, races):
     upload_data_to_file(drivers, 'drivers')
     upload_data_to_file(constructors, 'constructors')
@@ -215,6 +268,7 @@ def save_data(clients, constructors, drivers, races):
     upload_data_to_file(clients, 'clients')
 
 
+# Se encarga de que se pueda buscar por filtros cierta información, y se pueda finalizar una carrera.
 def races_and_team_management(constructors, drivers, races):
     while True:
         choice = input(f'1.Search by filters\n2.Finish race\n3.Leave\n')
@@ -274,5 +328,6 @@ def races_and_team_management(constructors, drivers, races):
                 break
 
 
+# Ejecuta el programa principal
 if __name__ == '__main__':
     main()
