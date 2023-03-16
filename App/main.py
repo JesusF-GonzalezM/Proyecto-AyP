@@ -75,52 +75,58 @@ def main():
 
 # Se encarga de manejar la asistencia de los clientes, y verificar que las entradas sean válidas
 def race_assistance_management(clients, races):
-    if not clients:
-        print('There are no clients in the database!')
-        return
-    for index, race in enumerate(races):
-        print(f'{index + 1}. {race.name}')
     while True:
-        is_valid = False
-        chosen_race_round = input('Choose the race you are trying to get into: ')
-        for index, race in enumerate(races):
-            if chosen_race_round == str(index + 1):
-                is_valid = True
-                current_race = race
-                current_race_index = str(index + 1)
-                break
-        if is_valid:
-            break
-        print('That is not a valid race!')
-    while True:
-        is_valid = False
-        client_id = input('Enter your id so we can verify your ticket: ')
-        if client_id.isnumeric():
-            for client in clients:
-                if client.id == client_id:
-                    is_valid = True
-                    current_client = client
-                    break
-            if is_valid:
-                break
-            print('That is not a valid id!')
-    is_valid = False
-    # noinspection PyUnboundLocalVariable
-    for ticket in current_client.tickets:
-        # noinspection PyUnboundLocalVariable
-        if ticket.race_round == current_race_index:
-            if ticket.type.value == '1':
+        choice = input('\t1. Enter the race\n\t2. Leave\n')
+        match choice:
+            case '1':
+                if not clients:
+                    print('There are no clients in the database!')
+                    return
+                for index, race in enumerate(races):
+                    print(f'{index + 1}. {race.name}')
+                while True:
+                    is_valid = False
+                    chosen_race_round = input('Choose the race you are trying to get into: ')
+                    for index, race in enumerate(races):
+                        if chosen_race_round == str(index + 1):
+                            is_valid = True
+                            current_race = race
+                            current_race_index = str(index + 1)
+                            break
+                    if is_valid:
+                        break
+                    print('That is not a valid race!')
+                while True:
+                    is_valid = False
+                    client_id = input('Enter your id so we can verify your ticket: ')
+                    if client_id.isnumeric():
+                        for client in clients:
+                            if client.id == client_id:
+                                is_valid = True
+                                current_client = client
+                                break
+                        if is_valid:
+                            break
+                        print('That is not a valid id!')
+                is_valid = False
                 # noinspection PyUnboundLocalVariable
-                is_valid = check_if_ticket_code_is_valid(current_race, current_race.vip_seats, is_valid, ticket)
-            if ticket.type.value == '2':
-                # noinspection PyUnboundLocalVariable
-                is_valid = check_if_ticket_code_is_valid(current_race, current_race.general_seats, is_valid, ticket)
-        if is_valid:
-            break
-    if not is_valid:
-        print('----------------------------------------')
-        print('You dont have any ticket for this race!')
-        print('----------------------------------------')
+                for ticket in current_client.tickets:
+                    # noinspection PyUnboundLocalVariable
+                    if ticket.race_round == current_race_index:
+                        if ticket.type.value == '1':
+                            # noinspection PyUnboundLocalVariable
+                            is_valid = check_if_ticket_code_is_valid(current_race, current_race.vip_seats, is_valid, ticket)
+                        if ticket.type.value == '2':
+                            # noinspection PyUnboundLocalVariable
+                            is_valid = check_if_ticket_code_is_valid(current_race, current_race.general_seats, is_valid, ticket)
+                    if is_valid:
+                        break
+                if not is_valid:
+                    print('----------------------------------------')
+                    print('You dont have any ticket for this race!')
+                    print('----------------------------------------')
+            case _:
+                print('Thank you for using the Races and team management module!')
 
 
 # revisa si el codigo del ticket es válido
@@ -134,6 +140,8 @@ def check_if_ticket_code_is_valid(current_race, seats, is_valid, ticket):
                 print('----------------------------')
                 print(f'Welcome to the race, enjoy!')
                 print('----------------------------')
+                print(f'Your seat is the {seat.position} | row {seat.position[0]} | column {seat.position[1]} |')
+                print('----------------------------')
                 is_valid = True
                 break
     return is_valid
@@ -141,107 +149,114 @@ def check_if_ticket_code_is_valid(current_race, seats, is_valid, ticket):
 
 # se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
 def restaurant_management_module(races):
-    for race in races:
-        print(f'{race.round}. {race.name}')
     while True:
-        is_valid = False
-        race_round = input('Which race restaurants do you want to see:\n')
-        for race in races:
-            if race_round == race.round:
-                if race.restaurants:
-                    race_at = race
-                    is_valid = True
-                    break
-        if is_valid:
-            break
-        print(f'{race_round} is not a valid race choice or race does not have any restaurants!')
-    # noinspection PyUnboundLocalVariable
-    for index, restaurant in enumerate(race_at.restaurants):
-        print(f'{index + 1}. {restaurant.name}')
-    while True:
-        is_valid = False
-        restaurant_choice = input('Which restaurant do you want to see:\n')
-        for index, restaurant in enumerate(race_at.restaurants):
-            if str(index + 1) == restaurant_choice:
-                if restaurant.items:
-                    is_valid = True
-                    restaurant_at = restaurant
-                    break
-        if is_valid:
-            break
-        print(f'{restaurant_choice} is not a valid restaurant choice or restaurant is empty')
-    choice = input('1.Products by name\n2.Products by type\n3.Products by price_range\n')
-    match choice:
-        case '1':
-            # noinspection PyUnboundLocalVariable
-            for index, item in enumerate(restaurant_at.items):
-                print(f'{index + 1}. {item.name}')
-            while True:
-                is_valid = False
-                product_index = input('Enter the product you want to search by: ')
-                for index, item in enumerate(restaurant_at.items):
-                    if str(index + 1) == product_index:
-                        is_valid = True
-                        product_at = item
+        choice = input('\t1. Search by filters\n\t2. Leave\n')
+        match choice:
+            case '1':
+                for race in races:
+                    print(f'{race.round}. {race.name}')
+                while True:
+                    is_valid = False
+                    race_round = input('Which race restaurants do you want to see:\n')
+                    for race in races:
+                        if race_round == race.round:
+                            if race.restaurants:
+                                race_at = race
+                                is_valid = True
+                                break
+                    if is_valid:
                         break
-                if is_valid:
-                    break
-                print(f'{product_index} is not a valid product choice')
-            # noinspection PyUnboundLocalVariable
-            found_product = get_product_by_name(restaurant_at.items, product_at.name)
-            if found_product:
-                print(found_product)
-            else:
-                print(f'{product_index} is not a product in this restaurant')
-        case '2':
-            choice = input(f'Enter the product types you want to search by: \n\t1. drink:alcoholic\n\t'
-                           f'2. drink:not-alcoholic\n\t3. food:restaurant\n\t4. food:fast\n')
-            match choice:
-                case '1':
-                    # noinspection PyUnboundLocalVariable
-                    filtered_products = get_products_by_type(restaurant_at.items, 'drink:alcoholic')
-                    if filtered_products:
-                        for product in filtered_products:
-                            print(product)
-                    else:
-                        print('There are no alcoholic drinks in this restaurant')
-                case '2':
-                    # noinspection PyUnboundLocalVariable
-                    filtered_products = get_products_by_type(restaurant_at.items, 'drink:not-alcoholic')
-                    if filtered_products:
-                        for product in filtered_products:
-                            print(product)
-                    else:
-                        print('There are no non alcoholic drinks in this restaurant')
-                case '3':
-                    # noinspection PyUnboundLocalVariable
-                    filtered_products = get_products_by_type(restaurant_at.items, 'food:restaurant')
-                    if filtered_products:
-                        for product in filtered_products:
-                            print(product)
-                    else:
-                        print('There are not eat-in-restaurant foods in this restaurant')
-                case '4':
-                    # noinspection PyUnboundLocalVariable
-                    filtered_products = get_products_by_type(restaurant_at.items, 'food:fast')
-                    if filtered_products:
-                        for product in filtered_products:
-                            print(product)
-                    else:
-                        print('There are no fast foods in this restaurant')
-                case _:
-                    print('Invalid choice')
+                    print(f'{race_round} is not a valid race choice or race does not have any restaurants!')
+                # noinspection PyUnboundLocalVariable
+                for index, restaurant in enumerate(race_at.restaurants):
+                    print(f'{index + 1}. {restaurant.name}')
+                while True:
+                    is_valid = False
+                    restaurant_choice = input('Which restaurant do you want to see:\n')
+                    for index, restaurant in enumerate(race_at.restaurants):
+                        if str(index + 1) == restaurant_choice:
+                            if restaurant.items:
+                                is_valid = True
+                                restaurant_at = restaurant
+                                break
+                    if is_valid:
+                        break
+                    print(f'{restaurant_choice} is not a valid restaurant choice or restaurant is empty')
+                choice = input('1.Products by name\n2.Products by type\n3.Products by price_range\n')
+                match choice:
+                    case '1':
+                        # noinspection PyUnboundLocalVariable
+                        for index, item in enumerate(restaurant_at.items):
+                            print(f'{index + 1}. {item.name}')
+                        while True:
+                            is_valid = False
+                            product_index = input('Enter the product you want to search by: ')
+                            for index, item in enumerate(restaurant_at.items):
+                                if str(index + 1) == product_index:
+                                    is_valid = True
+                                    product_at = item
+                                    break
+                            if is_valid:
+                                break
+                            print(f'{product_index} is not a valid product choice')
+                        # noinspection PyUnboundLocalVariable
+                        found_product = get_product_by_name(restaurant_at.items, product_at.name)
+                        if found_product:
+                            print(found_product)
+                        else:
+                            print(f'{product_index} is not a product in this restaurant')
+                    case '2':
+                        choice = input(f'Enter the product types you want to search by: \n\t1. drink:alcoholic\n\t'
+                                       f'2. drink:not-alcoholic\n\t3. food:restaurant\n\t4. food:fast\n')
+                        match choice:
+                            case '1':
+                                # noinspection PyUnboundLocalVariable
+                                filtered_products = get_products_by_type(restaurant_at.items, 'drink:alcoholic')
+                                if filtered_products:
+                                    for product in filtered_products:
+                                        print(product)
+                                else:
+                                    print('There are no alcoholic drinks in this restaurant')
+                            case '2':
+                                # noinspection PyUnboundLocalVariable
+                                filtered_products = get_products_by_type(restaurant_at.items, 'drink:not-alcoholic')
+                                if filtered_products:
+                                    for product in filtered_products:
+                                        print(product)
+                                else:
+                                    print('There are no non alcoholic drinks in this restaurant')
+                            case '3':
+                                # noinspection PyUnboundLocalVariable
+                                filtered_products = get_products_by_type(restaurant_at.items, 'food:restaurant')
+                                if filtered_products:
+                                    for product in filtered_products:
+                                        print(product)
+                                else:
+                                    print('There are not eat-in-restaurant foods in this restaurant')
+                            case '4':
+                                # noinspection PyUnboundLocalVariable
+                                filtered_products = get_products_by_type(restaurant_at.items, 'food:fast')
+                                if filtered_products:
+                                    for product in filtered_products:
+                                        print(product)
+                                else:
+                                    print('There are no fast foods in this restaurant')
+                            case _:
+                                print('Invalid choice')
 
-        case '3':
-            min_price = float(input('Enter the minimum price you want to search by: '))
-            max_price = float(input('Enter the maximum price you want to search by: '))
-            # noinspection PyUnboundLocalVariable
-            filtered_products = get_products_by_price_range(restaurant_at.items, min_price, max_price)
-            if filtered_products:
-                for product in filtered_products:
-                    print(product)
-            else:
-                print(f'No products found by the price range {min_price} to {max_price}')
+                    case '3':
+                        min_price = float(input('Enter the minimum price you want to search by: '))
+                        max_price = float(input('Enter the maximum price you want to search by: '))
+                        # noinspection PyUnboundLocalVariable
+                        filtered_products = get_products_by_price_range(restaurant_at.items, min_price, max_price)
+                        if filtered_products:
+                            for product in filtered_products:
+                                print(product)
+                        else:
+                            print(f'No products found by the price range {min_price} to {max_price}')
+            case _:
+                print('Goodbye!')
+                break
 
 
 # Se encarga de generar un codigo unico para cada asiento
@@ -253,13 +268,20 @@ def set_unique_code_to_seats(seats):
 
 # Se encarga de las compras en los restaurantes, y agregarle el costo a una variable en el cliente.
 def restaurant_sales_management(clients, races):
-    client, total_price, restaurant_at = manage_purchase(clients, races)
-    if client != 'no restaurants':
-        choice = input(f'1.Pay the products\n2.Cancel Payment\n')
-        if choice == '1':
-            print('Success! Thank you for your purchase!')
-            client.total_spent += total_price
-            # TODO: Remove from restaurant inventory
+    while True:
+        choice = input('\t1. Buy products\n\t2. Leave\n')
+        match choice:
+            case '1':
+                client, total_price, restaurant_at = manage_purchase(clients, races)
+                if client != 'no restaurants':
+                    choice = input(f'1.Pay the products\n2.Cancel Payment\n')
+                    if choice == '1':
+                        print('Success! Thank you for your purchase!')
+                        client.total_spent += total_price
+                        # TODO: Remove from restaurant inventory
+            case _:
+                print('Goodbye!')
+                break
 
 
 # Se encarga de la venta de tickets delegando responsabilidades en otras funciones
@@ -314,29 +336,41 @@ def races_and_team_management(constructors, drivers, races):
                         show_countries(constructors)
                         country = input('Enter the country you want to search by: ')
                         filtered_constructors = get_constructor_by_country(constructors, country)
-                        for constructor in filtered_constructors:
-                            print(constructor)
+                        if filtered_constructors:
+                            for constructor in filtered_constructors:
+                                print(constructor)
+                        else:
+                            print('There are no constructors in this country or you mistyped')
                     case '2':
                         show_constructor_id(constructors)
-                        constructor_id = input('Enter the id of the constructor you want to search by: ')
+                        constructor_id = input('Enter the id of the constructor you want to search drivers by: ')
                         filtered_drivers = get_driver_by_constructor(drivers, constructor_id)
-                        for driver in filtered_drivers:
-                            print(driver)
+                        if filtered_drivers:
+                            for driver in filtered_drivers:
+                                print(driver)
+                        else:
+                            print('There are no drivers in this constructor or you mistyped')
                     case '3':
                         show_circuit_country(races)
                         circuit_country = input('Enter the country of the circuit you want to search by: ')
                         filtered_races_by_circuit_country = \
                             get_races_by_circuit_country(races, circuit_country)
-                        for race in filtered_races_by_circuit_country:
-                            print(race)
+                        if filtered_races_by_circuit_country:
+                            for race in filtered_races_by_circuit_country:
+                                print(race)
+                        else:
+                            print('There are no races in this country or you mistyped')
                     case '4':
                         while True:
                             race_month = input('Enter the month(in numbers) of the year you want to search by: ')
                             if race_month.isnumeric() and 0 < int(race_month) < 13:
                                 filtered_races_by_month = get_races_by_month(races, race_month)
-                                for race in filtered_races_by_month:
-                                    print(race)
-                                    break
+                                if filtered_races_by_month:
+                                    for race in filtered_races_by_month:
+                                        print(race)
+                                else:
+                                    print(f'There are no races in this month')
+                                break
                             print('Invalid month')
                     case _:
                         break
@@ -354,6 +388,7 @@ def races_and_team_management(constructors, drivers, races):
 
                 reset_scores(drivers, constructors)
             case '3':
+                print('Goodbye!')
                 break
 
 

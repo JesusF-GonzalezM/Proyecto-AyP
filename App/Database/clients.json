@@ -11,6 +11,13 @@
                 "code": "d48565bb46124b579a201f5ec92936e5",
                 "total_price": 340,
                 "discount": true
+            },
+            {
+                "race_round": "22",
+                "type": "1",
+                "code": "3b344f850c7949b6b59bb25176e5142a",
+                "total_price": 340,
+                "discount": true
             }
         ]
     }

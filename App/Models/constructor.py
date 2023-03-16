@@ -7,8 +7,8 @@ class Constructor:
         self.score = score
 
     def __str__(self):
-        return f' -----\n ---\n name: {self.name}\n ' \
-               f'nationality: {self.nationality}\n ---\n -----\n'
+        return f' --------------\n name: {self.name}\n ' \
+               f'nationality: {self.nationality}\n'
 
     # sets the score to the constructors after the race finished.
     def set_score(self, drivers):

@@ -13,7 +13,7 @@
             }
         },
         "date": "2023-03-05",
-        "attendance": 0,
+        "attendance": 1,
         "restaurants": [
             {
                 "name": "Soria y Rael",
@@ -116,7 +116,7 @@
                     "position": "00",
                     "code": "d48565bb46124b579a201f5ec92936e5",
                     "taken": true,
-                    "assisted": false
+                    "assisted": true
                 }
             ]
         ],
@@ -9114,13 +9114,13 @@
                 7
             ]
         },
-        "sold_tickets": 0,
+        "sold_tickets": 1,
         "vip_seats": [
             [
                 {
                     "position": "00",
                     "code": "3b344f850c7949b6b59bb25176e5142a",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {

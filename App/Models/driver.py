@@ -12,5 +12,5 @@ class Driver:
         self.score = score
 
     def __str__(self):
-        return f' -----\n ---\n name: {self.firstName} {self.lastName}\n ' \
-               f'birth_date: {self.dateOfBirth}\n nationality: {self.nationality}\n ---\n -----\n'
+        return f' ----------\n name: {self.firstName} {self.lastName}\n ' \
+               f'birth_date: {self.dateOfBirth}\n nationality: {self.nationality}\n team: {self.team}\n'
