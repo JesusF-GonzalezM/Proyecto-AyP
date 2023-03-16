@@ -20,8 +20,8 @@ def manage_client(races, clients):
             print(f'Welcome back, {client.name.title()}')
             print('-------------------')
             # creación de un ticket
-            ticket, seat = create_ticket(race_at, race_round, ticket_type, client.id)
-            return seat, race_at, client, ticket, client_in_db
+            tickets, seats = create_ticket(race_at, race_round, ticket_type, client.id)
+            return seats, race_at, client, tickets, client_in_db
 
     while True:
         name = input('\tEnter your name: ')
@@ -38,5 +38,5 @@ def manage_client(races, clients):
 
     client = Client(name=name, id=id, age=age)
     # creación de un ticket
-    ticket, seat = create_ticket(race_at, race_round, ticket_type, client.id)
-    return seat, race_at, client, ticket, client_in_db
+    tickets, seats = create_ticket(race_at, race_round, ticket_type, client.id)
+    return seats, race_at, client, tickets, client_in_db

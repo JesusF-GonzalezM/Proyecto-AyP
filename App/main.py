@@ -10,9 +10,10 @@ from App.Restaurant_sale_management.manage_purchases import manage_purchase
 from App.Tickets_sale_management.manage_client_creation import manage_client
 from App.parse_data.download_data import initialize_data, download_clients_from_file, upload_data_to_file
 
-
-# Modulo 1 listo
-# Modulo 2 listo
+# Diagrama UML pendiente
+# README.md pendiente
+# Modulo 1 listo a
+# Modulo 2 listo a
 # Modulo 3 listo
 # Modulo 4 listo
 # Modulo 5 Gestion de venta de restaurantes, pendiente terminar, arreglar.
@@ -20,6 +21,7 @@ from App.parse_data.download_data import initialize_data, download_clients_from_
 # noinspection PyUnboundLocalVariable
 
 
+# La función principal donde se ejecutan todas las demás funciones
 def main():
     # inicializo la información, si no existen los archivos, la bajo de la api, sino, la bajo de los archivos
     drivers, constructors, races = initialize_data()
@@ -73,6 +75,9 @@ def main():
 
 # Se encarga de manejar la asistencia de los clientes, y verificar que las entradas sean válidas
 def race_assistance_management(clients, races):
+    if not clients:
+        print('There are no clients in the database!')
+        return
     for index, race in enumerate(races):
         print(f'{index + 1}. {race.name}')
     while True:
@@ -99,20 +104,39 @@ def race_assistance_management(clients, races):
             if is_valid:
                 break
             print('That is not a valid id!')
+    is_valid = False
     # noinspection PyUnboundLocalVariable
     for ticket in current_client.tickets:
         # noinspection PyUnboundLocalVariable
         if ticket.race_round == current_race_index:
-            if ticket.type == '1':
+            if ticket.type.value == '1':
                 # noinspection PyUnboundLocalVariable
-                for row in current_race.vip_seats:
-                    for seat in row:
-                        if seat.code == ticket.code:
-                            seat.assisted = True
-                            current_race.attendance += 1
-            print(f'Welcome to the race, enjoy!')
+                is_valid = check_if_ticket_code_is_valid(current_race, current_race.vip_seats, is_valid, ticket)
+            if ticket.type.value == '2':
+                # noinspection PyUnboundLocalVariable
+                is_valid = check_if_ticket_code_is_valid(current_race, current_race.general_seats, is_valid, ticket)
+        if is_valid:
             break
+    if not is_valid:
+        print('----------------------------------------')
         print('You dont have any ticket for this race!')
+        print('----------------------------------------')
+
+
+# revisa si el codigo del ticket es válido
+def check_if_ticket_code_is_valid(current_race, seats, is_valid, ticket):
+    for row in seats:
+        for seat in row:
+            if seat.code == ticket.code:
+                if not seat.assisted:
+                    seat.assisted = True
+                    current_race.attendance += 1
+                print('----------------------------')
+                print(f'Welcome to the race, enjoy!')
+                print('----------------------------')
+                is_valid = True
+                break
+    return is_valid
 
 
 # se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
@@ -241,21 +265,25 @@ def restaurant_sales_management(clients, races):
 # Se encarga de la venta de tickets delegando responsabilidades en otras funciones
 def tickets_sale_management(clients, races):
     while True:
-        choice = input(f'1.Buy ticket\n2.Leave\n')
+        choice = input(f'1.Buy ticket(s)\n2.Leave\n')
         match choice:
             case '1':
 
-                seat, race_at, client, ticket, client_in_db = manage_client(races, clients)
-                payment = input('\tDo you want to pay this ticket? (y/n):\n\t')
+                seats, race_at, client, tickets, client_in_db = manage_client(races, clients)
+                calculate_total_price_and_print(tickets)
+                payment = input('\tDo you want to pay this ticket(s)? (y/n):\n\t')
                 if payment == 'y':
-                    client.add_ticket(ticket)
-                    client.total_spent += ticket.total_price
-                    race_at.sold_tickets += 1
-                    seat.taken = True
+                    for ticket in tickets:
+                        client.add_ticket(ticket)
+                    race_at.sold_tickets += len(tickets)
+                    for seat in seats:
+                        seat.taken = True
                     if not client_in_db:
                         clients.append(client)
                     print('Success! Thank you for your purchase!')
                 else:
+                    for seat in seats:
+                        seat.taken = False
                     print('Goodbye!')
             case _:
                 break
@@ -327,6 +355,30 @@ def races_and_team_management(constructors, drivers, races):
                 reset_scores(drivers, constructors)
             case '3':
                 break
+
+
+# se encarga de calcular el costo total del los tickets a comprar
+def calculate_total_price_and_print(tickets):
+    base_price = 0
+    discount = 0
+    for ticket in tickets:
+        base_price += ticket.total_price
+    if tickets[0].discount:
+        discount = base_price * 0.5
+    total_price = base_price - discount
+    iva = total_price * 0.16
+    total_price = total_price + iva
+    print_tickets_receipt(base_price, total_price, iva, discount)
+
+
+# se encarga de imprimir la factura de los tickets a comprar de una manera amigable
+def print_tickets_receipt(base_price, total_price, iva, discount):
+    print('------------Ticket(s) receipt------------')
+    print(f'Base price: {base_price}$')
+    print(f'Discount: {discount}$')
+    print(f'IVA: {iva}$')
+    print(f'--------------------------------------')
+    print(f'TOTAL PRICE: {total_price}$')
 
 
 # Ejecuta el programa principal

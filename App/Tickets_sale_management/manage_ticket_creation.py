@@ -57,6 +57,7 @@ def validate_seat(seats):
                     if not seat.taken:
                         current_seat = seat
                         valid = True
+                        seat.taken = True
                         break
                     taken = True
                     print('Seat already taken')
@@ -68,26 +69,41 @@ def validate_seat(seats):
     return current_seat
 
 
-# se encarga de la creacion del ticket
+# se encarga de la creación del ticket
 def create_ticket(race_at, race_round, ticket_type, client_id):
-
-    seat = choose_seat(race_at, ticket_type)
-    ticket = Ticket(race_round=race_round, type=ticket_type, code=seat.code)
-
-    if number_is_ondulado(client_id):
-        ticket.discount = True
-    ticket.calculate_price()
-    ticket.print_detailed_price()
-    return ticket, seat
+    tickets = []
+    seats = []
+    while True:
+        seat = choose_seat(race_at, ticket_type)
+        if not seat:
+            break
+        ticket = Ticket(race_round=race_round, type=ticket_type, code=seat.code)
+        if number_is_ondulado(client_id):
+            ticket.discount = True
+        ticket.calculate_price()
+        tickets.append(ticket)
+        seats.append(seat)
+        choice = input('Do you want to buy another ticket? (y/n)\n')
+        if choice == 'y':
+            continue
+        break
+    # ticket.print_detailed_price()
+    return tickets, seats
 
 
 # se encarga de permitir al usuario escoger un asiento.
 def choose_seat(race, ticket_type):
     while True:
         if ticket_type == '1':
+            if check_if_seats_available(race.vip_seats):
+                print('We are out of VIP seats.')
+                return None
             race.print_vip_seats()
             current_seat = validate_seat(race.vip_seats)
         else:
+            if check_if_seats_available(race.general_seats):
+                print('We are out of GENERAL seats.')
+                return None
             race.print_general_seats()
             current_seat = validate_seat(race.general_seats)
         return current_seat

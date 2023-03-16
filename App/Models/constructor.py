@@ -1,3 +1,4 @@
+# clase que se encarga de modelar la información del constructor en objetos de python.
 class Constructor:
     def __init__(self, id, name, nationality, score=0):
         self.id = id  # Name of the team used in code to compare equality with drivers.team.

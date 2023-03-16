@@ -1,3 +1,4 @@
+# clase que se encarga de modelar la información del producto en objetos de python.
 class Refreshment:
     def __init__(self, name, price, total_sold):
         self.name = name

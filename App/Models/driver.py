@@ -1,3 +1,4 @@
+# clase que se encarga de modelar la información del driver en objetos de python.
 class Driver:
     def __init__(self, id, permanentNumber, code, team, firstName, lastName, dateOfBirth, nationality, score=0):
         self.id = id

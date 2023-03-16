@@ -1,3 +1,4 @@
+# clase que se encarga de modelar la información el asiento en objetos de python.
 class Seat:
     def __init__(self, position, code=None, taken=False, assisted=False):
         self.position = position

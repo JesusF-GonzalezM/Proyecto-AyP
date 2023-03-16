@@ -1,6 +1,7 @@
 from App.Models.ticket import Ticket
 
 
+# clase que se encarga de modelar la información del cliente en objetos de python.
 class Client:
     def __init__(self, name, id, age, total_spent=0, tickets=None):
         self.name = name
