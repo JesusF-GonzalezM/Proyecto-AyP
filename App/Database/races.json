@@ -241,7 +241,7 @@
                 7
             ]
         },
-        "sold_tickets": 0,
+        "sold_tickets": 1,
         "vip_seats": [
             [
                 {
@@ -253,7 +253,7 @@
                 {
                     "position": "01",
                     "code": "947e4f9d475e4f27ae0d836c571a81dc",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -9009,19 +9009,19 @@
                     {
                         "name": "facere eius quidem",
                         "price": 61.0,
-                        "total_sold": 0,
+                        "total_sold": 4,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "nemo odio impedit",
                         "price": 902.0,
-                        "total_sold": 0,
+                        "total_sold": 3,
                         "type": "drink:alcoholic"
                     },
                     {
                         "name": "ab voluptates aspernatur",
                         "price": 399.0,
-                        "total_sold": 0,
+                        "total_sold": 2,
                         "type": "drink:alcoholic"
                     },
                     {

@@ -4,6 +4,7 @@ class Refreshment:
         self.name = name
         self.price = float(price)
         self.total_sold = total_sold
+        #invetario
 
     def __str__(self):
         return f'name: {self.name}\n\tprice: {self.price}'

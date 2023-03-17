@@ -6,7 +6,7 @@ from App.Races_and_team_management.finish_race import set_drivers_and_constructo
     get_winning_constructor, reset_scores
 from App.Restaurant_management.order_restaurant_products import get_product_by_name, get_products_by_type, \
     get_products_by_price_range
-from App.Restaurant_sale_management.manage_purchases import manage_purchase
+from App.Restaurant_sale_management.manage_purchases import manage_purchase, print_receipt
 from App.Tickets_sale_management.manage_client_creation import manage_client
 from App.parse_data.download_data import initialize_data, download_clients_from_file, upload_data_to_file
 
@@ -14,10 +14,10 @@ from App.parse_data.download_data import initialize_data, download_clients_from_
 # README.md pendiente
 # Modulo 1 listo a
 # Modulo 2 listo a
-# Modulo 3 listo
-# Modulo 4 listo
-# Modulo 5 Gestion de venta de restaurantes, pendiente terminar, arreglar.
-# Modulo 6 Falta 2, 5 y 7 y luego implementarlo en el main()
+# Modulo 3 listo a
+# Modulo 4 listo, faltaría implementar los filtros generales
+# Modulo 5 Gestion de venta de restaurantes, falta la parte del inventario.
+# Modulo 6 Falta 5 y 7 y luego implementarlo en el main()
 # noinspection PyUnboundLocalVariable
 
 
@@ -34,6 +34,8 @@ def main():
         if not race.vip_seats:
             race.define_vip_seats_matrix()
             set_unique_code_to_seats(race.vip_seats)
+    for client in clients:
+        client.tickets.sort(key=lambda x: x.type)
 
     # corro los modulos
     while True:
@@ -62,15 +64,19 @@ def main():
 
             case '5':
                 # Restaurants sale management Module
+                print('Welcome to the restaurant sale management module!')
                 restaurant_sales_management(clients, races)
             case '6':
+                print('Welcome to the statistics module!')
                 # Statistics Module
                 pass
-            case _:
+            case '7':
+                print('Goodbye!')
                 # Exit and Save
                 save_data(clients, constructors, drivers, races)
-
                 quit()
+            case _:
+                print('Wrong input!')
 
 
 # Se encarga de manejar la asistencia de los clientes, y verificar que las entradas sean válidas
@@ -125,8 +131,11 @@ def race_assistance_management(clients, races):
                     print('----------------------------------------')
                     print('You dont have any ticket for this race!')
                     print('----------------------------------------')
-            case _:
+            case '2':
                 print('Thank you for using the Races and team management module!')
+                break
+            case _:
+                print('Wrong input!')
 
 
 # revisa si el codigo del ticket es válido
@@ -149,114 +158,7 @@ def check_if_ticket_code_is_valid(current_race, seats, is_valid, ticket):
 
 # se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
 def restaurant_management_module(races):
-    while True:
-        choice = input('\t1. Search by filters\n\t2. Leave\n')
-        match choice:
-            case '1':
-                for race in races:
-                    print(f'{race.round}. {race.name}')
-                while True:
-                    is_valid = False
-                    race_round = input('Which race restaurants do you want to see:\n')
-                    for race in races:
-                        if race_round == race.round:
-                            if race.restaurants:
-                                race_at = race
-                                is_valid = True
-                                break
-                    if is_valid:
-                        break
-                    print(f'{race_round} is not a valid race choice or race does not have any restaurants!')
-                # noinspection PyUnboundLocalVariable
-                for index, restaurant in enumerate(race_at.restaurants):
-                    print(f'{index + 1}. {restaurant.name}')
-                while True:
-                    is_valid = False
-                    restaurant_choice = input('Which restaurant do you want to see:\n')
-                    for index, restaurant in enumerate(race_at.restaurants):
-                        if str(index + 1) == restaurant_choice:
-                            if restaurant.items:
-                                is_valid = True
-                                restaurant_at = restaurant
-                                break
-                    if is_valid:
-                        break
-                    print(f'{restaurant_choice} is not a valid restaurant choice or restaurant is empty')
-                choice = input('1.Products by name\n2.Products by type\n3.Products by price_range\n')
-                match choice:
-                    case '1':
-                        # noinspection PyUnboundLocalVariable
-                        for index, item in enumerate(restaurant_at.items):
-                            print(f'{index + 1}. {item.name}')
-                        while True:
-                            is_valid = False
-                            product_index = input('Enter the product you want to search by: ')
-                            for index, item in enumerate(restaurant_at.items):
-                                if str(index + 1) == product_index:
-                                    is_valid = True
-                                    product_at = item
-                                    break
-                            if is_valid:
-                                break
-                            print(f'{product_index} is not a valid product choice')
-                        # noinspection PyUnboundLocalVariable
-                        found_product = get_product_by_name(restaurant_at.items, product_at.name)
-                        if found_product:
-                            print(found_product)
-                        else:
-                            print(f'{product_index} is not a product in this restaurant')
-                    case '2':
-                        choice = input(f'Enter the product types you want to search by: \n\t1. drink:alcoholic\n\t'
-                                       f'2. drink:not-alcoholic\n\t3. food:restaurant\n\t4. food:fast\n')
-                        match choice:
-                            case '1':
-                                # noinspection PyUnboundLocalVariable
-                                filtered_products = get_products_by_type(restaurant_at.items, 'drink:alcoholic')
-                                if filtered_products:
-                                    for product in filtered_products:
-                                        print(product)
-                                else:
-                                    print('There are no alcoholic drinks in this restaurant')
-                            case '2':
-                                # noinspection PyUnboundLocalVariable
-                                filtered_products = get_products_by_type(restaurant_at.items, 'drink:not-alcoholic')
-                                if filtered_products:
-                                    for product in filtered_products:
-                                        print(product)
-                                else:
-                                    print('There are no non alcoholic drinks in this restaurant')
-                            case '3':
-                                # noinspection PyUnboundLocalVariable
-                                filtered_products = get_products_by_type(restaurant_at.items, 'food:restaurant')
-                                if filtered_products:
-                                    for product in filtered_products:
-                                        print(product)
-                                else:
-                                    print('There are not eat-in-restaurant foods in this restaurant')
-                            case '4':
-                                # noinspection PyUnboundLocalVariable
-                                filtered_products = get_products_by_type(restaurant_at.items, 'food:fast')
-                                if filtered_products:
-                                    for product in filtered_products:
-                                        print(product)
-                                else:
-                                    print('There are no fast foods in this restaurant')
-                            case _:
-                                print('Invalid choice')
-
-                    case '3':
-                        min_price = float(input('Enter the minimum price you want to search by: '))
-                        max_price = float(input('Enter the maximum price you want to search by: '))
-                        # noinspection PyUnboundLocalVariable
-                        filtered_products = get_products_by_price_range(restaurant_at.items, min_price, max_price)
-                        if filtered_products:
-                            for product in filtered_products:
-                                print(product)
-                        else:
-                            print(f'No products found by the price range {min_price} to {max_price}')
-            case _:
-                print('Goodbye!')
-                break
+    pass
 
 
 # Se encarga de generar un codigo unico para cada asiento
@@ -272,16 +174,33 @@ def restaurant_sales_management(clients, races):
         choice = input('\t1. Buy products\n\t2. Leave\n')
         match choice:
             case '1':
-                client, total_price, restaurant_at = manage_purchase(clients, races)
+                client, total_price, restaurant_at, products = manage_purchase(clients, races)
+                if not client:
+                    break
                 if client != 'no restaurants':
                     choice = input(f'1.Pay the products\n2.Cancel Payment\n')
-                    if choice == '1':
-                        print('Success! Thank you for your purchase!')
-                        client.total_spent += total_price
-                        # TODO: Remove from restaurant inventory
-            case _:
+                    match choice:
+                        case '1':
+                            print('Success! Thank you for your purchase!')
+                            client.total_spent += total_price
+                            for item in restaurant_at.items:
+                                for product in products:
+                                    if product == item:
+                                        item.total_sold += 1
+                        case '2':
+                            # TODO: Remove from restaurant inventory
+                            #for item in restaurant_at.items:
+                                #for product in products:
+                                    #if product == item:
+                                        #item.inventory += 1
+                            print('Goodbye!')
+                        case _:
+                            print('Wrong input!')
+            case '2':
                 print('Goodbye!')
                 break
+            case _:
+                print('Wrong input!')
 
 
 # Se encarga de la venta de tickets delegando responsabilidades en otras funciones
@@ -292,12 +211,13 @@ def tickets_sale_management(clients, races):
             case '1':
 
                 seats, race_at, client, tickets, client_in_db = manage_client(races, clients)
-                calculate_total_price_and_print(tickets)
+                total_price = calculate_total_ticket_price_and_print(tickets)
                 payment = input('\tDo you want to pay this ticket(s)? (y/n):\n\t')
                 if payment == 'y':
                     for ticket in tickets:
                         client.add_ticket(ticket)
                     race_at.sold_tickets += len(tickets)
+                    client.total_spent += total_price
                     for seat in seats:
                         seat.taken = True
                     if not client_in_db:
@@ -307,8 +227,11 @@ def tickets_sale_management(clients, races):
                     for seat in seats:
                         seat.taken = False
                     print('Goodbye!')
-            case _:
+            case '2':
+                print('Goodbye!')
                 break
+            case _:
+                print('Wrong input!')
 
 
 # Se encarga de subir la data a la base de datos
@@ -333,33 +256,43 @@ def races_and_team_management(constructors, drivers, races):
                                        '\n\t5.Leave\n')
                 match type_of_filter:
                     case '1':
-                        show_countries(constructors)
-                        country = input('Enter the country you want to search by: ')
-                        filtered_constructors = get_constructor_by_country(constructors, country)
-                        if filtered_constructors:
-                            for constructor in filtered_constructors:
-                                print(constructor)
-                        else:
-                            print('There are no constructors in this country or you mistyped')
+                        countries = show_countries(constructors)
+                        while True:
+                            chosen_country = input('Choose the country you want to search by: ')
+                            if chosen_country.isnumeric():
+                                if 0 < int(chosen_country) <= len(countries):
+                                    chosen_country = countries[int(chosen_country) - 1]
+                                    filtered_constructors = get_constructor_by_country(constructors, chosen_country)
+                                    for constructor in filtered_constructors:
+                                        print(constructor)
+                                    break
+                            print('Invalid country choice')
                     case '2':
                         show_constructor_id(constructors)
-                        constructor_id = input('Enter the id of the constructor you want to search drivers by: ')
-                        filtered_drivers = get_driver_by_constructor(drivers, constructor_id)
-                        if filtered_drivers:
-                            for driver in filtered_drivers:
-                                print(driver)
-                        else:
-                            print('There are no drivers in this constructor or you mistyped')
+                        while True:
+                            constructor_id = input('Choose the constructor you want to search drivers by: ')
+                            if constructor_id.isnumeric():
+                                if 0 < int(constructor_id) <= len(constructors):
+                                    constructor_id = constructors[int(constructor_id) - 1].id
+                                    filtered_drivers = get_driver_by_constructor(drivers, constructor_id)
+                                    for driver in filtered_drivers:
+                                        print(driver)
+                                    break
+                            print('Invalid constructor choice')
                     case '3':
                         show_circuit_country(races)
-                        circuit_country = input('Enter the country of the circuit you want to search by: ')
-                        filtered_races_by_circuit_country = \
-                            get_races_by_circuit_country(races, circuit_country)
-                        if filtered_races_by_circuit_country:
-                            for race in filtered_races_by_circuit_country:
-                                print(race)
-                        else:
-                            print('There are no races in this country or you mistyped')
+                        while True:
+                            circuit_country = input('Choose the country of the circuit you want to search by: ')
+                            if circuit_country.isnumeric():
+                                if 0 < int(circuit_country) <= len(races):
+                                    circuit_country = races[int(circuit_country) - 1].circuit.location.country
+                                    filtered_races_by_circuit_country = \
+                                        get_races_by_circuit_country(races, circuit_country)
+                                    if filtered_races_by_circuit_country:
+                                        for race in filtered_races_by_circuit_country:
+                                            print(race)
+                                        break
+                            print('Invalid country choice')
                     case '4':
                         while True:
                             race_month = input('Enter the month(in numbers) of the year you want to search by: ')
@@ -391,9 +324,12 @@ def races_and_team_management(constructors, drivers, races):
                 print('Goodbye!')
                 break
 
+            case _:
+                print('Wrong input')
+
 
 # se encarga de calcular el costo total del los tickets a comprar
-def calculate_total_price_and_print(tickets):
+def calculate_total_ticket_price_and_print(tickets):
     base_price = 0
     discount = 0
     for ticket in tickets:
@@ -403,17 +339,8 @@ def calculate_total_price_and_print(tickets):
     total_price = base_price - discount
     iva = total_price * 0.16
     total_price = total_price + iva
-    print_tickets_receipt(base_price, total_price, iva, discount)
-
-
-# se encarga de imprimir la factura de los tickets a comprar de una manera amigable
-def print_tickets_receipt(base_price, total_price, iva, discount):
-    print('------------Ticket(s) receipt------------')
-    print(f'Base price: {base_price}$')
-    print(f'Discount: {discount}$')
-    print(f'IVA: {iva}$')
-    print(f'--------------------------------------')
-    print(f'TOTAL PRICE: {total_price}$')
+    print_receipt(base_price, total_price, iva, discount)
+    return total_price
 
 
 # Ejecuta el programa principal

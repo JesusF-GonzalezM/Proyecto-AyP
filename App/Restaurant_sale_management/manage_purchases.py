@@ -1,8 +1,14 @@
 # Maneja la compra de un item por un usuario
+from App.Models.refreshment import Drink
+
+
+# Maneja la validación de que la carrera no tenga restaurantes, o que si los tenga, pero ellos no contengan productos.
+# También maneja la validación de que el usuario tenga un ticket VIP para esta carrera.
 def manage_purchase(clients, races):
     can_buy = False
     valid_id = False
-    restaurants = {}
+    ticket_vip = False
+    non_alcoholic_items = False
     while True:
         id = input("Enter your ID: ")
         for client in clients:
@@ -26,79 +32,120 @@ def manage_purchase(clients, races):
             break
         print('Entered round is not valid, try again')
     # noinspection PyUnboundLocalVariable
-    if len(race_at.restaurants) == 0:
-        print('There are no restaurants in this race')
-        return 'no restaurants', 'no restaurants'
-    for restaurant in race_at.restaurants:
-        if len(restaurant.items) > 0:
-            can_buy = True
-    if not can_buy:
-        print('There are no items in this race restaurants')
-        return 'no restaurants', 'no restaurants'
+    for ticket in current_client.tickets:
+        # noinspection PyUnboundLocalVariable
+        if ticket.race_round == race_at.round and ticket.type == '1':
+            ticket_vip = True
+    if ticket_vip:
+        if len(race_at.restaurants) == 0:
+            print('There are no restaurants in this race\n')
+            return 'no restaurants', 'no restaurants'
+        if int(current_client.age) < 18:
+            for restaurant in race_at.restaurants:
+                for item in restaurant.items:
+                    if item.type != 'drink:alcoholic':
+                        non_alcoholic_items = True
+                        break
+            if not non_alcoholic_items:
+                print('There are not non alcoholic items in this restaurant\n')
+                return 'no restaurants', 'no restaurants'
+        for restaurant in race_at.restaurants:
+            if len(restaurant.items) > 0:
+                can_buy = True
+        if not can_buy:
+            print('There are no items in this race restaurants\n')
+            return 'no restaurants', 'no restaurants'
 
-    # noinspection PyUnboundLocalVariable
-    for index, restaurant in enumerate(race_at.restaurants):
-        restaurants.update({index+1: restaurant})
-    # noinspection PyUnboundLocalVariable
-    total_price, restaurant_at = purchase_products(current_client, restaurants)
-    return current_client, total_price, restaurant_at
+        # noinspection PyUnboundLocalVariable
+        for index, restaurant in enumerate(race_at.restaurants):
+            print(f'{index + 1}. {restaurant.name}')
+        # noinspection PyUnboundLocalVariable
+        total_price, restaurant_at, products = purchase_products(current_client, race_at.restaurants)
+    else:
+        print('You dont have a VIP ticket in this race\n')
+        return None, None, None
+    return current_client, total_price, restaurant_at, products
 
 
+# Maneja la compra de productos por un usuario y la mayoria de las validaciones
 def purchase_products(client, restaurants):
-    no_items = False
     products_to_buy = []
-    products = {}
     valid_restaurant = False
     while True:
-        for number, restaurant in restaurants.items():
-            print(f'{number}. {restaurant.name}')
-        chosen_restaurant = int(input('Choose the restaurant you want the products of: '))
-        for key in restaurants.keys():
-            if key == int(chosen_restaurant):
-                if len(restaurants[chosen_restaurant].items) > 0:
-                    valid_restaurant = True
-                    restaurant_at = restaurants[chosen_restaurant]
+        for index, restaurant in enumerate(restaurants):
+            print(f'{index+1}. {restaurant.name}')
+        while True:
+            chosen_restaurant = input('Choose the restaurant you want the products of: ')
+            if chosen_restaurant.isnumeric():
+                if 0 < int(chosen_restaurant) <= len(restaurants):
                     break
-                print('This restaurant does not have any inventory currently')
-                no_items = True
+            print('Chosen restaurant is not valid, try again')
+        for index, restaurant in enumerate(restaurants):
+            if index == (int(chosen_restaurant) - 1):
+                if len(restaurant.items) > 0:
+                    valid_restaurant = True
+                    restaurant_at = restaurant
+                    break
+                print('This restaurant does not have any inventory currently\n')
         if valid_restaurant:
             break
-        if not no_items:
-            print('Restaurant is not valid, try again')
 
-    for index, product in enumerate(restaurants[chosen_restaurant].items):
-        products.update({index+1: product})
+    for index, product in enumerate(restaurant_at.items):
         print(f'{index+1}. {product.name}\n\ttype: {product.type}\n\tprice: {product.price}')
     while True:
-        chosen_product = input("Enter the product you want to buy: ")
-        if chosen_product in products.keys():
-            chosen_product = int(chosen_product)
-            alcoholic = products[chosen_product].type.split(':')[1]
+        while True:
+            chosen_product = input("Choose the product you want to buy: ")
+            if chosen_product.isnumeric():
+                if 0 < int(chosen_product) <= len(restaurant_at.items):
+                    break
+            print('Chosen product is not valid, try again')
+        chosen_product = restaurant_at.items[int(chosen_product) - 1]
+        if isinstance(chosen_product, Drink):
+            alcoholic = chosen_product.type.split(':')[1]
             print(f'Alcoholic: {alcoholic}')
             if alcoholic == 'alcoholic' and int(client.age) < 18:
                 print('Sorry, you are too young to buy this alcoholic product')
                 continue
-            print(products[chosen_product].type)
-            products_to_buy.append(products[chosen_product])
-            print('Successfully added the item to the cart\n ---------')
-            choice = input('Do you want to buy another product? (y/n): ')
-            if choice == 'y':
-                continue
-            break
-    total_price = calculate_total_price(client, products_to_buy)
-    print_checkout(products_to_buy, total_price)
-    return total_price, restaurant_at
+            print(chosen_product.type)
+        #if chosen_product.inventory > 0:
+            chosen_product.inventory -= 1
+            products_to_buy.append(chosen_product)
+            total_price = calculate_total_products_price_and_print(products_to_buy, client.id)
+        #else:
+            #print('We do not have more of that product in our inventory!')
+        choice = input('Do you want to buy another product? (y/n): ')
+        if choice == 'y':
+            continue
+        break
+    return total_price, restaurant_at, products_to_buy
 
 
-def calculate_total_price(client, products):
-    total_price = 0
+# calcula el precio total de los productos
+def calculate_total_products_price_and_print(products, client_id):
+    base_price = 0
+    discount = 0
     for product in products:
-        total_price += (float(product.price) * 1.16)
-    if perfect_number(client.id):
-        total_price *= 0.85
+        base_price += product.price
+    if perfect_number(client_id):
+        discount = base_price * 0.5
+    total_price = base_price - discount
+    iva = total_price * 0.16
+    total_price = total_price + iva
+    print_receipt(base_price, total_price, iva, discount)
     return total_price
 
 
+# se encarga de imprimir una factura de manera amigable
+def print_receipt(base_price, total_price, iva, discount):
+    print('------------Ticket(s) receipt------------')
+    print(f'Base price: {base_price}$')
+    print(f'Discount: {discount}$')
+    print(f'IVA: {iva}$')
+    print(f'--------------------------------------')
+    print(f'TOTAL PRICE: {total_price}$')
+
+
+# se encarga de validar si un número es perfecto
 def perfect_number(n):
     n = int(n)
     n_divisors = 0
@@ -108,9 +155,3 @@ def perfect_number(n):
     if n_divisors == (2 * n):
         return True
     return False
-
-
-def print_checkout(products, total_price):
-    for product in products:
-        print(f"{product.name} - {product.price:.2f}")
-    print(f"Total: {total_price:.2f}")

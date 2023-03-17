@@ -30,17 +30,18 @@ def show_countries(constructors):
     countries = set()
     for constructor in constructors:
         countries.add(constructor.nationality)
-    for country in countries:
-        print(country)
+    for index, country in enumerate(countries):
+        print(f'{index+1}. {country}')
+    return list(countries)
 
 
 # imprime los ID de los constructors
 def show_constructor_id(constructors):
-    for constructor in constructors:
-        print(constructor.id)
+    for index, constructor in enumerate(constructors):
+        print(f'{index+1}. {constructor.id}')
 
 
 # imprime los paises de cada circuito
 def show_circuit_country(races):
-    for race in races:
-        print(race.circuit.location.country)
+    for index, race in enumerate(races):
+        print(f'{index+1}. {race.circuit.location.country}')

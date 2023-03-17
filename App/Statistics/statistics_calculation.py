@@ -12,9 +12,8 @@ def race_with_more_assistance_and_most_tickets_sold(races):
 
 # retorna la lista con los 3 clientes con mayor cantidad de tickets comprados
 # si hay menos de 3 clientes retorna una lista con la cantidad de clientes
-def calculate_and_print_top_clients(clients):
+def calculate_top_clients(clients):
     sorted_clients = sorted(clients, key=lambda obj: len(obj.tickets), reverse=True)
-    print('Top 3 clients:')
     if len(sorted_clients) > 3:
         return sorted_clients[:3]
     else:
@@ -37,3 +36,15 @@ def average_spent_by_vip_client(clients):
                 total_spent += client.total_spent
                 break
     return total_spent / total_vip_clients
+
+
+# retorna la lista con los 3 productos más comprados de un restaurant
+# si hay menos de 3 productos retorna una lista con la cantidad de productos
+def calculate_top_sold_items_of_restaurant(items):
+    sorted_items = sorted(items, key=lambda obj: obj.total_sold, reverse=True)
+    if len(sorted_items) > 3:
+        return sorted_items[:3]
+    else:
+        return sorted_items
+
+
