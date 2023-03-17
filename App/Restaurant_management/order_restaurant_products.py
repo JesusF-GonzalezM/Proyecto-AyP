@@ -1,8 +1,10 @@
 # retorna el producto con el nombre indicado.
-def get_product_by_name(products, product_name):
+def get_products_by_name(products, product_name):
+    filtered_products = []
     for product in products:
         if product.name == product_name:
-            return product
+            filtered_products.append(product)
+    return filtered_products
 
 
 # retorna todos los productos con el tipo indicado.

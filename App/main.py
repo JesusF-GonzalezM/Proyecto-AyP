@@ -4,9 +4,11 @@ from App.Races_and_team_management.filter_races import get_constructor_by_countr
     get_races_by_circuit_country, get_races_by_month, show_circuit_country, show_constructor_id, show_countries
 from App.Races_and_team_management.finish_race import set_drivers_and_constructors_score, randomize_list, \
     get_winning_constructor, reset_scores
-from App.Restaurant_management.order_restaurant_products import get_product_by_name, get_products_by_type, \
+from App.Restaurant_management.order_restaurant_products import get_products_by_name, get_products_by_type, \
     get_products_by_price_range
 from App.Restaurant_sale_management.manage_purchases import manage_purchase, print_receipt
+from App.Statistics.statistics_calculation import average_spent_by_vip_client, \
+    race_with_more_assistance_and_most_tickets_sold, calculate_top_sold_items_of_restaurant, calculate_top_clients
 from App.Tickets_sale_management.manage_client_creation import manage_client
 from App.parse_data.download_data import initialize_data, download_clients_from_file, upload_data_to_file
 
@@ -15,9 +17,9 @@ from App.parse_data.download_data import initialize_data, download_clients_from_
 # Modulo 1 listo a
 # Modulo 2 listo a
 # Modulo 3 listo a
-# Modulo 4 listo, faltaría implementar los filtros generales
+# Modulo 4 listo a
 # Modulo 5 Gestion de venta de restaurantes, falta la parte del inventario.
-# Modulo 6 Falta 5 y 7 y luego implementarlo en el main()
+# Modulo 6 Falta 2 y luego implementarlo en el main()
 # noinspection PyUnboundLocalVariable
 
 
@@ -34,8 +36,9 @@ def main():
         if not race.vip_seats:
             race.define_vip_seats_matrix()
             set_unique_code_to_seats(race.vip_seats)
-    for client in clients:
-        client.tickets.sort(key=lambda x: x.type)
+    if clients:
+        for client in clients:
+            client.tickets.sort(key=lambda x: x.type)
 
     # corro los modulos
     while True:
@@ -48,18 +51,22 @@ def main():
             case '1':
                 # Races and team management Module
                 print('Welcome to the Races and team management module!')
+                print('------------------------------------------------')
                 races_and_team_management(constructors, drivers, races)
             case '2':
                 # Tickets sale management Module
                 print('Welcome to the Tickets sale management module!')
+                print('-----------------------------------------------')
                 tickets_sale_management(clients, races)
             case '3':
                 # Races assistance management Module
                 print('Welcome to the ticket validation module!')
+                print('----------------------------------------')
                 race_assistance_management(clients, races)
             case '4':
                 # Restaurants management Module
                 print('Welcome to the restaurant management module!, here you can see our food and drinks by filters!')
+                print('-----------------------------------------------------------------------------------------------')
                 restaurant_management_module(races)
 
             case '5':
@@ -68,13 +75,63 @@ def main():
                 restaurant_sales_management(clients, races)
             case '6':
                 print('Welcome to the statistics module!')
-                # Statistics Module
-                pass
+                print('---------------------------------')
+                statistics_module(clients, races)
             case '7':
                 print('Goodbye!')
                 # Exit and Save
                 save_data(clients, constructors, drivers, races)
                 quit()
+            case _:
+                print('Wrong input!')
+
+
+# Se encarga de generar todas las estadísticas
+def statistics_module(clients, races):
+    highest_attendance, most_tickets_sold = race_with_more_assistance_and_most_tickets_sold(races)
+    while True:
+        choice = input("\t1. Average spending's of a VIP client\n\t2. Show table of races assistance\n\t"
+                       "3.Race with highest attendance\n\t4. Race with most sold tickets\n\t"
+                       "5. Top 3 products sold by a restaurant\n\t6. Top 3 clients with more tickets\n\t"
+                       "7.Graphics of all the statistics\n\t8.Exit\n\t")
+        match choice:
+            case '1':
+                average_spent = average_spent_by_vip_client(clients)
+                print(f'Average spending of a VIP client:\n\t{average_spent}')
+            case '2':
+                pass
+            case '3':
+                print('---------------------------------------------')
+                print(f'Highest attendance:\n\t{highest_attendance}')
+                highest_attendance.pretty_print_attendance()
+                print('---------------------------------------------')
+            case '4':
+                print('---------------------------------------------')
+                print(f'Highest attendance:\n\t{most_tickets_sold}')
+                highest_attendance.pretty_print_sold_tickets()
+                print('---------------------------------------------')
+            case '5':
+                for race in races:
+                    print(f'RACE: {race.name}')
+                    print('---------------------------------------------')
+                    for restaurant in race.restaurants:
+                        print(f'\tRESTAURANT: {restaurant.name}')
+                        print('---------------------------------------------')
+                        top_items_sold = calculate_top_sold_items_of_restaurant(restaurant.items)
+                        for index, item in enumerate(top_items_sold):
+                            print(f'\tTOP {index + 1}:\n\tProduct: {item.name}\n\ttotal sales: {item.total_sold}\n')
+                        print('---------------------------------------------')
+            case '6':
+                top_clients = calculate_top_clients(clients)
+                for index, client in enumerate(top_clients):
+                    print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
+                    print('---------------------------------------------')
+            case '7':
+                pass
+                # Hacer gráficos con libraries.
+            case '8':
+                print('Goodbye!')
+                break
             case _:
                 print('Wrong input!')
 
@@ -158,7 +215,107 @@ def check_if_ticket_code_is_valid(current_race, seats, is_valid, ticket):
 
 # se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
 def restaurant_management_module(races):
-    pass
+    while True:
+        choice = input('\t1. Search by filters\n\t2. Leave\n')
+        match choice:
+            case '1':
+                chosen_filter = input(f'\t1. Search by name\n\t2. Search by type\n\t3. Search by price range\n\t')
+                match chosen_filter:
+                    case '1':
+                        product_name = input('Enter the name of the product you want to search: ')
+                        for race in races:
+                            for restaurant in race.restaurants:
+                                filtered_products = get_products_by_name(restaurant.items, product_name)
+                                if filtered_products:
+                                    print(f'RACE: {race.name}')
+                                    print('--------------------------------')
+                                    print(f'\tRESTAURANT: {restaurant.name}')
+                                    print('--------------------------------')
+                                for product in filtered_products:
+                                    print(f'\t\tname: {product.name} | type: {product.type} | price: {product.price} |')
+                    case '2':
+                        chosen_type = input('\t1. drink:alcoholic\n\t2. drink:not-alcoholic\n\t'
+                                            '3. food:restaurant\n\t4. food:fast\n')
+                        for race in races:
+                            print(f'RACE: {race.name}')
+                            print('--------------------------------')
+                            for restaurant in race.restaurants:
+                                print(f'\tRESTAURANT: {restaurant.name}')
+                                print('--------------------------------')
+                                match chosen_type:
+                                    case '1':
+                                        filtered_products = get_products_by_type(restaurant.items, 'drink:alcoholic')
+                                        if filtered_products:
+                                            for product in filtered_products:
+                                                print(f'name: {product.name} | type: {product.type} | price: {product}')
+                                        else:
+                                            print('There are no products with that type at this restaurant!')
+                                            print('--------------------------------------------------------')
+                                    case '2':
+                                        filtered_products = get_products_by_type(restaurant.items, 'drink:not-alcoholic')
+                                        if filtered_products:
+                                            for product in filtered_products:
+                                                print(f'name: {product.name} | type: {product.type} | price: {product}')
+                                        else:
+                                            print(f'There are no products with that type at this restaurant!')
+                                            print('--------------------------------------------------------')
+                                    case '3':
+                                        filtered_products = get_products_by_type(restaurant.items, 'food:restaurant')
+                                        if filtered_products:
+                                            for product in filtered_products:
+                                                print(f'name: {product.name} | type: {product.type} | price: {product}')
+                                        else:
+                                            print(f'There are no products with that type at this restaurant!')
+                                            print('--------------------------------------------------------')
+                                    case '4':
+                                        filtered_products = get_products_by_type(restaurant.items, 'food:fast')
+                                        if filtered_products:
+                                            for product in filtered_products:
+                                                print(f'name: {product.name} | type: {product.type} | price: {product}')
+                                        else:
+                                            print(f'There are no products with that type at this restaurant!')
+                                            print('--------------------------------------------------------')
+                                    case _:
+                                        print('Wrong input!')
+                                        break
+                    case '3':
+                        while True:
+                            min_price = input('Enter the minimum price you want to search by: ')
+                            if min_price.isnumeric():
+                                min_price = float(min_price)
+                                if min_price > 0:
+                                    break
+                            print('That is not a valid minimum price, must be a number and greater than 0')
+
+                        while True:
+                            max_price = input('Enter the maximum price you want to search by: ')
+                            if max_price.isnumeric():
+                                max_price = float(max_price)
+                                if max_price > min_price:
+                                    break
+                            print('That is not a valid maximum price, must be a number and grater than the minimum price')
+                        for race in races:
+                            print(f'RACE: {race.name}')
+                            print('--------------------------------')
+                            for restaurant in race.restaurants:
+                                print(f'\tRESTAURANT: {restaurant.name}')
+                                print('--------------------------------')
+                            # noinspection PyUnboundLocalVariable
+                            filtered_products = get_products_by_price_range(restaurant.items, min_price, max_price)
+                            if filtered_products:
+                                for product in filtered_products:
+                                    print(f'name: {product.name} | type: {product.type} | price: {product}')
+                            else:
+                                print('There are no products with that price range at this restaurant!')
+                                print('---------------------------------------------------------------')
+
+                    case _:
+                        print('Wrong input!')
+            case '2':
+                print('Goodbye!')
+                break
+            case _:
+                print('Wrong input!')
 
 
 # Se encarga de generar un codigo unico para cada asiento

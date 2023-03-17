@@ -110,7 +110,7 @@ def choose_seat(race, ticket_type):
 
 
 # se encarga de revisar si un número es ondulando(utilizada para validar con la cédula si el cliente recibirá un descuento).
-def number_is_ondulado(number):  # this shit does not work
+def number_is_ondulado(number):
     number = str(number)
     if int(number) < 100:
         return True
@@ -122,8 +122,7 @@ def number_is_ondulado(number):  # this shit does not work
     for i in range(len(number)-1):
         if number[i] == number[i+1]:
             return False
-    if number[-1] != number[-2] and number[-1] == number[-3]:
-        return True
+    return True
 
 
 # se encarga de verificar si quedan asientos disponibles.

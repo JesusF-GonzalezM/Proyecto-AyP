@@ -5,7 +5,7 @@ def race_with_more_assistance_and_most_tickets_sold(races):
     for race in races:
         if race.attendance > highest_attendance_race.attendance:
             highest_attendance_race = race
-        if race.tickets_sold > most_tickets_sold_race.tickets_sold:
+        if race.sold_tickets > most_tickets_sold_race.sold_tickets:
             most_tickets_sold_race = race
     return highest_attendance_race, most_tickets_sold_race
 
@@ -35,7 +35,10 @@ def average_spent_by_vip_client(clients):
                 total_vip_clients += 1
                 total_spent += client.total_spent
                 break
-    return total_spent / total_vip_clients
+    if total_vip_clients > 0:
+        return total_spent / total_vip_clients
+    else:
+        return 0
 
 
 # retorna la lista con los 3 productos más comprados de un restaurant

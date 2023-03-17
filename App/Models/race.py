@@ -53,3 +53,9 @@ class Race:
             print('_____' * len(row))
             print_row = str(row).replace(',', '').replace('[', '').replace(']', '')
             print(print_row)
+
+    def pretty_print_attendance(self):
+        print(f'\tATTENDANCE: {self.attendance}\n')
+
+    def pretty_print_sold_tickets(self):
+        print(f'\tSOLD TICKETS: {self.sold_tickets}\n')
