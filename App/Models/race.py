@@ -1,3 +1,5 @@
+from tabulate import tabulate
+
 from App.Models.circuit import Circuit
 from App.Models.restaurant import Restaurant
 from App.Models.seat import Seat
@@ -53,6 +55,12 @@ class Race:
             print('_____' * len(row))
             print_row = str(row).replace(',', '').replace('[', '').replace(']', '')
             print(print_row)
+
+    def print_general_seats_tabulate(self):
+        print(tabulate(self.general_seats, tablefmt='grid', numalign='center', stralign='center'))
+
+    def print_vip_seats_tabulate(self):
+        print(tabulate(self.vip_seats, tablefmt='grid', numalign='center', stralign='center'))
 
     def pretty_print_attendance(self):
         print(f'\tATTENDANCE: {self.attendance}\n')

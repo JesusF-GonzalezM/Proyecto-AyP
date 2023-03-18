@@ -6047,7 +6047,7 @@
                 1
             ]
         },
-        "sold_tickets": 0,
+        "sold_tickets": 2,
         "vip_seats": [
             [
                 {
@@ -6237,13 +6237,13 @@
                 {
                     "position": "34",
                     "code": "bcff95acc54b41398d7d2b60bd8fb04a",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
                     "position": "35",
                     "code": "e88140c913cf47f9a3f12156113734e5",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {

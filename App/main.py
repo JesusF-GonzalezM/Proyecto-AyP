@@ -1,4 +1,3 @@
-import random
 import uuid
 from tabulate import tabulate
 from math import gcd
@@ -42,7 +41,6 @@ def main():
     if clients:
         for client in clients:
             client.tickets.sort(key=lambda x: x.type)
-
 
     # corro los modulos
     while True:
@@ -90,7 +88,7 @@ def main():
                 print('Wrong input!')
 
 
-# Mostrar tabla con la asistencia a las carreras de mejor a peor, mostrando el nombre del carrera (nombre de los equipos), estadio en donde se juega, boletos vendidos, personas que asistieron y la relación asistencia/venta
+# Mostrar tabla con la asistencia a las carreras de mejor a peor
 def make_table(races):
     sorted_races = sort_races_by_attendance(races)
     data = {
@@ -101,7 +99,8 @@ def make_table(races):
         'Attendance/Tickets_sold ratio': []
     }
     for race in sorted_races:
-
+        numerator = race.attendance
+        denominator = race.sold_tickets
         if race.sold_tickets and race.attendance:
             common_divisor = gcd(race.attendance, race.sold_tickets)
             numerator = race.attendance // common_divisor
@@ -113,7 +112,7 @@ def make_table(races):
         # noinspection PyUnboundLocalVariable
         data['Attendance/Tickets_sold ratio'].append(f'{numerator}/{denominator}')
 
-    print(tabulate(data, headers='keys', tablefmt='fancy_grid', showindex='always'))
+    print(tabulate(data, headers='keys', tablefmt='fancy_grid', showindex='always', numalign='center', stralign='center'))
 
 
 # Ordena las carreras por asistencias.

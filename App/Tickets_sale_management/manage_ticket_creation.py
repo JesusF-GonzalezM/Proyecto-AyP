@@ -98,13 +98,13 @@ def choose_seat(race, ticket_type):
             if check_if_seats_available(race.vip_seats):
                 print('We are out of VIP seats.')
                 return None
-            race.print_vip_seats()
+            race.print_vip_seats_tabulate()
             current_seat = validate_seat(race.vip_seats)
         else:
             if check_if_seats_available(race.general_seats):
                 print('We are out of GENERAL seats.')
                 return None
-            race.print_general_seats()
+            race.print_general_seats_tabulate()
             current_seat = validate_seat(race.general_seats)
         return current_seat
 
