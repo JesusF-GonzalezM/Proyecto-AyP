@@ -1,4 +1,7 @@
+import random
 import uuid
+from tabulate import tabulate
+from math import gcd
 
 from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month, show_circuit_country, show_constructor_id, show_countries
@@ -39,6 +42,7 @@ def main():
     if clients:
         for client in clients:
             client.tickets.sort(key=lambda x: x.type)
+
 
     # corro los modulos
     while True:
@@ -86,6 +90,38 @@ def main():
                 print('Wrong input!')
 
 
+# Mostrar tabla con la asistencia a las carreras de mejor a peor, mostrando el nombre del carrera (nombre de los equipos), estadio en donde se juega, boletos vendidos, personas que asistieron y la relación asistencia/venta
+def make_table(races):
+    sorted_races = sort_races_by_attendance(races)
+    data = {
+        'Race_name': [],
+        'Circuit': [],
+        'Attendance': [],
+        'Tickets_sold': [],
+        'Attendance/Tickets_sold ratio': []
+    }
+    for race in sorted_races:
+
+        if race.sold_tickets and race.attendance:
+            common_divisor = gcd(race.attendance, race.sold_tickets)
+            numerator = race.attendance // common_divisor
+            denominator = race.sold_tickets // common_divisor
+        data['Race_name'].append(race.name)
+        data['Circuit'].append(race.circuit.name)
+        data['Attendance'].append(race.attendance)
+        data['Tickets_sold'].append(race.sold_tickets)
+        # noinspection PyUnboundLocalVariable
+        data['Attendance/Tickets_sold ratio'].append(f'{numerator}/{denominator}')
+
+    print(tabulate(data, headers='keys', tablefmt='fancy_grid', showindex='always'))
+
+
+# Ordena las carreras por asistencias.
+def sort_races_by_attendance(races):
+    sorted_races = sorted(races, key=lambda race: race.attendance, reverse=True)
+    return sorted_races
+
+
 # Se encarga de generar todas las estadísticas
 def statistics_module(clients, races):
     highest_attendance, most_tickets_sold = race_with_more_assistance_and_most_tickets_sold(races)
@@ -99,7 +135,7 @@ def statistics_module(clients, races):
                 average_spent = average_spent_by_vip_client(clients)
                 print(f'Average spending of a VIP client:\n\t{average_spent}')
             case '2':
-                pass
+                make_table(races)
             case '3':
                 print('---------------------------------------------')
                 print(f'Highest attendance:\n\t{highest_attendance}')
