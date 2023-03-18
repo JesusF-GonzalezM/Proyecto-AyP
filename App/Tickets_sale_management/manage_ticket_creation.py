@@ -84,10 +84,13 @@ def create_ticket(race_at, race_round, ticket_type, client_id):
         tickets.append(ticket)
         seats.append(seat)
         choice = input('Do you want to buy another ticket? (y/n)\n')
-        if choice == 'y':
-            continue
-        break
-    # ticket.print_detailed_price()
+        match choice:
+            case 'y':
+                continue
+            case 'n':
+                break
+            case _:
+                print('Invalid input, please try again.')
     return tickets, seats
 
 

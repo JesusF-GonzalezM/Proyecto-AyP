@@ -39,7 +39,7 @@ def manage_purchase(clients, races):
     if ticket_vip:
         if len(race_at.restaurants) == 0:
             print('There are no restaurants in this race\n')
-            return 'no restaurants', 'no restaurants'
+            return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
         if int(current_client.age) < 18:
             for restaurant in race_at.restaurants:
                 for item in restaurant.items:
@@ -48,13 +48,13 @@ def manage_purchase(clients, races):
                         break
             if not non_alcoholic_items:
                 print('There are not non alcoholic items in this restaurant\n')
-                return 'no restaurants', 'no restaurants'
+                return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
         for restaurant in race_at.restaurants:
             if len(restaurant.items) > 0:
                 can_buy = True
         if not can_buy:
             print('There are no items in this race restaurants\n')
-            return 'no restaurants', 'no restaurants'
+            return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
 
         # noinspection PyUnboundLocalVariable
         for index, restaurant in enumerate(race_at.restaurants):
@@ -62,8 +62,10 @@ def manage_purchase(clients, races):
         # noinspection PyUnboundLocalVariable
         total_price, restaurant_at, products = purchase_products(current_client, race_at.restaurants)
     else:
+        print('-----------------------------------------')
         print('You dont have a VIP ticket in this race\n')
-        return None, None, None
+        print('-----------------------------------------')
+        return None, None, None, None
     return current_client, total_price, restaurant_at, products
 
 
@@ -89,9 +91,9 @@ def purchase_products(client, restaurants):
                 print('This restaurant does not have any inventory currently\n')
         if valid_restaurant:
             break
-
+    # noinspection PyUnboundLocalVariable
     for index, product in enumerate(restaurant_at.items):
-        print(f'{index+1}. {product.name}\n\ttype: {product.type}\n\tprice: {product.price}')
+        print(f'\t{index+1}. {product.name}\n\t\ttype: {product.type}\n\t\tprice: {product.price}\n\t\tstock: {product.stock}\n')
     while True:
         while True:
             chosen_product = input("Choose the product you want to buy: ")
@@ -107,16 +109,23 @@ def purchase_products(client, restaurants):
                 print('Sorry, you are too young to buy this alcoholic product')
                 continue
             print(chosen_product.type)
-        #if chosen_product.inventory > 0:
-            chosen_product.inventory -= 1
+        total_price = 0
+        if chosen_product.stock > 0:
+            chosen_product.stock -= 1
             products_to_buy.append(chosen_product)
             total_price = calculate_total_products_price_and_print(products_to_buy, client.id)
-        #else:
-            #print('We do not have more of that product in our inventory!')
-        choice = input('Do you want to buy another product? (y/n): ')
-        if choice == 'y':
-            continue
-        break
+        else:
+            print('We do not have more of that product in our inventory!')
+        choice = input('Do you want to buy another product?\n\t1. Yes\n\t2. No\n')
+        match choice:
+            case '1':
+                continue
+            case '2':
+                break
+            case _:
+                print('Wrong Input!')
+                print('------------')
+    # noinspection PyUnboundLocalVariable
     return total_price, restaurant_at, products_to_buy
 
 
@@ -141,8 +150,8 @@ def print_receipt(base_price, total_price, iva, discount):
     print(f'Base price: {base_price}$')
     print(f'Discount: {discount}$')
     print(f'IVA: {iva}$')
-    print(f'--------------------------------------')
     print(f'TOTAL PRICE: {total_price}$')
+    print(f'--------------------------------------')
 
 
 # se encarga de validar si un número es perfecto

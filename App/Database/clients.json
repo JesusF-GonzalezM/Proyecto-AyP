@@ -3,7 +3,7 @@
         "name": "jesus",
         "id": "25",
         "age": 25,
-        "total_spent": 7797.52,
+        "total_spent": 9119.92,
         "tickets": [
             {
                 "race_round": "1",
@@ -23,6 +23,13 @@
                 "race_round": "2",
                 "type": "1",
                 "code": "947e4f9d475e4f27ae0d836c571a81dc",
+                "total_price": 340,
+                "discount": true
+            },
+            {
+                "race_round": "15",
+                "type": "1",
+                "code": "46032ff2d309428ab4a9414005b76e37",
                 "total_price": 340,
                 "discount": true
             },

@@ -1,3 +1,59 @@
+from math import gcd
+from tabulate import tabulate
+
+
+# Se encarga de generar todas las estadísticas
+def statistics_module(clients, races):
+    highest_attendance, most_tickets_sold = race_with_more_assistance_and_most_tickets_sold(races)
+    while True:
+        choice = input("\t1. Average spending's of a VIP client\n\t2. Show table of races assistance\n\t"
+                       "3.Race with highest attendance\n\t4. Race with most sold tickets\n\t"
+                       "5. Top 3 products sold by a restaurant\n\t6. Top 3 clients with more tickets\n\t"
+                       "7.Graphics of all the statistics\n\t8.Exit\n\t")
+        match choice:
+            case '1':
+                average_spent = average_spent_by_vip_client(clients)
+                print('---------------------------------------------')
+                print(f'Average spending of a VIP client:\n\t{average_spent}$')
+                print('---------------------------------------------')
+            case '2':
+                make_table(races)
+            case '3':
+                print('---------------------------------------------')
+                print(f'Highest attendance:\n\t{highest_attendance}')
+                highest_attendance.pretty_print_attendance()
+                print('---------------------------------------------')
+            case '4':
+                print('---------------------------------------------')
+                print(f'Highest attendance:\n\t{most_tickets_sold}')
+                highest_attendance.pretty_print_sold_tickets()
+                print('---------------------------------------------')
+            case '5':
+                for race in races:
+                    print(f'RACE: {race.name}')
+                    print('---------------------------------------------')
+                    for restaurant in race.restaurants:
+                        print(f'\tRESTAURANT: {restaurant.name}')
+                        print('\t---------------------------------------------')
+                        top_items_sold = calculate_top_sold_items_of_restaurant(restaurant.items)
+                        for index, item in enumerate(top_items_sold):
+                            print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
+                        print('---------------------------------------------')
+            case '6':
+                top_clients = calculate_top_clients(clients)
+                for index, client in enumerate(top_clients):
+                    print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
+                    print('---------------------------------------------')
+            case '7':
+                pass
+                # Hacer gráficos con libraries.
+            case '8':
+                print('Goodbye!')
+                break
+            case _:
+                print('Wrong input!')
+
+
 # retorna la carrera con mayor asistencia, y también la carrera con mayor cantidad de tickets vendidos
 def race_with_more_assistance_and_most_tickets_sold(races):
     highest_attendance_race = races[0]
@@ -18,11 +74,6 @@ def calculate_top_clients(clients):
         return sorted_clients[:3]
     else:
         return sorted_clients
-
-
-# Imprime una tabla con las carreras ordenadas de mayor a menor por asistencia, y con una cantidad de información extra por carrera
-def print_table_of_races_assistance(races):
-    pass
 
 
 # retorna el promedio de gasto de un cliente vip
@@ -51,3 +102,34 @@ def calculate_top_sold_items_of_restaurant(items):
         return sorted_items
 
 
+# Mostrar tabla con la asistencia a las carreras de mejor a peor y con una cantidad de información extra por carrera
+def make_table(races):
+    sorted_races = sort_races_by_attendance(races)
+    data = {
+        'Race_name': [],
+        'Circuit': [],
+        'Attendance': [],
+        'Tickets_sold': [],
+        'Attendance/Tickets_sold ratio': []
+    }
+    for race in sorted_races:
+        numerator = race.attendance
+        denominator = race.sold_tickets
+        if race.sold_tickets and race.attendance:
+            common_divisor = gcd(race.attendance, race.sold_tickets)
+            numerator = race.attendance // common_divisor
+            denominator = race.sold_tickets // common_divisor
+        data['Race_name'].append(race.name)
+        data['Circuit'].append(race.circuit.name)
+        data['Attendance'].append(race.attendance)
+        data['Tickets_sold'].append(race.sold_tickets)
+        # noinspection PyUnboundLocalVariable
+        data['Attendance/Tickets_sold ratio'].append(f'{numerator}/{denominator}')
+
+    print(tabulate(data, headers='keys', tablefmt='fancy_grid', showindex='always', numalign='center', stralign='center'))
+
+
+# Ordena las carreras por asistencias.
+def sort_races_by_attendance(races):
+    sorted_races = sorted(races, key=lambda race: race.attendance, reverse=True)
+    return sorted_races
