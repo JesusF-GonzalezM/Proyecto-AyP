@@ -13,11 +13,11 @@ class Race:
         self.circuit = Circuit(**circuit)
         self.date = date
         self.attendance = attendance
+        self.sold_tickets = sold_tickets
         self.restaurants = []
         for restaurant in restaurants:
             self.restaurants.append(Restaurant(**restaurant))
         self.map = map
-        self.sold_tickets = sold_tickets
         self.vip_seats = []
         if vip_seats is not None:
             for row in vip_seats:

@@ -1,11 +1,14 @@
+import random
 import uuid
+
+
 from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month, show_circuit_country, show_constructor_id, show_countries
 from App.Races_and_team_management.finish_race import set_drivers_and_constructors_score, randomize_list, \
     get_winning_constructor, reset_scores
 from App.Races_assistance_module.manage_race_assistance import race_assistance_management
 from App.Restaurant_management.order_restaurant_products import get_products_by_type, \
-    get_products_by_price_range, search_product_generally
+    get_products_by_price_range, search_product_generally, get_products_by_name
 from App.Restaurant_sale_management.manage_purchases import manage_purchase, print_receipt
 from App.Statistics.statistics_calculation import statistics_module
 from App.Tickets_sale_management.manage_client_creation import manage_client
@@ -17,9 +20,7 @@ from App.parse_data.download_data import initialize_data, download_clients_from_
 # Modulo 2 listo a
 # Modulo 3 listo a
 # Modulo 4 listo a
-# Modulo 5 Gestion de venta de restaurantes, falta cambiar implementación cuando el profesor arregle la api.
-# Modulo 6 Realizar Gráfico.
-# noinspection PyUnboundLocalVariable
+# Modulo 5 listo, cambiar si el profesor arregla la api
 
 
 # La función principal donde se ejecutan todas las demás funciones
@@ -38,6 +39,13 @@ def main():
     if clients:
         for client in clients:
             client.tickets.sort(key=lambda x: x.type)
+
+    # Borrar esto al terminar, esto es para poblar las clases de información y testear, to lazy to do unittests :D
+    for client in clients:
+        client.total_spent = random.randint(0, 1000000)
+    for race in races:
+        race.attendance = random.randint(0, 1000000)
+        race.total_sold = random.randint(0, 1000000)
 
     # corro los modulos
     while True:
@@ -242,14 +250,62 @@ def restaurant_management_module(races):
                 match chosen_filter:
                     case '1':
                         while True:
-                            choice = input(f'\t1. Search by name generally\n\t2. Search by name in a specific restaurant')
+                            choice = input(f'\t1. Search by name generally\n\t2. Search by name in a specific restaurant\n\t')
                             match choice:
                                 case '1':
                                     restaurant = search_product_generally(races)
                                     break
                                 case '2':
-                                    pass
-                                    # TODO Implementation of search in a specific restaurant.
+                                    for race in races:
+                                        print(f'{race.round}. {race.name}')
+                                    while True:
+                                        is_valid = False
+                                        race_round = input('Which race restaurants do you want to see:\n')
+                                        for race in races:
+                                            if race_round == race.round:
+                                                if race.restaurants:
+                                                    race_at = race
+                                                    is_valid = True
+                                                    break
+                                        if is_valid:
+                                            break
+                                        print(f'{race_round} is not a valid race choice or race does not have any restaurants!')
+                                    # noinspection PyUnboundLocalVariable
+                                    for index, restaurant in enumerate(race_at.restaurants):
+                                        print(f'{index + 1}. {restaurant.name}')
+                                    while True:
+                                        is_valid = False
+                                        restaurant_choice = input('Which restaurant do you want to see:\n')
+                                        for index, restaurant in enumerate(race_at.restaurants):
+                                            if str(index + 1) == restaurant_choice:
+                                                if restaurant.items:
+                                                    is_valid = True
+                                                    restaurant_at = restaurant
+                                                    break
+                                        if is_valid:
+                                            break
+                                        print(f'{restaurant_choice} is not a valid restaurant choice or restaurant is empty')
+                                    # noinspection PyUnboundLocalVariable
+                                    for index, item in enumerate(restaurant_at.items):
+                                        print(f'{index + 1}. {item.name}')
+                                    while True:
+                                        is_valid = False
+                                        product_index = input('Enter the product you want to search by: ')
+                                        for index, item in enumerate(restaurant_at.items):
+                                            if str(index + 1) == product_index:
+                                                is_valid = True
+                                                product_at = item
+                                                break
+                                        if is_valid:
+                                            break
+                                        print(f'{product_index} is not a valid product choice')
+                                    # noinspection PyUnboundLocalVariable
+                                    found_products = get_products_by_name(restaurant_at.items, product_at.name)
+                                    if found_products:
+                                        for product in found_products:
+                                            print(product)
+                                    else:
+                                        print(f'{product_index} is not a product in this restaurant')
                                     break
                                 case _:
                                     print('Wrong input!')

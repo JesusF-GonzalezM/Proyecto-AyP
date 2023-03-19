@@ -13,7 +13,8 @@
             }
         },
         "date": "2023-03-05",
-        "attendance": 0,
+        "attendance": 756917,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Soria y Rael",
@@ -122,7 +123,6 @@
                 1
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -172,7 +172,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 903015
     },
     {
         "round": "2",
@@ -188,7 +189,8 @@
             }
         },
         "date": "2023-03-19",
-        "attendance": 0,
+        "attendance": 463971,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Soto e Hijos",
@@ -262,13 +264,12 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
                     "position": "00",
                     "code": "bbfd220ec57f4292a1759c07a5bd20ac",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -424,7 +425,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 751013
     },
     {
         "round": "3",
@@ -440,7 +442,8 @@
             }
         },
         "date": "2023-04-02",
-        "attendance": 0,
+        "attendance": 592483,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Men\u00e9ndez y Olivera",
@@ -927,13 +930,12 @@
                 3
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
                     "position": "00",
                     "code": "3ce42d71c97b48f39da34d8bdb451cfa",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -1007,7 +1009,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 459895
     },
     {
         "round": "4",
@@ -1023,7 +1026,8 @@
             }
         },
         "date": "2023-04-30",
-        "attendance": 0,
+        "attendance": 234103,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Cardona Hermanos",
@@ -1458,7 +1462,6 @@
                 2
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -1756,7 +1759,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 691519
     },
     {
         "round": "5",
@@ -1772,7 +1776,8 @@
             }
         },
         "date": "2023-05-07",
-        "attendance": 0,
+        "attendance": 487438,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -1784,7 +1789,6 @@
                 3
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -2068,7 +2072,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 860947
     },
     {
         "round": "6",
@@ -2084,7 +2089,8 @@
             }
         },
         "date": "2023-05-21",
-        "attendance": 0,
+        "attendance": 161604,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Barajas, Men\u00e9ndez y Ledesma Asociados",
@@ -2491,7 +2497,6 @@
                 2
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -2619,7 +2624,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 467419
     },
     {
         "round": "7",
@@ -2635,7 +2641,8 @@
             }
         },
         "date": "2023-05-28",
-        "attendance": 0,
+        "attendance": 965580,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Vela, Mares y Ortega Asociados",
@@ -2856,7 +2863,6 @@
                 6
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -3148,7 +3154,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 534414
     },
     {
         "round": "8",
@@ -3164,7 +3171,8 @@
             }
         },
         "date": "2023-06-04",
-        "attendance": 0,
+        "attendance": 964266,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -3176,7 +3184,6 @@
                 2
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -3266,7 +3273,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 524473
     },
     {
         "round": "9",
@@ -3282,7 +3290,8 @@
             }
         },
         "date": "2023-06-18",
-        "attendance": 0,
+        "attendance": 579328,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "P\u00e1ez y Garrido",
@@ -3307,7 +3316,6 @@
                 5
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -3567,7 +3575,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 470809
     },
     {
         "round": "10",
@@ -3583,7 +3592,8 @@
             }
         },
         "date": "2023-07-02",
-        "attendance": 0,
+        "attendance": 105411,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Tovar y T\u00f3rrez",
@@ -4068,7 +4078,6 @@
                 3
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -4462,7 +4471,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 73601
     },
     {
         "round": "11",
@@ -4478,7 +4488,8 @@
             }
         },
         "date": "2023-07-09",
-        "attendance": 0,
+        "attendance": 68130,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Rinc\u00f3n, Sanabria y Marroqu\u00edn Asociados",
@@ -4929,7 +4940,6 @@
                 2
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -5143,7 +5153,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 529506
     },
     {
         "round": "12",
@@ -5159,7 +5170,8 @@
             }
         },
         "date": "2023-07-23",
-        "attendance": 0,
+        "attendance": 109560,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Polanco Vera Hermanos",
@@ -5395,7 +5407,6 @@
                 8
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -5419,7 +5430,7 @@
                 {
                     "position": "03",
                     "code": "c858d0b3c02c4d6c877052ef77c5223e",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -5715,7 +5726,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 346269
     },
     {
         "round": "13",
@@ -5731,7 +5743,8 @@
             }
         },
         "date": "2023-07-30",
-        "attendance": 0,
+        "attendance": 679938,
+        "sold_tickets": 1,
         "restaurants": [],
         "map": {
             "general": [
@@ -5743,7 +5756,6 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -5927,7 +5939,7 @@
                 {
                     "position": "00",
                     "code": "d7a6aa0edcfc4f5f91f9cbd1be313838",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -5943,7 +5955,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 172609
     },
     {
         "round": "14",
@@ -5959,7 +5972,8 @@
             }
         },
         "date": "2023-08-27",
-        "attendance": 0,
+        "attendance": 197550,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -5971,7 +5985,6 @@
                 6
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -6287,7 +6300,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 899133
     },
     {
         "round": "15",
@@ -6303,7 +6317,8 @@
             }
         },
         "date": "2023-09-03",
-        "attendance": 0,
+        "attendance": 371493,
+        "sold_tickets": 3,
         "restaurants": [
             {
                 "name": "Zarate S.A.",
@@ -6422,7 +6437,6 @@
                 1
             ]
         },
-        "sold_tickets": 3,
         "vip_seats": [
             [
                 {
@@ -6634,7 +6648,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 201921
     },
     {
         "round": "16",
@@ -6650,7 +6665,8 @@
             }
         },
         "date": "2023-09-17",
-        "attendance": 0,
+        "attendance": 142388,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Negrete, Romo y Esquibel Asociados",
@@ -6956,7 +6972,6 @@
                 4
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -7350,7 +7365,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 937076
     },
     {
         "round": "17",
@@ -7366,7 +7382,8 @@
             }
         },
         "date": "2023-09-24",
-        "attendance": 0,
+        "attendance": 27079,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -7378,7 +7395,6 @@
                 1
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -7500,7 +7516,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 727188
     },
     {
         "round": "18",
@@ -7516,7 +7533,8 @@
             }
         },
         "date": "2023-10-08",
-        "attendance": 0,
+        "attendance": 184138,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Haro, G\u00f3mez y Valle Asociados",
@@ -7602,7 +7620,6 @@
                 2
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -7802,7 +7819,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 991396
     },
     {
         "round": "19",
@@ -7818,7 +7836,8 @@
             }
         },
         "date": "2023-10-22",
-        "attendance": 0,
+        "attendance": 962119,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Fajardo, Samaniego y Carrillo Asociados",
@@ -7906,7 +7925,6 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -8234,7 +8252,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 282449
     },
     {
         "round": "20",
@@ -8250,7 +8269,8 @@
             }
         },
         "date": "2023-10-29",
-        "attendance": 0,
+        "attendance": 988108,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Cedillo y Vargas",
@@ -8454,7 +8474,6 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -8526,7 +8545,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 236046
     },
     {
         "round": "21",
@@ -8542,7 +8562,8 @@
             }
         },
         "date": "2023-11-05",
-        "attendance": 0,
+        "attendance": 442859,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Verdugo Quintero S.L.",
@@ -9085,13 +9106,12 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
                     "position": "00",
                     "code": "984900945b6a4ab180a8c9c5ad1438c5",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -9281,7 +9301,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 322627
     },
     {
         "round": "22",
@@ -9297,7 +9318,8 @@
             }
         },
         "date": "2023-11-19",
-        "attendance": 0,
+        "attendance": 666700,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Mat\u00edas, N\u00e1jera y Riojas Asociados",
@@ -9684,7 +9706,6 @@
                 7
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -9752,7 +9773,7 @@
                 {
                     "position": "20",
                     "code": "0474d2db252640e1b87501b3b218118f",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 }
             ],
@@ -9780,7 +9801,8 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 895366
     },
     {
         "round": "23",
@@ -9796,7 +9818,8 @@
             }
         },
         "date": "2023-11-26",
-        "attendance": 0,
+        "attendance": 461462,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Saucedo Solorzano e Hijos",
@@ -9905,7 +9928,6 @@
                 9
             ]
         },
-        "sold_tickets": 0,
         "vip_seats": [
             [
                 {
@@ -10151,7 +10173,7 @@
                 {
                     "position": "61",
                     "code": "306ac12441d44d76a2469d89817dd9e4",
-                    "taken": false,
+                    "taken": true,
                     "assisted": false
                 },
                 {
@@ -10181,6 +10203,7 @@
                     "assisted": false
                 }
             ]
-        ]
+        ],
+        "total_sold": 270548
     }
 ]
