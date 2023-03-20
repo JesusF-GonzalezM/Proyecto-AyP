@@ -1,5 +1,5 @@
-# Maneja la compra de un item por un usuario
 from App.Models.refreshment import Drink
+from App.Tickets_sale_management.manage_ticket_creation import print_receipt
 
 
 # Maneja la validación de que la carrera no tenga restaurantes, o que si los tenga, pero ellos no contengan productos.
@@ -19,6 +19,7 @@ def manage_purchase(clients, races):
         if valid_id:
             break
         print('Entered ID is not in this race, try again')
+        print('-----------------------------------------')
     while True:
         for race in races:
             print(race)
@@ -31,6 +32,7 @@ def manage_purchase(clients, races):
                     break
             break
         print('Entered round is not valid, try again')
+        print('-------------------------------------')
     # noinspection PyUnboundLocalVariable
     for ticket in current_client.tickets:
         # noinspection PyUnboundLocalVariable
@@ -38,7 +40,8 @@ def manage_purchase(clients, races):
             ticket_vip = True
     if ticket_vip:
         if len(race_at.restaurants) == 0:
-            print('There are no restaurants in this race\n')
+            print('There are no restaurants in this race')
+            print('-------------------------------------')
             return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
         if int(current_client.age) < 18:
             for restaurant in race_at.restaurants:
@@ -47,13 +50,15 @@ def manage_purchase(clients, races):
                         non_alcoholic_items = True
                         break
             if not non_alcoholic_items:
-                print('There are not non alcoholic items in this restaurant\n')
+                print('There are not non alcoholic items in this restaurant')
+                print('----------------------------------------------------')
                 return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
         for restaurant in race_at.restaurants:
             if len(restaurant.items) > 0:
                 can_buy = True
         if not can_buy:
-            print('There are no items in this race restaurants\n')
+            print('There are no items in this race restaurants')
+            print('-------------------------------------------')
             return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
 
         # noinspection PyUnboundLocalVariable
@@ -82,13 +87,15 @@ def purchase_products(client, restaurants):
                 if 0 < int(chosen_restaurant) <= len(restaurants):
                     break
             print('Chosen restaurant is not valid, try again')
+            print('-----------------------------------------')
         for index, restaurant in enumerate(restaurants):
             if index == (int(chosen_restaurant) - 1):
                 if len(restaurant.items) > 0:
                     valid_restaurant = True
                     restaurant_at = restaurant
                     break
-                print('This restaurant does not have any inventory currently\n')
+                print('This restaurant does not have any inventory currently')
+                print('-----------------------------------------------------')
         if valid_restaurant:
             break
     # noinspection PyUnboundLocalVariable
@@ -101,12 +108,14 @@ def purchase_products(client, restaurants):
                 if 0 < int(chosen_product) <= len(restaurant_at.items):
                     break
             print('Chosen product is not valid, try again')
+            print('--------------------------------------')
         chosen_product = restaurant_at.items[int(chosen_product) - 1]
         if isinstance(chosen_product, Drink):
             alcoholic = chosen_product.type.split(':')[1]
             print(f'Alcoholic: {alcoholic}')
             if alcoholic == 'alcoholic' and int(client.age) < 18:
                 print('Sorry, you are too young to buy this alcoholic product')
+                print('------------------------------------------------------')
                 continue
             print(chosen_product.type)
         total_price = 0
@@ -116,6 +125,7 @@ def purchase_products(client, restaurants):
             total_price = calculate_total_products_price_and_print(products_to_buy, client.id)
         else:
             print('We do not have more of that product in our inventory!')
+            print('-----------------------------------------------------')
         choice = input('Do you want to buy another product?\n\t1. Yes\n\t2. No\n')
         match choice:
             case '1':
@@ -142,16 +152,6 @@ def calculate_total_products_price_and_print(products, client_id):
     total_price = total_price + iva
     print_receipt(base_price, total_price, iva, discount)
     return total_price
-
-
-# se encarga de imprimir una factura de manera amigable
-def print_receipt(base_price, total_price, iva, discount):
-    print('------------Ticket(s) receipt------------')
-    print(f'Base price: {base_price}$')
-    print(f'Discount: {discount}$')
-    print(f'IVA: {iva}$')
-    print(f'TOTAL PRICE: {total_price}$')
-    print(f'--------------------------------------')
 
 
 # se encarga de validar si un número es perfecto

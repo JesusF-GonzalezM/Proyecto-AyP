@@ -13,12 +13,13 @@ def manage_client(races, clients):
         if id.isnumeric():
             break
         print('ID is not valid, please try again.')
+        print('----------------------------------')
     # verificamos si el cliente ya existe en la base de datos
     for client in clients:
         if client.id == id:
             client_in_db = True
             print(f'Welcome back, {client.name.title()}')
-            print('-------------------')
+            print('--------------------------')
             # creación de un ticket
             tickets, seats = create_ticket(race_at, race_round, ticket_type, client.id)
             return seats, race_at, client, tickets, client_in_db
@@ -29,12 +30,14 @@ def manage_client(races, clients):
             name = name.lower()
             break
         print('Name is not valid, please try again.')
+        print('------------------------------------')
 
     while True:
         age = input('\tEnter your age: ')
         if age.isnumeric():
             break
         print('Age is not valid, please try again.')
+        print('-----------------------------------')
 
     client = Client(name=name, id=id, age=age)
     # creación de un ticket

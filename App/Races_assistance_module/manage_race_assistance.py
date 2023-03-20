@@ -8,6 +8,7 @@ def race_assistance_management(clients, races):
             case '1':
                 if not clients:
                     print('There are no clients in the database!')
+                    print('-------------------------------------')
                     return
                 for index, race in enumerate(races):
                     print(f'{index + 1}. {race.name}')
@@ -23,6 +24,7 @@ def race_assistance_management(clients, races):
                     if is_valid:
                         break
                     print('That is not a valid race!')
+                    print('-------------------------')
                 while True:
                     is_valid = False
                     client_id = input('Enter your id so we can verify your ticket: ')
@@ -35,6 +37,7 @@ def race_assistance_management(clients, races):
                         if is_valid:
                             break
                         print('That is not a valid id!')
+                        print('-----------------------')
                 is_valid = False
                 # noinspection PyUnboundLocalVariable
                 for ticket in current_client.tickets:
@@ -42,10 +45,10 @@ def race_assistance_management(clients, races):
                     if ticket.race_round == current_race_index:
                         if ticket.type.value == '1':
                             # noinspection PyUnboundLocalVariable
-                            is_valid = check_if_ticket_code_is_valid(current_client, current_race, current_race.vip_seats, is_valid, ticket)
+                            is_valid = check_if_ticket_code_is_valid(current_client, current_race, current_race.vip_seats, ticket)
                         if ticket.type.value == '2':
                             # noinspection PyUnboundLocalVariable
-                            is_valid = check_if_ticket_code_is_valid(current_client, current_race, current_race.general_seats, is_valid, ticket)
+                            is_valid = check_if_ticket_code_is_valid(current_client, current_race, current_race.general_seats, ticket)
                     if is_valid:
                         break
                 if not is_valid:
@@ -54,13 +57,16 @@ def race_assistance_management(clients, races):
                     print('----------------------------------------')
             case '2':
                 print('Thank you for using the Races and team management module!')
+                print('---------------------------------------------------------')
                 break
             case _:
                 print('Wrong input!')
+                print('------------')
 
 
 # revisa si el codigo del ticket es válido
-def check_if_ticket_code_is_valid(current_client, current_race, seats, is_valid, ticket):
+def check_if_ticket_code_is_valid(current_client, current_race, seats, ticket):
+    is_valid = False
     for row in seats:
         for seat in row:
             if seat.code == ticket.code:

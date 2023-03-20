@@ -4,7 +4,7 @@ class Constructor:
         self.id = id  # Name of the team used in code to compare equality with drivers.team.
         self.name = name  # Same name as team_id but formatted for prints.
         self.nationality = nationality
-        self.score = score
+        self.score = int(score)
 
     def __str__(self):
         return f' --------------\n name: {self.name}\n ' \

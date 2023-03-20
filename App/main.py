@@ -1,7 +1,6 @@
 import random
 import uuid
 
-
 from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month, show_circuit_country, show_constructor_id, show_countries
 from App.Races_and_team_management.finish_race import set_drivers_and_constructors_score, randomize_list, \
@@ -9,18 +8,11 @@ from App.Races_and_team_management.finish_race import set_drivers_and_constructo
 from App.Races_assistance_module.manage_race_assistance import race_assistance_management
 from App.Restaurant_management.order_restaurant_products import get_products_by_type, \
     get_products_by_price_range, search_product_generally, get_products_by_name
-from App.Restaurant_sale_management.manage_purchases import manage_purchase, print_receipt
+from App.Restaurant_sale_management.manage_purchases import manage_purchase
 from App.Statistics.statistics_calculation import statistics_module
 from App.Tickets_sale_management.manage_client_creation import manage_client
+from App.Tickets_sale_management.manage_ticket_creation import calculate_total_ticket_price_and_print
 from App.parse_data.download_data import initialize_data, download_clients_from_file, upload_data_to_file
-
-# Diagrama UML pendiente
-# README.md pendiente
-# Modulo 1 listo a
-# Modulo 2 listo a
-# Modulo 3 listo a
-# Modulo 4 listo a
-# Modulo 5 listo, cambiar si el profesor arregla la api
 
 
 # La función principal donde se ejecutan todas las demás funciones
@@ -45,7 +37,7 @@ def main():
         client.total_spent = random.randint(0, 1000000)
     for race in races:
         race.attendance = random.randint(0, 1000000)
-        race.total_sold = random.randint(0, 1000000)
+        race.sold_tickets = random.randint(0, 1000000)
 
     # corro los modulos
     while True:
@@ -125,6 +117,7 @@ def races_and_team_management(constructors, drivers, races):
                                         print(constructor)
                                     break
                             print('Invalid country choice')
+                            print('----------------------')
                     case '2':
                         show_constructor_id(constructors)
                         while True:
@@ -137,6 +130,7 @@ def races_and_team_management(constructors, drivers, races):
                                         print(driver)
                                     break
                             print('Invalid constructor choice')
+                            print('--------------------------')
                     case '3':
                         show_circuit_country(races)
                         while True:
@@ -151,6 +145,7 @@ def races_and_team_management(constructors, drivers, races):
                                             print(race)
                                         break
                             print('Invalid country choice')
+                            print('----------------------')
                     case '4':
                         while True:
                             race_month = input('Enter the month(in numbers) of the year you want to search by: ')
@@ -161,8 +156,10 @@ def races_and_team_management(constructors, drivers, races):
                                         print(race)
                                 else:
                                     print(f'There are no races in this month')
+                                    print('---------------------------------')
                                 break
                             print('Invalid month')
+                            print('-------------')
                     case _:
                         break
 
@@ -183,9 +180,11 @@ def races_and_team_management(constructors, drivers, races):
                 reset_scores(drivers, constructors)
             case '3':
                 print('Goodbye!')
+                print('--------')
                 break
             case _:
                 print('Wrong input')
+                print('-----------')
 
 
 # Se encarga de la venta de tickets delegando responsabilidades en otras funciones
@@ -209,35 +208,26 @@ def tickets_sale_management(clients, races):
                                 seat.taken = True
                             if not client_in_db:
                                 clients.append(client)
+                            print('-------------------------------------')
                             print('Success! Thank you for your purchase!')
+                            print('-------------------------------------')
                             break
                         case 'n':
                             for seat in seats:
                                 seat.taken = False
                             print('Goodbye!')
+                            print('--------')
                             break
                         case _:
                             print('Wrong input!')
+                            print('------------')
             case '2':
                 print('Goodbye!')
+                print('--------')
                 break
             case _:
                 print('Wrong input!')
-
-
-# se encarga de calcular el costo total del los tickets a comprar
-def calculate_total_ticket_price_and_print(tickets):
-    base_price = 0
-    discount = 0
-    for ticket in tickets:
-        base_price += ticket.total_price
-    if tickets[0].discount:
-        discount = base_price * 0.5
-    total_price = base_price - discount
-    iva = total_price * 0.16
-    total_price = total_price + iva
-    print_receipt(base_price, total_price, iva, discount)
-    return total_price
+                print('------------')
 
 
 # se encarga de permitir la búsqueda de items en los restaurantes mediante filtros
@@ -270,6 +260,7 @@ def restaurant_management_module(races):
                                         if is_valid:
                                             break
                                         print(f'{race_round} is not a valid race choice or race does not have any restaurants!')
+                                        print('-------------------------------------------------------------------------------')
                                     # noinspection PyUnboundLocalVariable
                                     for index, restaurant in enumerate(race_at.restaurants):
                                         print(f'{index + 1}. {restaurant.name}')
@@ -285,6 +276,7 @@ def restaurant_management_module(races):
                                         if is_valid:
                                             break
                                         print(f'{restaurant_choice} is not a valid restaurant choice or restaurant is empty')
+                                        print('----------------------------------------------------------------------------')
                                     # noinspection PyUnboundLocalVariable
                                     for index, item in enumerate(restaurant_at.items):
                                         print(f'{index + 1}. {item.name}')
@@ -299,6 +291,7 @@ def restaurant_management_module(races):
                                         if is_valid:
                                             break
                                         print(f'{product_index} is not a valid product choice')
+                                        print('----------------------------------------------')
                                     # noinspection PyUnboundLocalVariable
                                     found_products = get_products_by_name(restaurant_at.items, product_at.name)
                                     if found_products:
@@ -306,9 +299,11 @@ def restaurant_management_module(races):
                                             print(product)
                                     else:
                                         print(f'{product_index} is not a product in this restaurant')
+                                        print('----------------------------------------------------')
                                     break
                                 case _:
                                     print('Wrong input!')
+                                    print('------------')
                     case '2':
                         chosen_type = input('\t1. drink:alcoholic\n\t2. drink:not-alcoholic\n\t'
                                             '3. food:restaurant\n\t4. food:fast\n')
@@ -361,6 +356,7 @@ def restaurant_management_module(races):
                                             print('\t\t--------------------------------------------------------')
                                     case _:
                                         print('Wrong input!')
+                                        print('------------')
                                         break
                     case '3':
                         while True:
@@ -370,6 +366,7 @@ def restaurant_management_module(races):
                                 if min_price >= 0:
                                     break
                             print('That is not a valid minimum price, must be a number and greater than 0')
+                            print('----------------------------------------------------------------------')
 
                         while True:
                             max_price = input('Enter the maximum price you want to search by: ')
@@ -378,6 +375,7 @@ def restaurant_management_module(races):
                                 if max_price > min_price:
                                     break
                             print('That is not a valid maximum price, must be a number and grater than the minimum price')
+                            print('-------------------------------------------------------------------------------------')
                         for race in races:
                             print(f'RACE: {race.name}')
                             print('--------------------------------')
@@ -397,11 +395,14 @@ def restaurant_management_module(races):
 
                     case _:
                         print('Wrong input!')
+                        print('------------')
             case '2':
                 print('Goodbye!')
+                print('--------')
                 break
             case _:
                 print('Wrong input!')
+                print('------------')
 
 
 # Se encarga de las compras en los restaurantes, y agregarle el costo a una variable en el cliente.
@@ -418,6 +419,7 @@ def restaurant_sales_management(clients, races):
                     match choice:
                         case '1':
                             print('Success! Thank you for your purchase!')
+                            print('-------------------------------------')
                             client.total_spent += total_price
                             for item in restaurant_at.items:
                                 for product in products:
@@ -427,13 +429,17 @@ def restaurant_sales_management(clients, races):
                             for product in products:
                                 product.stock += 1
                             print('Goodbye!')
+                            print('--------')
                         case _:
                             print('Wrong input!')
+                            print('------------')
             case '2':
                 print('Goodbye!')
+                print('--------')
                 break
             case _:
                 print('Wrong input!')
+                print('------------')
 
 
 # Se encarga de subir la data a la base de datos

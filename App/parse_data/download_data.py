@@ -30,21 +30,33 @@ def download_clients_from_file():
 
 # descarga los drivers de la api
 def download_drivers_from_api(url):
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except requests.exceptions.RequestException as e:
+        print('There is no connection, program aborting...')
+        raise SystemExit(e)
     data_array = response.json()
     return initialize_drivers(data_array)
 
 
 # descarga los constructors de la api
 def download_constructors_from_api(url):
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except requests.exceptions.RequestException as e:
+        print('There is no connection, program aborting...')
+        raise SystemExit(e)
     data_array = response.json()
     return initialize_constructors(data_array)
 
 
 # descarga las carreras de la api
 def download_races_from_api(url):
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except requests.exceptions.RequestException as e:
+        print('There is no connection, program aborting...')
+        raise SystemExit(e)
     data_array = response.json()
     return initialize_races(data_array)
 
@@ -86,7 +98,7 @@ def check_txt_data(file_path):
 
 # inicializa la data de la api o de los archivos, dependiendo si los archivos existen
 def initialize_data():
-    if not check_txt_data('drivers'):
+    if not check_txt_data('races'):
         drivers, constructors, races = load_data_from_api_and_save()
     else:
         drivers, constructors, races = download_data_from_txt()

@@ -12,8 +12,8 @@ class Race:
         self.name = name
         self.circuit = Circuit(**circuit)
         self.date = date
-        self.attendance = attendance
-        self.sold_tickets = sold_tickets
+        self.attendance = int(attendance)
+        self.sold_tickets = int(sold_tickets)
         self.restaurants = []
         for restaurant in restaurants:
             self.restaurants.append(Restaurant(**restaurant))

@@ -7,7 +7,7 @@ class Client:
         self.name = name
         self.id = id
         self.age = int(age)
-        self.total_spent = total_spent
+        self.total_spent = int(total_spent)
         self.tickets = []
         if tickets is not None:
             for ticket in tickets:

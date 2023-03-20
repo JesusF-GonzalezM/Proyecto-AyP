@@ -6,18 +6,33 @@ import matplotlib.pyplot as plt
 # Se encarga de generar todas las estadísticas
 def statistics_module(clients, races):
     sorted_races = sort_races_by_attendance(races)
-    vip_clients = get_vip_clients(clients)
     highest_attendance, most_tickets_sold = race_with_more_assistance_and_most_tickets_sold(races)
-    average_spent = average_spent_by_vip_client(vip_clients)
     table = make_table(sorted_races)
     top_clients = calculate_top_clients(clients)
     while True:
-        choice = input("\t1. Average spending's of a VIP client\n\t2. Show table of races assistance\n\t"
+        choice = input("\t1. Average spending's of a VIP client in a race\n\t2. Show table of races assistance\n\t"
                        "3.Race with highest attendance\n\t4. Race with most sold tickets\n\t"
                        "5. Top 3 products sold by a restaurant\n\t6. Top 3 clients with more tickets\n\t"
                        "7.Exit\n\t")
         match choice:
             case '1':
+                for index, race in enumerate(races):
+                    print(f'{index + 1}. {race.name}')
+                while True:
+                    is_valid = False
+                    chosen_race = input('Choose a race: ')
+                    for index, race in enumerate(races):
+                        if chosen_race == str(index + 1):
+                            is_valid = True
+                            race_at = race
+                            break
+                    if is_valid:
+                        break
+                    print('Invalid choice!')
+                    print('---------------')
+                # noinspection PyUnboundLocalVariable
+                vip_clients = get_vip_clients(clients, race_at)
+                average_spent = average_spent_by_vip_client(vip_clients)
                 print('---------------------------------------------')
                 print(f'Average spending of a VIP client:\n\t{average_spent}$')
                 print('---------------------------------------------')
@@ -67,6 +82,7 @@ def statistics_module(clients, races):
                             if is_valid_race:
                                 break
                             print('Wrong race chosen, try again')
+                            print('----------------------------')
                         for index, restaurant in enumerate(race_chosen.restaurants):
                             print(f'{index + 1}. RESTAURANT: {restaurant.name}')
                         while True:
@@ -80,13 +96,15 @@ def statistics_module(clients, races):
                             if is_valid_restaurant:
                                 break
                             print('Wrong restaurant chosen, try again')
+                            print('----------------------------------')
                         top_items_sold = calculate_top_sold_items_of_restaurant(chosen_restaurant.items)
                         for index, item in enumerate(top_items_sold):
                             print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
                         print('---------------------------------------------')
-                        make_graph_of_top_sold_items_in_restaurant(chosen_restaurant.items)
+                        make_graph_of_top_sold_items_in_restaurant(top_items_sold)
                     case _:
                         print('Wrong input!')
+                        print('------------')
             case '6':
                 for index, client in enumerate(top_clients):
                     print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
@@ -94,9 +112,11 @@ def statistics_module(clients, races):
                 make_graph_of_top_clients_with_most_tickets(top_clients)
             case '7':
                 print('Goodbye!')
+                print('----------')
                 break
             case _:
                 print('Wrong input!')
+                print('------------')
 
 
 # retorna la carrera con mayor asistencia, y también la carrera con mayor cantidad de tickets vendidos
@@ -132,11 +152,11 @@ def average_spent_by_vip_client(vip_clients):
 
 
 # retorna una lista únicamente con los clientes vip
-def get_vip_clients(clients):
+def get_vip_clients(clients, race):
     vip_clients = []
     for client in clients:
         for ticket in client.tickets:
-            if ticket.type == '1':
+            if ticket.type == '1' and ticket.race_round == race.round:
                 vip_clients.append(client)
                 break
     return vip_clients
