@@ -10,9 +10,9 @@ def statistics_module(clients, races):
     table = make_table(sorted_races)
     top_clients = calculate_top_clients(clients)
     while True:
-        choice = input("\t1. Average spending's of a VIP client in a race\n\t2. Show table of races assistance\n\t"
-                       "3.Race with highest attendance\n\t4. Race with most sold tickets\n\t"
-                       "5. Top 3 products sold by a restaurant\n\t6. Top 3 clients with more tickets\n\t"
+        choice = input("\t1.Average spending's of a VIP client in a race\n\t2.Show table of races assistance\n\t"
+                       "3.Race with highest attendance\n\t4.Race with most sold tickets\n\t"
+                       "5.Top 3 products sold by a restaurant\n\t6.Top 3 clients with more tickets\n\t"
                        "7.Exit\n\t")
         match choice:
             case '1':
@@ -36,7 +36,7 @@ def statistics_module(clients, races):
                 print('---------------------------------------------')
                 print(f'Average spending of a VIP client:\n\t{average_spent}$')
                 print('---------------------------------------------')
-                make_graph_of_average_vip_spending(vip_clients)
+                make_graph_of_average_vip_spending(vip_clients, average_spent)
             case '2':
                 print(table)
                 make_graph_of_races_attendance(sorted_races)
@@ -54,8 +54,8 @@ def statistics_module(clients, races):
                 make_graph_of_highest_sold_tickets_races(sorted_races)
                 print('---------------------------------------------')
             case '5':
-                choice = input("\t1. Top 3 products sold by a restaurant in all the races\n\t"
-                               "2. Top 3 products sold by a restaurant in specific(with graphs)\n\t")
+                choice = input("\t1.Top 3 products sold by a restaurant in all the races\n\t"
+                               "2.Top 3 products sold by a restaurant in specific(with graphs)\n\t")
                 match choice:
                     case '1':
                         for race in races:
@@ -210,7 +210,7 @@ def sort_races_by_sold_tickets(races):
 
 
 # Realiza un gráfico de barras con los gastos de un cliente vip
-def make_graph_of_average_vip_spending(vip_clients):
+def make_graph_of_average_vip_spending(vip_clients, average_spent):
     vip_clients = sorted(vip_clients, key=lambda cl: cl.total_spent, reverse=True)
     positions = range(len(vip_clients))
     label = []
@@ -219,7 +219,7 @@ def make_graph_of_average_vip_spending(vip_clients):
     heights = []
     for client in vip_clients:
         heights.append(client.total_spent)
-
+    plt.axhline(y=average_spent, color='red', linewidth=3, label='Avg')
     plt.bar(positions, heights, color=['red', 'black'], width=0.3, tick_label=label)
     plt.xlabel('Vip clients')
     plt.ylabel('Total spent')
@@ -232,9 +232,13 @@ def make_graph_of_races_attendance(sorted_races):
     positions = range(len(sorted_races))
     label = []
     heights = []
+    highest_value = 0
     for race in sorted_races:
         label.append(race.round)
         heights.append(race.sold_tickets)
+        if race.sold_tickets > highest_value:
+            highest_value = race.sold_tickets
+    plt.axhline(y=highest_value, color='grey', linewidth=3, label='Avg')
     plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
     plt.xlabel('Races')
     plt.ylabel('Attendance')
@@ -247,9 +251,13 @@ def make_graph_of_highest_sold_tickets_races(sorted_races):
     positions = range(len(sorted_races))
     label = []
     heights = []
+    highest_value = 0
     for race in sorted_races:
         label.append(race.round)
         heights.append(race.attendance)
+        if race.attendance > highest_value:
+            highest_value = race.attendance
+    plt.axhline(y=highest_value, color='grey', linewidth=3, label='Avg')
     plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
     plt.xlabel('Races')
     plt.ylabel('Sold tickets')

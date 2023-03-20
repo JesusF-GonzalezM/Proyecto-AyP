@@ -13,8 +13,8 @@
             }
         },
         "date": "2023-03-05",
-        "attendance": 903813,
-        "sold_tickets": 756493,
+        "attendance": 510016,
+        "sold_tickets": 760544,
         "restaurants": [
             {
                 "name": "Soria y Rael",
@@ -188,8 +188,8 @@
             }
         },
         "date": "2023-03-19",
-        "attendance": 686856,
-        "sold_tickets": 269319,
+        "attendance": 505796,
+        "sold_tickets": 200641,
         "restaurants": [
             {
                 "name": "Soto e Hijos",
@@ -440,8 +440,8 @@
             }
         },
         "date": "2023-04-02",
-        "attendance": 228425,
-        "sold_tickets": 713622,
+        "attendance": 410834,
+        "sold_tickets": 316073,
         "restaurants": [
             {
                 "name": "Men\u00e9ndez y Olivera",
@@ -1023,8 +1023,8 @@
             }
         },
         "date": "2023-04-30",
-        "attendance": 875213,
-        "sold_tickets": 756964,
+        "attendance": 70222,
+        "sold_tickets": 562036,
         "restaurants": [
             {
                 "name": "Cardona Hermanos",
@@ -1772,8 +1772,8 @@
             }
         },
         "date": "2023-05-07",
-        "attendance": 613471,
-        "sold_tickets": 846789,
+        "attendance": 701220,
+        "sold_tickets": 505340,
         "restaurants": [],
         "map": {
             "general": [
@@ -2084,8 +2084,8 @@
             }
         },
         "date": "2023-05-21",
-        "attendance": 514220,
-        "sold_tickets": 803243,
+        "attendance": 188705,
+        "sold_tickets": 485950,
         "restaurants": [
             {
                 "name": "Barajas, Men\u00e9ndez y Ledesma Asociados",
@@ -2635,8 +2635,8 @@
             }
         },
         "date": "2023-05-28",
-        "attendance": 575161,
-        "sold_tickets": 933660,
+        "attendance": 902519,
+        "sold_tickets": 817691,
         "restaurants": [
             {
                 "name": "Vela, Mares y Ortega Asociados",
@@ -3164,8 +3164,8 @@
             }
         },
         "date": "2023-06-04",
-        "attendance": 516553,
-        "sold_tickets": 364406,
+        "attendance": 857861,
+        "sold_tickets": 785809,
         "restaurants": [],
         "map": {
             "general": [
@@ -3282,8 +3282,8 @@
             }
         },
         "date": "2023-06-18",
-        "attendance": 409808,
-        "sold_tickets": 918485,
+        "attendance": 727428,
+        "sold_tickets": 825892,
         "restaurants": [
             {
                 "name": "P\u00e1ez y Garrido",
@@ -3583,8 +3583,8 @@
             }
         },
         "date": "2023-07-02",
-        "attendance": 769050,
-        "sold_tickets": 244474,
+        "attendance": 119791,
+        "sold_tickets": 896414,
         "restaurants": [
             {
                 "name": "Tovar y T\u00f3rrez",
@@ -4478,8 +4478,8 @@
             }
         },
         "date": "2023-07-09",
-        "attendance": 859790,
-        "sold_tickets": 978018,
+        "attendance": 554383,
+        "sold_tickets": 784925,
         "restaurants": [
             {
                 "name": "Rinc\u00f3n, Sanabria y Marroqu\u00edn Asociados",
@@ -5159,8 +5159,8 @@
             }
         },
         "date": "2023-07-23",
-        "attendance": 379424,
-        "sold_tickets": 879083,
+        "attendance": 975436,
+        "sold_tickets": 95066,
         "restaurants": [
             {
                 "name": "Polanco Vera Hermanos",
@@ -5731,8 +5731,8 @@
             }
         },
         "date": "2023-07-30",
-        "attendance": 974567,
-        "sold_tickets": 342952,
+        "attendance": 196345,
+        "sold_tickets": 751733,
         "restaurants": [],
         "map": {
             "general": [
@@ -5959,8 +5959,8 @@
             }
         },
         "date": "2023-08-27",
-        "attendance": 919708,
-        "sold_tickets": 70383,
+        "attendance": 919542,
+        "sold_tickets": 101225,
         "restaurants": [],
         "map": {
             "general": [
@@ -6303,8 +6303,8 @@
             }
         },
         "date": "2023-09-03",
-        "attendance": 330907,
-        "sold_tickets": 108,
+        "attendance": 405021,
+        "sold_tickets": 870870,
         "restaurants": [
             {
                 "name": "Zarate S.A.",
@@ -6650,8 +6650,8 @@
             }
         },
         "date": "2023-09-17",
-        "attendance": 637881,
-        "sold_tickets": 352876,
+        "attendance": 112661,
+        "sold_tickets": 396887,
         "restaurants": [
             {
                 "name": "Negrete, Romo y Esquibel Asociados",
@@ -7366,8 +7366,8 @@
             }
         },
         "date": "2023-09-24",
-        "attendance": 310751,
-        "sold_tickets": 159302,
+        "attendance": 780227,
+        "sold_tickets": 129641,
         "restaurants": [],
         "map": {
             "general": [
@@ -7516,8 +7516,8 @@
             }
         },
         "date": "2023-10-08",
-        "attendance": 578122,
-        "sold_tickets": 22844,
+        "attendance": 716832,
+        "sold_tickets": 575511,
         "restaurants": [
             {
                 "name": "Haro, G\u00f3mez y Valle Asociados",
@@ -7818,8 +7818,8 @@
             }
         },
         "date": "2023-10-22",
-        "attendance": 549125,
-        "sold_tickets": 129957,
+        "attendance": 738246,
+        "sold_tickets": 147803,
         "restaurants": [
             {
                 "name": "Fajardo, Samaniego y Carrillo Asociados",
@@ -8250,8 +8250,8 @@
             }
         },
         "date": "2023-10-29",
-        "attendance": 220497,
-        "sold_tickets": 787306,
+        "attendance": 812749,
+        "sold_tickets": 407304,
         "restaurants": [
             {
                 "name": "Cedillo y Vargas",
@@ -8542,8 +8542,8 @@
             }
         },
         "date": "2023-11-05",
-        "attendance": 763146,
-        "sold_tickets": 795949,
+        "attendance": 236953,
+        "sold_tickets": 602527,
         "restaurants": [
             {
                 "name": "Verdugo Quintero S.L.",
@@ -9297,8 +9297,8 @@
             }
         },
         "date": "2023-11-19",
-        "attendance": 90888,
-        "sold_tickets": 748794,
+        "attendance": 360593,
+        "sold_tickets": 298022,
         "restaurants": [
             {
                 "name": "Mat\u00edas, N\u00e1jera y Riojas Asociados",
@@ -9796,8 +9796,8 @@
             }
         },
         "date": "2023-11-26",
-        "attendance": 540487,
-        "sold_tickets": 978756,
+        "attendance": 689078,
+        "sold_tickets": 408319,
         "restaurants": [
             {
                 "name": "Saucedo Solorzano e Hijos",

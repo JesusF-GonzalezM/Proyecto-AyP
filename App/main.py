@@ -42,7 +42,7 @@ def main():
     # corro los modulos
     while True:
         print('Choose which module you want to use: ')
-        module_to_choose = input('\t1. Races and team management\n\t2. Tickets sale management\n\t'
+        module_to_choose = input('\t1.Races and team management\n\t2.Tickets sale management\n\t'
                                  '3.Races assistance management\n\t4.Restaurants management\n\t'
                                  '5.Restaurants sale management\n\t6.Statistics\n\t7.Exit\n\t'
                                  )
