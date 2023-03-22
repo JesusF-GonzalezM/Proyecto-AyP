@@ -33,6 +33,7 @@ def download_drivers_from_api(url):
     try:
         response = requests.get(url)
     except requests.exceptions.RequestException as e:
+        print('Exception ocurred while code execution')
         print('There is no connection, program aborting...')
         raise SystemExit(e)
     data_array = response.json()

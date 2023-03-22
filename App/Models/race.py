@@ -7,11 +7,16 @@ from App.Models.seat import Seat
 
 # clase que se encarga de modelar la información de la carrera en objetos de python.
 class Race:
-    def __init__(self, round, name, circuit, date, restaurants, map, attendance=0, sold_tickets=0, vip_seats=None, general_seats=None):
+    def __init__(self, round, name, circuit, date, restaurants, map, finished=False, drivers_podium=None, winning_constructor=None,
+                 attendance=0, sold_tickets=0, vip_seats=None, general_seats=None):
+
         self.round = round
         self.name = name
         self.circuit = Circuit(**circuit)
         self.date = date
+        self.finished = finished
+        self.drivers_podium = drivers_podium
+        self.winning_constructor = winning_constructor
         self.attendance = int(attendance)
         self.sold_tickets = int(sold_tickets)
         self.restaurants = []

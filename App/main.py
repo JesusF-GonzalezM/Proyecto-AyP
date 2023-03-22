@@ -33,11 +33,11 @@ def main():
             client.tickets.sort(key=lambda x: x.type)
 
     # Borrar esto al terminar, esto es para poblar las clases de información y testear, to lazy to do unittests :D
-    for client in clients:
-        client.total_spent = random.randint(0, 1000000)
-    for race in races:
-        race.attendance = random.randint(0, 1000000)
-        race.sold_tickets = random.randint(0, 1000000)
+    #for client in clients:
+        #client.total_spent = random.randint(0, 1000000)
+    #for race in races:
+        #race.attendance = random.randint(0, 1000000)
+        #race.sold_tickets = random.randint(0, 1000000)
 
     # corro los modulos
     while True:
@@ -164,8 +164,42 @@ def races_and_team_management(constructors, drivers, races):
                         break
 
             case '2':
-                randomize_list(drivers)
+                races_available = False
+                for race in races:
+                    if not race.finished:
+                        races_available = True
+                        break
 
+                if not races_available:
+                    print('----------------------------')
+                    print('There are no races available')
+                    print('----------------------------')
+                finished = False
+                for race in races:
+                    if not race.finished:
+                        print(race)
+                while True:
+                    chosen_race = input('Select a race round to finish: ')
+                    if chosen_race.isnumeric():
+                        if 0 < int(chosen_race) <= 23:
+                            for race in races:
+                                if chosen_race == race.round:
+                                    chosen_race = race
+                                    break
+                            if not chosen_race.finished:
+                                break
+                            else:
+                                finished = True
+                    if not finished:
+                        print('Invalid input')
+                        print('-------------')
+                    else:
+                        print('That race finished already!')
+                        print('---------------------------')
+                print('CHOSEN RACE:')
+                print('--------------------------------')
+                print(chosen_race)
+                randomize_list(drivers)
                 set_drivers_and_constructors_score(drivers, constructors)
                 print('---------------------------------------------------------------------------')
                 print(f'Congratulations to the driver {drivers[0].firstName} {drivers[0].lastName}, '
@@ -176,7 +210,10 @@ def races_and_team_management(constructors, drivers, races):
                 print(f'Congratulations to the constructor {winning_constructor.name}, for '
                       f'winning in the first place!, scoring {winning_constructor.score} points')
                 print('---------------------------------------------------------------------------')
-
+                drivers_podium = drivers.copy()
+                chosen_race.drivers_podium = drivers_podium
+                chosen_race.winning_constructor = winning_constructor
+                chosen_race.finished = True
                 reset_scores(drivers, constructors)
             case '3':
                 print('Goodbye!')
