@@ -13,7 +13,7 @@ def statistics_module(clients, races):
         choice = input("\t1.Average spending's of a VIP client in a race\n\t2.Show table of races assistance\n\t"
                        "3.Race with highest attendance\n\t4.Race with most sold tickets\n\t"
                        "5.Top 3 products sold by a restaurant\n\t6.Top 3 clients with more tickets\n\t"
-                       "7.Exit\n\t")
+                       "7.See Graphs\n\t8.Leave\n\t")
         match choice:
             case '1':
                 for index, race in enumerate(races):
@@ -41,18 +41,28 @@ def statistics_module(clients, races):
                 print(table)
                 make_graph_of_races_attendance(sorted_races)
             case '3':
-                print('---------------------------------------------')
-                print(f'Highest attendance:\n\t{highest_attendance}')
-                highest_attendance.pretty_print_attendance()
-                make_graph_of_races_attendance(sorted_races)
-                print('---------------------------------------------')
+                if highest_attendance:
+                    print('---------------------------------------------')
+                    print(f'Highest attendance:\n\t{highest_attendance}')
+                    print('---------------------------------------------')
+                    highest_attendance.pretty_print_attendance()
+                    make_graph_of_races_attendance(sorted_races)
+                else:
+                    print('---------------------------------')
+                    print('No one have attended to any race.')
+                    print('---------------------------------')
             case '4':
-                print('---------------------------------------------')
-                print(f'Highest sold tickets:\n\t{most_tickets_sold}')
-                highest_attendance.pretty_print_sold_tickets()
-                sorted_races = sort_races_by_sold_tickets(sorted_races)
-                make_graph_of_highest_sold_tickets_races(sorted_races)
-                print('---------------------------------------------')
+                if most_tickets_sold:
+                    print('---------------------------------------------')
+                    print(f'Highest sold tickets:\n\t{most_tickets_sold}')
+                    highest_attendance.pretty_print_sold_tickets()
+                    sorted_races = sort_races_by_sold_tickets(sorted_races)
+                    make_graph_of_highest_sold_tickets_races(sorted_races)
+                    print('---------------------------------------------')
+                else:
+                    print('--------------------------')
+                    print('No tickets have been sold.')
+                    print('--------------------------')
             case '5':
                 choice = input("\t1.Top 3 products sold by a restaurant in all the races\n\t"
                                "2.Top 3 products sold by a restaurant in specific(with graphs)\n\t")
@@ -65,24 +75,38 @@ def statistics_module(clients, races):
                                 print(f'\tRESTAURANT: {restaurant.name}')
                                 print('\t---------------------------------------------')
                                 top_items_sold = calculate_top_sold_items_of_restaurant(restaurant.items)
-                                for index, item in enumerate(top_items_sold):
-                                    print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
-                                print('---------------------------------------------')
+                                if not top_items_sold:
+                                    print('No items have been sold at this restaurant!')
+                                    print('-------------------------------------------')
+                                else:
+                                    for index, item in enumerate(top_items_sold):
+                                        if item.total_sold != 0:
+                                            print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
+                                            print('---------------------------------------------')
                     case '2':
+                        no_restaurants = False
                         for index, race in enumerate(races):
-                            print(f'{index + 1}. RACE: {race.name}')
+                            if race.restaurants:
+                                print(f'{index + 1}. RACE: {race.name}')
                         while True:
                             is_valid_race = False
                             race_chosen = input("\tChoose a race: ")
                             for index, race in enumerate(races):
                                 if race_chosen == str(index + 1):
-                                    is_valid_race = True
                                     race_chosen = race
-                                    break
+                                    if race_chosen.restaurants:
+                                        is_valid_race = True
+                                        break
+                                    else:
+                                        no_restaurants = True
                             if is_valid_race:
                                 break
-                            print('Wrong race chosen, try again')
-                            print('----------------------------')
+                            if not no_restaurants:
+                                print('Wrong race chosen, try again')
+                                print('----------------------------')
+                            else:
+                                print('Race have no restaurants!')
+                                print('-------------------------')
                         for index, restaurant in enumerate(race_chosen.restaurants):
                             print(f'{index + 1}. RESTAURANT: {restaurant.name}')
                         while True:
@@ -98,19 +122,29 @@ def statistics_module(clients, races):
                             print('Wrong restaurant chosen, try again')
                             print('----------------------------------')
                         top_items_sold = calculate_top_sold_items_of_restaurant(chosen_restaurant.items)
-                        for index, item in enumerate(top_items_sold):
-                            print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
-                        print('---------------------------------------------')
-                        make_graph_of_top_sold_items_in_restaurant(top_items_sold)
+                        if not top_items_sold:
+                            print('There are no items sold at this restaurant!')
+                            print('-------------------------------------------')
+                        else:
+                            for index, item in enumerate(top_items_sold):
+                                print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
+                            print('---------------------------------------------')
+                            make_graph_of_top_sold_items_in_restaurant(top_items_sold)
                     case _:
                         print('Wrong input!')
                         print('------------')
             case '6':
-                for index, client in enumerate(top_clients):
-                    print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
-                    print('---------------------------------------------')
-                make_graph_of_top_clients_with_most_tickets(top_clients)
+                if not top_clients:
+                    print('There are no clients with tickets')
+                    print('---------------------------------')
+                else:
+                    for index, client in enumerate(top_clients):
+                        print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
+                        print('---------------------------------------------')
+                        make_graph_of_top_clients_with_most_tickets(top_clients)
             case '7':
+                pass
+            case '8':
                 print('Goodbye!')
                 print('----------')
                 break
@@ -135,10 +169,17 @@ def race_with_more_assistance_and_most_tickets_sold(races):
 # si hay menos de 3 clientes retorna una lista con la cantidad de clientes
 def calculate_top_clients(clients):
     sorted_clients = sorted(clients, key=lambda obj: len(obj.tickets), reverse=True)
-    if len(sorted_clients) > 3:
-        return sorted_clients[:3]
+    if clients:
+        if len(sorted_clients[0].tickets) == 0:
+            return False
+        if len(sorted_clients[2].tickets) > 0:
+            return sorted_clients[:3]
+        elif len(sorted_clients[1].tickets) > 0:
+            return sorted_clients[:2]
+        elif len(sorted_clients[0].tickets) > 0:
+            return sorted_clients[: 1]
     else:
-        return sorted_clients
+        return False
 
 
 # retorna el promedio de gasto de un cliente vip
@@ -166,10 +207,17 @@ def get_vip_clients(clients, race):
 # si hay menos de 3 productos retorna una lista con la cantidad de productos
 def calculate_top_sold_items_of_restaurant(items):
     sorted_items = sorted(items, key=lambda obj: obj.total_sold, reverse=True)
-    if len(sorted_items) > 3:
-        return sorted_items[:3]
+    if sorted_items:
+        if sorted_items[0].total_sold == 0:
+            return False
+        if sorted_items[2].total_sold > 0:
+            return sorted_items[:3]
+        elif sorted_items[1].total_sold > 0:
+            return sorted_items[:2]
+        elif sorted_items[0].total_sold > 0:
+            return sorted_items[: 1]
     else:
-        return sorted_items
+        return False
 
 
 # Mostrar tabla con la asistencia a las carreras de mejor a peor y con una cantidad de información extra por carrera

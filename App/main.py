@@ -4,7 +4,7 @@ import uuid
 from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
     get_races_by_circuit_country, get_races_by_month, show_circuit_country, show_constructor_id, show_countries
 from App.Races_and_team_management.finish_race import set_drivers_and_constructors_score, randomize_list, \
-    get_winning_constructor, reset_scores
+    get_winning_constructor
 from App.Races_assistance_module.manage_race_assistance import race_assistance_management
 from App.Restaurant_management.order_restaurant_products import get_products_by_type, \
     get_products_by_price_range, search_product_generally, get_products_by_name
@@ -33,11 +33,12 @@ def main():
             client.tickets.sort(key=lambda x: x.type)
 
     # Borrar esto al terminar, esto es para poblar las clases de información y testear, to lazy to do unittests :D
-    #for client in clients:
-        #client.total_spent = random.randint(0, 1000000)
-    #for race in races:
-        #race.attendance = random.randint(0, 1000000)
-        #race.sold_tickets = random.randint(0, 1000000)
+
+    for client in clients:
+        client.total_spent = random.randint(0, 1000000)
+    for race in races:
+        race.attendance = random.randint(0, 1000000)
+        race.sold_tickets = random.randint(0, 1000000)
 
     # corro los modulos
     while True:
@@ -169,11 +170,11 @@ def races_and_team_management(constructors, drivers, races):
                     if not race.finished:
                         races_available = True
                         break
-
                 if not races_available:
                     print('----------------------------')
                     print('There are no races available')
                     print('----------------------------')
+                    break
                 finished = False
                 for race in races:
                     if not race.finished:
@@ -199,22 +200,25 @@ def races_and_team_management(constructors, drivers, races):
                 print('CHOSEN RACE:')
                 print('--------------------------------')
                 print(chosen_race)
-                randomize_list(drivers)
-                set_drivers_and_constructors_score(drivers, constructors)
+                drivers_podium = drivers.copy()
+                randomize_list(drivers_podium)
+                constructors_podium = constructors.copy()
+                set_drivers_and_constructors_score(drivers_podium, constructors_podium)
                 print('---------------------------------------------------------------------------')
-                print(f'Congratulations to the driver {drivers[0].firstName} {drivers[0].lastName}, '
-                      f'for winning in the first place!, scoring {drivers[0].score} points')
+                print(f'Congratulations to the driver {drivers_podium[0].firstName} {drivers_podium[0].lastName}, '
+                      f'for winning in the first place!, scoring {drivers_podium[0].score} points')
                 print('---------------------------------------------------------------------------')
-                winning_constructor = get_winning_constructor(constructors)
+                print('All Drivers score:')
+                for driver in drivers_podium:
+                    print(f'{driver.firstName} {driver.lastName}: {driver.score} points')
+                winning_constructor = get_winning_constructor(constructors_podium)
                 print('---------------------------------------------------------------------------')
                 print(f'Congratulations to the constructor {winning_constructor.name}, for '
                       f'winning in the first place!, scoring {winning_constructor.score} points')
                 print('---------------------------------------------------------------------------')
-                drivers_podium = drivers.copy()
-                chosen_race.drivers_podium = drivers_podium
+                chosen_race.drivers_podium = drivers_podium[:10]
                 chosen_race.winning_constructor = winning_constructor
                 chosen_race.finished = True
-                reset_scores(drivers, constructors)
             case '3':
                 print('Goodbye!')
                 print('--------')

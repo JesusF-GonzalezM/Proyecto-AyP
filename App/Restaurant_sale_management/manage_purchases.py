@@ -98,10 +98,11 @@ def purchase_products(client, restaurants):
                 print('-----------------------------------------------------')
         if valid_restaurant:
             break
-    # noinspection PyUnboundLocalVariable
-    for index, product in enumerate(restaurant_at.items):
-        print(f'\t{index+1}. {product.name}\n\t\ttype: {product.type}\n\t\tprice: {product.price}\n\t\tstock: {product.stock}\n')
     while True:
+        # noinspection PyUnboundLocalVariable
+        for index, product in enumerate(restaurant_at.items):
+            print(
+                f'\t{index + 1}. {product.name}\n\t\ttype: {product.type}\n\t\tprice: {product.price}\n\t\tstock: {product.stock}\n')
         while True:
             chosen_product = input("Choose the product you want to buy: ")
             if chosen_product.isnumeric():
@@ -126,15 +127,20 @@ def purchase_products(client, restaurants):
         else:
             print('We do not have more of that product in our inventory!')
             print('-----------------------------------------------------')
-        choice = input('Do you want to buy another product?\n\t1. Yes\n\t2. No\n')
-        match choice:
-            case '1':
-                continue
-            case '2':
-                break
-            case _:
-                print('Wrong Input!')
-                print('------------')
+        flag = False
+        while True:
+            choice = input('Do you want to buy another product?\n\t1. Yes\n\t2. No\n')
+            match choice:
+                case '1':
+                    break
+                case '2':
+                    flag = True
+                    break
+                case _:
+                    print('Wrong Input!')
+                    print('------------')
+        if flag:
+            break
     # noinspection PyUnboundLocalVariable
     return total_price, restaurant_at, products_to_buy
 
