@@ -172,12 +172,12 @@ def calculate_top_clients(clients):
     if clients:
         if len(sorted_clients[0].tickets) == 0:
             return False
-        if len(sorted_clients[2].tickets) > 0:
-            return sorted_clients[:3]
+        if len(sorted_clients[0].tickets) > 0:
+            return sorted_clients[: 1]
         elif len(sorted_clients[1].tickets) > 0:
             return sorted_clients[:2]
-        elif len(sorted_clients[0].tickets) > 0:
-            return sorted_clients[: 1]
+        elif len(sorted_clients[2].tickets) > 0:
+            return sorted_clients[:3]
     else:
         return False
 
@@ -230,18 +230,24 @@ def make_table(sorted_races):
         'Attendance/Tickets_sold ratio': []
     }
     for race in sorted_races:
+        its_zero = False
         numerator = race.attendance
         denominator = race.sold_tickets
         if race.sold_tickets and race.attendance:
             common_divisor = gcd(race.attendance, race.sold_tickets)
             numerator = race.attendance // common_divisor
             denominator = race.sold_tickets // common_divisor
+        else:
+            its_zero = True
         data['Race_name'].append(race.name)
         data['Circuit'].append(race.circuit.name)
         data['Attendance'].append(race.attendance)
         data['Tickets_sold'].append(race.sold_tickets)
         # noinspection PyUnboundLocalVariable
-        data['Attendance/Tickets_sold ratio'].append(f'{numerator}/{denominator}')
+        if its_zero:
+            data['Attendance/Tickets_sold ratio'].append(f'0')
+        else:
+            data['Attendance/Tickets_sold ratio'].append(f'{numerator}/{denominator}')
     return tabulate(data, headers='keys', tablefmt='fancy_grid', numalign='center', stralign='center')
 
 
@@ -267,30 +273,33 @@ def make_graph_of_average_vip_spending(vip_clients, average_spent):
     heights = []
     for client in vip_clients:
         heights.append(client.total_spent)
-    plt.axhline(y=average_spent, color='red', linewidth=3, label='Avg')
-    plt.bar(positions, heights, color=['red', 'black'], width=0.3, tick_label=label)
+    plt.axhline(y=average_spent, color='gold', linewidth=3, label='Avg')
+    plt.bar(positions, heights, color=['blue'], tick_label=label)
     plt.xlabel('Vip clients')
     plt.ylabel('Total spent')
     plt.title("Average vip client spending's")
+    plt.legend(['Average Spent', 'Clients'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
     plt.show()
 
 
 # Realiza un gráfico de barras con las asistencias de las carreras de mejor a peor
 def make_graph_of_races_attendance(sorted_races):
-    positions = range(len(sorted_races))
+    races_sorted_by_attendance = sorted(sorted_races, key=lambda x: x.attendance, reverse=True)
+    positions = range(len(races_sorted_by_attendance))
     label = []
     heights = []
     highest_value = 0
-    for race in sorted_races:
+    for race in races_sorted_by_attendance:
         label.append(race.round)
-        heights.append(race.sold_tickets)
-        if race.sold_tickets > highest_value:
-            highest_value = race.sold_tickets
-    plt.axhline(y=highest_value, color='grey', linewidth=3, label='Avg')
-    plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
+        heights.append(race.attendance)
+        if race.attendance > highest_value:
+            highest_value = race.attendance
+    plt.axhline(y=highest_value, color='gold', linewidth=3, label='Avg')
+    plt.bar(positions, heights, color=['blue'], tick_label=label)
     plt.xlabel('Races')
     plt.ylabel('Attendance')
     plt.title("All Races by attendance")
+    plt.legend(['Highest Attendance', 'Attendances'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
     plt.show()
 
 
@@ -302,14 +311,15 @@ def make_graph_of_highest_sold_tickets_races(sorted_races):
     highest_value = 0
     for race in sorted_races:
         label.append(race.round)
-        heights.append(race.attendance)
-        if race.attendance > highest_value:
-            highest_value = race.attendance
-    plt.axhline(y=highest_value, color='grey', linewidth=3, label='Avg')
-    plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
+        heights.append(race.sold_tickets)
+        if race.sold_tickets > highest_value:
+            highest_value = race.sold_tickets
+    plt.axhline(y=highest_value, color='gold', linewidth=3, label='Avg')
+    plt.bar(positions, heights, color=['blue'], tick_label=label)
     plt.xlabel('Races')
     plt.ylabel('Sold tickets')
     plt.title("Races by sold tickets")
+    plt.legend(['Highest sold ticket race', 'Race sold tickets'], bbox_to_anchor=(1.12, 1.15), loc='upper right', borderaxespad=0)
     plt.show()
 
 
@@ -321,10 +331,11 @@ def make_graph_of_top_sold_items_in_restaurant(items):
     for index, item in enumerate(items):
         label.append(f'{index + 1}')
         heights.append(item.total_sold)
-    plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
+    plt.bar(positions, heights, color=['blue'], tick_label=label)
     plt.xlabel('Products')
     plt.ylabel('Sold amount')
     plt.title("Top 3 products sold in a restaurant")
+    plt.legend(['sold amount'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
     plt.show()
 
 
@@ -336,8 +347,9 @@ def make_graph_of_top_clients_with_most_tickets(top_clients):
     for index, client in enumerate(top_clients):
         label.append(f'Client {index + 1}')
         heights.append(len(client.tickets))
-    plt.bar(positions, heights, color=['blue', 'red'], tick_label=label)
+    plt.bar(positions, heights, color=['blue'], tick_label=label)
     plt.xlabel('Clients')
     plt.ylabel('Tickets bought')
     plt.title("Clients by tickets bought")
+    plt.legend(['Tickets bought'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
     plt.show()

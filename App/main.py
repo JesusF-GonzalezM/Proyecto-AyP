@@ -35,10 +35,10 @@ def main():
     # Borrar esto al terminar, esto es para poblar las clases de información y testear, to lazy to do unittests :D
 
     for client in clients:
-        client.total_spent = random.randint(0, 1000000)
+        client.total_spent = random.randint(0, 10000)
     for race in races:
-        race.attendance = random.randint(0, 1000000)
-        race.sold_tickets = random.randint(0, 1000000)
+        race.attendance = random.randint(0, 10)
+        race.sold_tickets = random.randint(0, 10)
 
     # corro los modulos
     while True:
