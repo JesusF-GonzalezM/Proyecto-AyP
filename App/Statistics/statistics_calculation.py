@@ -16,27 +16,19 @@ def statistics_module(clients, races):
                        "7.See Graphs\n\t8.Leave\n\t")
         match choice:
             case '1':
-                for index, race in enumerate(races):
-                    print(f'{index + 1}. {race.name}')
-                while True:
-                    is_valid = False
-                    chosen_race = input('Choose a race: ')
-                    for index, race in enumerate(races):
-                        if chosen_race == str(index + 1):
-                            is_valid = True
-                            race_at = race
-                            break
-                    if is_valid:
-                        break
-                    print('Invalid choice!')
-                    print('---------------')
-                # noinspection PyUnboundLocalVariable
-                vip_clients = get_vip_clients(clients, race_at)
-                average_spent = average_spent_by_vip_client(vip_clients)
+                average_in_races = {}
+                for race in races:
+                    vip_clients = get_vip_clients(clients, race)
+                    average_spent_per_race = average_spent_by_vip_client(vip_clients)
+                    print('----------------------------------------------------------')
+                    print(f'Race: {race.name}\naverage spent by VIP clients: {average_spent_per_race}$')
+                    print('----------------------------------------------------------')
+                    average_in_races.update({race.round: average_spent_per_race})
+                average_spent = sum(average_in_races.values())/23
                 print('---------------------------------------------')
-                print(f'Average spending of a VIP client:\n\t{average_spent}$')
+                print(f'Average spending of a VIP client in all races:\n\t{average_spent}$')
                 print('---------------------------------------------')
-                make_graph_of_average_vip_spending(vip_clients, average_spent)
+                make_graph_of_average_vip_spending(average_in_races)
             case '2':
                 print(table)
                 make_graph_of_races_attendance(sorted_races)
@@ -264,21 +256,22 @@ def sort_races_by_sold_tickets(races):
 
 
 # Realiza un gráfico de barras con los gastos de un cliente vip
-def make_graph_of_average_vip_spending(vip_clients, average_spent):
-    vip_clients = sorted(vip_clients, key=lambda cl: cl.total_spent, reverse=True)
-    positions = range(len(vip_clients))
+def make_graph_of_average_vip_spending(average_spent_in_races):
+    sum_of_averages = 0
+    positions = average_spent_in_races.keys()
     label = []
-    for i in range(len(vip_clients)):
-        label.append(f'Client {i + 1}')
+    for i in average_spent_in_races:
+        label.append(i)
     heights = []
-    for client in vip_clients:
-        heights.append(client.total_spent)
-    plt.axhline(y=average_spent, color='gold', linewidth=3, label='Avg')
+    for average_in_race in average_spent_in_races.values():
+        sum_of_averages += average_in_race
+        heights.append(average_in_race)
+    plt.axhline(y=sum_of_averages/23, color='gold', linewidth=3, label='Avg')
     plt.bar(positions, heights, color=['blue'], tick_label=label)
-    plt.xlabel('Vip clients')
-    plt.ylabel('Total spent')
+    plt.xlabel('Races')
+    plt.ylabel('Avg spent in race')
     plt.title("Average vip client spending's")
-    plt.legend(['Average Spent', 'Clients'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
+    plt.legend(['Average Spent in all races', 'Avg spent per Race'], bbox_to_anchor=(1.1, 1.15), loc='upper right', borderaxespad=0)
     plt.show()
 
 

@@ -132,8 +132,8 @@
             "nationality": "French",
             "score": 25
         },
-        "attendance": 5,
-        "sold_tickets": 1,
+        "attendance": 4,
+        "sold_tickets": 10,
         "restaurants": [
             {
                 "name": "Soria y Rael",
@@ -426,8 +426,8 @@
             "nationality": "French",
             "score": 60
         },
-        "attendance": 3,
-        "sold_tickets": 7,
+        "attendance": 9,
+        "sold_tickets": 4,
         "restaurants": [
             {
                 "name": "Soto e Hijos",
@@ -681,8 +681,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 6,
-        "sold_tickets": 7,
+        "attendance": 4,
+        "sold_tickets": 8,
         "restaurants": [
             {
                 "name": "Men\u00e9ndez y Olivera",
@@ -1267,8 +1267,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 9,
-        "sold_tickets": 9,
+        "attendance": 0,
+        "sold_tickets": 8,
         "restaurants": [
             {
                 "name": "Cardona Hermanos",
@@ -2019,8 +2019,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 9,
-        "sold_tickets": 9,
+        "attendance": 4,
+        "sold_tickets": 6,
         "restaurants": [],
         "map": {
             "general": [
@@ -2334,8 +2334,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 7,
-        "sold_tickets": 10,
+        "attendance": 10,
+        "sold_tickets": 7,
         "restaurants": [
             {
                 "name": "Barajas, Men\u00e9ndez y Ledesma Asociados",
@@ -2888,8 +2888,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 0,
+        "attendance": 8,
+        "sold_tickets": 4,
         "restaurants": [
             {
                 "name": "Vela, Mares y Ortega Asociados",
@@ -3420,7 +3420,7 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 6,
+        "attendance": 2,
         "sold_tickets": 6,
         "restaurants": [],
         "map": {
@@ -3845,8 +3845,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 7,
-        "sold_tickets": 10,
+        "attendance": 0,
+        "sold_tickets": 8,
         "restaurants": [
             {
                 "name": "Tovar y T\u00f3rrez",
@@ -4744,7 +4744,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 4,
-        "sold_tickets": 10,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Rinc\u00f3n, Sanabria y Marroqu\u00edn Asociados",
@@ -5428,7 +5428,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 2,
-        "sold_tickets": 10,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Polanco Vera Hermanos",
@@ -6002,8 +6002,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
-        "sold_tickets": 6,
+        "attendance": 7,
+        "sold_tickets": 1,
         "restaurants": [],
         "map": {
             "general": [
@@ -6233,7 +6233,7 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
+        "attendance": 9,
         "sold_tickets": 8,
         "restaurants": [],
         "map": {
@@ -6580,8 +6580,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 9,
+        "attendance": 5,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Zarate S.A.",
@@ -6930,8 +6930,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 5,
+        "attendance": 10,
+        "sold_tickets": 3,
         "restaurants": [
             {
                 "name": "Negrete, Romo y Esquibel Asociados",
@@ -7649,8 +7649,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 6,
-        "sold_tickets": 0,
+        "attendance": 9,
+        "sold_tickets": 6,
         "restaurants": [],
         "map": {
             "general": [
@@ -7803,7 +7803,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 7,
-        "sold_tickets": 2,
+        "sold_tickets": 9,
         "restaurants": [
             {
                 "name": "Haro, G\u00f3mez y Valle Asociados",
@@ -8107,8 +8107,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 7,
-        "sold_tickets": 1,
+        "attendance": 10,
+        "sold_tickets": 7,
         "restaurants": [
             {
                 "name": "Fajardo, Samaniego y Carrillo Asociados",
@@ -8542,8 +8542,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 9,
-        "sold_tickets": 6,
+        "attendance": 2,
+        "sold_tickets": 5,
         "restaurants": [
             {
                 "name": "Cedillo y Vargas",
@@ -8837,8 +8837,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 8,
-        "sold_tickets": 8,
+        "attendance": 3,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Verdugo Quintero S.L.",
@@ -9595,7 +9595,7 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
+        "attendance": 10,
         "sold_tickets": 1,
         "restaurants": [
             {
@@ -10097,8 +10097,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 6,
-        "sold_tickets": 1,
+        "attendance": 0,
+        "sold_tickets": 9,
         "restaurants": [
             {
                 "name": "Saucedo Solorzano e Hijos",
