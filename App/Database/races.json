@@ -132,8 +132,8 @@
             "nationality": "French",
             "score": 25
         },
-        "attendance": 4,
-        "sold_tickets": 10,
+        "attendance": 5,
+        "sold_tickets": 4,
         "restaurants": [
             {
                 "name": "Soria y Rael",
@@ -218,8 +218,8 @@
                     {
                         "name": "reprehenderit pariatur impedit",
                         "price": 229.0,
-                        "total_sold": 2,
-                        "stock": 8,
+                        "total_sold": 3,
+                        "stock": 7,
                         "type": "drink:not-alcoholic"
                     },
                     {
@@ -426,8 +426,8 @@
             "nationality": "French",
             "score": 60
         },
-        "attendance": 9,
-        "sold_tickets": 4,
+        "attendance": 10,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Soto e Hijos",
@@ -681,8 +681,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 8,
+        "attendance": 6,
+        "sold_tickets": 5,
         "restaurants": [
             {
                 "name": "Men\u00e9ndez y Olivera",
@@ -1267,8 +1267,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
-        "sold_tickets": 8,
+        "attendance": 3,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Cardona Hermanos",
@@ -2019,8 +2019,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 6,
+        "attendance": 1,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -2334,8 +2334,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 10,
-        "sold_tickets": 7,
+        "attendance": 0,
+        "sold_tickets": 4,
         "restaurants": [
             {
                 "name": "Barajas, Men\u00e9ndez y Ledesma Asociados",
@@ -2888,8 +2888,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 8,
-        "sold_tickets": 4,
+        "attendance": 7,
+        "sold_tickets": 0,
         "restaurants": [
             {
                 "name": "Vela, Mares y Ortega Asociados",
@@ -3420,8 +3420,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 2,
-        "sold_tickets": 6,
+        "attendance": 3,
+        "sold_tickets": 5,
         "restaurants": [],
         "map": {
             "general": [
@@ -3541,8 +3541,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 9,
-        "sold_tickets": 2,
+        "attendance": 8,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "P\u00e1ez y Garrido",
@@ -3845,8 +3845,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
-        "sold_tickets": 8,
+        "attendance": 4,
+        "sold_tickets": 6,
         "restaurants": [
             {
                 "name": "Tovar y T\u00f3rrez",
@@ -4743,8 +4743,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 4,
-        "sold_tickets": 2,
+        "attendance": 1,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Rinc\u00f3n, Sanabria y Marroqu\u00edn Asociados",
@@ -5427,8 +5427,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 2,
-        "sold_tickets": 1,
+        "attendance": 0,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Polanco Vera Hermanos",
@@ -6002,8 +6002,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 7,
-        "sold_tickets": 1,
+        "attendance": 2,
+        "sold_tickets": 2,
         "restaurants": [],
         "map": {
             "general": [
@@ -6234,7 +6234,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 9,
-        "sold_tickets": 8,
+        "sold_tickets": 1,
         "restaurants": [],
         "map": {
             "general": [
@@ -6580,8 +6580,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 5,
-        "sold_tickets": 2,
+        "attendance": 2,
+        "sold_tickets": 5,
         "restaurants": [
             {
                 "name": "Zarate S.A.",
@@ -6930,8 +6930,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 10,
-        "sold_tickets": 3,
+        "attendance": 8,
+        "sold_tickets": 10,
         "restaurants": [
             {
                 "name": "Negrete, Romo y Esquibel Asociados",
@@ -7650,7 +7650,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 9,
-        "sold_tickets": 6,
+        "sold_tickets": 0,
         "restaurants": [],
         "map": {
             "general": [
@@ -7802,8 +7802,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 7,
-        "sold_tickets": 9,
+        "attendance": 10,
+        "sold_tickets": 4,
         "restaurants": [
             {
                 "name": "Haro, G\u00f3mez y Valle Asociados",
@@ -8542,8 +8542,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 2,
-        "sold_tickets": 5,
+        "attendance": 10,
+        "sold_tickets": 1,
         "restaurants": [
             {
                 "name": "Cedillo y Vargas",
@@ -8837,8 +8837,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 3,
-        "sold_tickets": 2,
+        "attendance": 6,
+        "sold_tickets": 10,
         "restaurants": [
             {
                 "name": "Verdugo Quintero S.L.",
@@ -9596,7 +9596,7 @@
         "drivers_podium": null,
         "winning_constructor": null,
         "attendance": 10,
-        "sold_tickets": 1,
+        "sold_tickets": 2,
         "restaurants": [
             {
                 "name": "Mat\u00edas, N\u00e1jera y Riojas Asociados",
@@ -10097,8 +10097,8 @@
         "finished": false,
         "drivers_podium": null,
         "winning_constructor": null,
-        "attendance": 0,
-        "sold_tickets": 9,
+        "attendance": 3,
+        "sold_tickets": 3,
         "restaurants": [
             {
                 "name": "Saucedo Solorzano e Hijos",

@@ -13,7 +13,7 @@ def statistics_module(clients, races):
         choice = input("\t1.Average spending's of a VIP client in a race\n\t2.Show table of races assistance\n\t"
                        "3.Race with highest attendance\n\t4.Race with most sold tickets\n\t"
                        "5.Top 3 products sold by a restaurant\n\t6.Top 3 clients with more tickets\n\t"
-                       "7.See Graphs\n\t8.Leave\n\t")
+                       "7.Leave\n\t")
         match choice:
             case '1':
                 average_in_races = {}
@@ -28,17 +28,24 @@ def statistics_module(clients, races):
                 print('---------------------------------------------')
                 print(f'Average spending of a VIP client in all races:\n\t{average_spent}$')
                 print('---------------------------------------------')
-                make_graph_of_average_vip_spending(average_in_races)
+                see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                if see_graph == 'y':
+                    make_graph_of_average_vip_spending(average_in_races)
             case '2':
                 print(table)
-                make_graph_of_races_attendance(sorted_races)
+                print('-------------------------------------')
+                see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                if see_graph == 'y':
+                    make_graph_of_races_attendance(sorted_races)
             case '3':
                 if highest_attendance:
                     print('---------------------------------------------')
                     print(f'Highest attendance:\n\t{highest_attendance}')
                     print('---------------------------------------------')
                     highest_attendance.pretty_print_attendance()
-                    make_graph_of_races_attendance(sorted_races)
+                    see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                    if see_graph == 'y':
+                        make_graph_of_races_attendance(sorted_races)
                 else:
                     print('---------------------------------')
                     print('No one have attended to any race.')
@@ -49,8 +56,10 @@ def statistics_module(clients, races):
                     print(f'Highest sold tickets:\n\t{most_tickets_sold}')
                     highest_attendance.pretty_print_sold_tickets()
                     sorted_races = sort_races_by_sold_tickets(sorted_races)
-                    make_graph_of_highest_sold_tickets_races(sorted_races)
                     print('---------------------------------------------')
+                    see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                    if see_graph == 'y':
+                        make_graph_of_highest_sold_tickets_races(sorted_races)
                 else:
                     print('--------------------------')
                     print('No tickets have been sold.')
@@ -121,7 +130,9 @@ def statistics_module(clients, races):
                             for index, item in enumerate(top_items_sold):
                                 print(f'\t\tTOP {index + 1}:\n\t\tProduct: {item.name}\n\t\ttotal sales: {item.total_sold}\n')
                             print('---------------------------------------------')
-                            make_graph_of_top_sold_items_in_restaurant(top_items_sold)
+                            see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                            if see_graph == 'y':
+                                make_graph_of_top_sold_items_in_restaurant(top_items_sold)
                     case _:
                         print('Wrong input!')
                         print('------------')
@@ -133,10 +144,10 @@ def statistics_module(clients, races):
                     for index, client in enumerate(top_clients):
                         print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
                         print('---------------------------------------------')
-                        make_graph_of_top_clients_with_most_tickets(top_clients)
+                        see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                        if see_graph == 'y':
+                            make_graph_of_top_clients_with_most_tickets(top_clients)
             case '7':
-                pass
-            case '8':
                 print('Goodbye!')
                 print('----------')
                 break

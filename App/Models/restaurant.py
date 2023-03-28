@@ -12,3 +12,7 @@ class Restaurant:
                 self.items.append(Drink(**item))
             else:
                 self.items.append(Food(**item))
+
+    def __str__(self):
+        return f'{self.name}'
+    

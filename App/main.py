@@ -1,4 +1,3 @@
-import random
 import uuid
 
 from App.Races_and_team_management.filter_races import get_constructor_by_country, get_driver_by_constructor, \
@@ -31,14 +30,6 @@ def main():
     if clients:
         for client in clients:
             client.tickets.sort(key=lambda x: x.type)
-
-    # Borrar esto al terminar, esto es para poblar las clases de información y testear, to lazy to do unittests :D
-
-    for client in clients:
-        client.total_spent = random.randint(0, 10000)
-    for race in races:
-        race.attendance = random.randint(0, 10)
-        race.sold_tickets = random.randint(0, 10)
 
     # corro los modulos
     while True:

@@ -61,10 +61,6 @@ def manage_purchase(clients, races):
             print('-------------------------------------------')
             return 'no restaurants', 'no restaurants', 'no restaurants', 'no restaurants'
 
-        # noinspection PyUnboundLocalVariable
-        for index, restaurant in enumerate(race_at.restaurants):
-            print(f'{index + 1}. {restaurant.name}')
-        # noinspection PyUnboundLocalVariable
         total_price, restaurant_at, products = purchase_products(current_client, race_at.restaurants)
     else:
         print('-----------------------------------------')
@@ -80,7 +76,7 @@ def purchase_products(client, restaurants):
     valid_restaurant = False
     while True:
         for index, restaurant in enumerate(restaurants):
-            print(f'{index+1}. {restaurant.name}')
+            print(f'{index+1}. {restaurant}')
         while True:
             chosen_restaurant = input('Choose the restaurant you want the products of: ')
             if chosen_restaurant.isnumeric():
@@ -129,11 +125,11 @@ def purchase_products(client, restaurants):
             print('-----------------------------------------------------')
         flag = False
         while True:
-            choice = input('Do you want to buy another product?\n\t1. Yes\n\t2. No\n')
+            choice = input('Do you want to buy another product? (y/n)\n')
             match choice:
-                case '1':
+                case 'y':
                     break
-                case '2':
+                case 'n':
                     flag = True
                     break
                 case _:
