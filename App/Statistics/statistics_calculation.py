@@ -144,9 +144,9 @@ def statistics_module(clients, races):
                     for index, client in enumerate(top_clients):
                         print(f'\tTOP {index + 1}:\n\tName: {client.name}\n\ttotal tickets: {len(client.tickets)}\n')
                         print('---------------------------------------------')
-                        see_graph = input('Do you want to to see the graph? (y/n)\n\t')
-                        if see_graph == 'y':
-                            make_graph_of_top_clients_with_most_tickets(top_clients)
+                    see_graph = input('Do you want to to see the graph? (y/n)\n\t')
+                    if see_graph == 'y':
+                        make_graph_of_top_clients_with_most_tickets(top_clients)
             case '7':
                 print('Goodbye!')
                 print('----------')
@@ -175,12 +175,12 @@ def calculate_top_clients(clients):
     if clients:
         if len(sorted_clients[0].tickets) == 0:
             return False
-        if len(sorted_clients[0].tickets) > 0:
-            return sorted_clients[: 1]
+        if len(sorted_clients[2].tickets) > 0:
+            return sorted_clients[:3]
         elif len(sorted_clients[1].tickets) > 0:
             return sorted_clients[:2]
-        elif len(sorted_clients[2].tickets) > 0:
-            return sorted_clients[:3]
+        elif len(sorted_clients[0].tickets) > 0:
+            return sorted_clients[: 1]
     else:
         return False
 

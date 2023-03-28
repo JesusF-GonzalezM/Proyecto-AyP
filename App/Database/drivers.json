@@ -8,7 +8,7 @@
         "lastName": "Albon",
         "dateOfBirth": "1996-03-23",
         "nationality": "Thai",
-        "score": 18
+        "score": 0
     },
     {
         "id": "alonso",
@@ -19,7 +19,7 @@
         "lastName": "Alonso",
         "dateOfBirth": "1981-07-29",
         "nationality": "Spanish",
-        "score": 6
+        "score": 0
     },
     {
         "id": "bottas",
@@ -30,7 +30,7 @@
         "lastName": "Bottas",
         "dateOfBirth": "1989-08-28",
         "nationality": "Finnish",
-        "score": 8
+        "score": 0
     },
     {
         "id": "de_vries",
@@ -41,7 +41,7 @@
         "lastName": "de Vries",
         "dateOfBirth": "1995-02-06",
         "nationality": "Dutch",
-        "score": 6
+        "score": 0
     },
     {
         "id": "gasly",
@@ -52,7 +52,7 @@
         "lastName": "Gasly",
         "dateOfBirth": "1996-02-07",
         "nationality": "French",
-        "score": 10
+        "score": 0
     },
     {
         "id": "hamilton",
@@ -74,7 +74,7 @@
         "lastName": "H\u00fclkenberg",
         "dateOfBirth": "1987-08-19",
         "nationality": "German",
-        "score": 1
+        "score": 0
     },
     {
         "id": "leclerc",
@@ -85,7 +85,7 @@
         "lastName": "Leclerc",
         "dateOfBirth": "1997-10-16",
         "nationality": "Monegasque",
-        "score": 2
+        "score": 0
     },
     {
         "id": "kevin_magnussen",
@@ -107,7 +107,7 @@
         "lastName": "Norris",
         "dateOfBirth": "1999-11-13",
         "nationality": "British",
-        "score": 12
+        "score": 0
     },
     {
         "id": "ocon",
@@ -118,7 +118,7 @@
         "lastName": "Ocon",
         "dateOfBirth": "1996-09-17",
         "nationality": "French",
-        "score": 25
+        "score": 0
     },
     {
         "id": "perez",
@@ -129,7 +129,7 @@
         "lastName": "P\u00e9rez",
         "dateOfBirth": "1990-01-26",
         "nationality": "Mexican",
-        "score": 4
+        "score": 0
     },
     {
         "id": "piastri",
@@ -162,7 +162,7 @@
         "lastName": "Sainz",
         "dateOfBirth": "1994-09-01",
         "nationality": "Spanish",
-        "score": 10
+        "score": 0
     },
     {
         "id": "sargeant",
@@ -184,7 +184,7 @@
         "lastName": "Stroll",
         "dateOfBirth": "1998-10-29",
         "nationality": "Canadian",
-        "score": 25
+        "score": 0
     },
     {
         "id": "tsunoda",
@@ -195,7 +195,7 @@
         "lastName": "Tsunoda",
         "dateOfBirth": "2000-05-11",
         "nationality": "Japanese",
-        "score": 4
+        "score": 0
     },
     {
         "id": "max_verstappen",
@@ -217,6 +217,6 @@
         "lastName": "Zhou",
         "dateOfBirth": "1999-05-30",
         "nationality": "Chinese",
-        "score": 15
+        "score": 0
     }
 ]
