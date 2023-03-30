@@ -90,6 +90,7 @@ def main():
                 quit()
             case _:
                 print('Wrong input!')
+                print('------------')
 
 
 # Ejecuta el programa principal
